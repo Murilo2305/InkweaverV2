@@ -6,16 +6,23 @@ public class DummyScript : MonoBehaviour
 {
     [Header(" - References")]
     [SerializeField] Animator animatorRef;
-    [SerializeField] EnemyCombatScript combatScriptRef;
+    [SerializeField] GameObject EnemyRef;
 
     [Header(" - Dummy Parameters")]
     [SerializeField] private float timerMax = 1.0f;
     [SerializeField] private float respawnTimer = 0.0f;
     [SerializeField] private bool isDead;
 
+    [Header("Debug stuff")]
+    [SerializeField] EnemyCombatScript combatScriptRef;
+    [SerializeField] EnemyColorSystem colorSystemRef;
+
+
     private void Start()
     {
         animatorRef.SetBool("isDead", false);
+        combatScriptRef = EnemyRef.GetComponent<EnemyCombatScript>();
+        colorSystemRef = EnemyRef.GetComponent<EnemyColorSystem>();
     }
 
     private void Update()
@@ -25,8 +32,9 @@ public class DummyScript : MonoBehaviour
             animatorRef.SetBool("isDead", true);
             isDead = true;
             respawnTimer = timerMax;
+            colorSystemRef.debuffTimer = 0.0f;
         }
-
+        
         if (respawnTimer > 0.0f)
         {
             respawnTimer -= Time.deltaTime;
@@ -36,6 +44,7 @@ public class DummyScript : MonoBehaviour
                 animatorRef.SetBool("isDead", false);
                 isDead = false;
                 combatScriptRef.healthPoints = combatScriptRef.maxHealth;
+                combatScriptRef.UpdateHealthBar();
             }
         }
 

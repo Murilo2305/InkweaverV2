@@ -58,23 +58,28 @@
     <Analyzer Include="C:\Program Files\2022.3.10f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\SpriteScript.cs" />
+    <Compile Include="Assets\Eric\Scripts\EnemyScripts\DummyScripts\DummyScript.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\enemy_seeking_mechanism.cs" />
     <Compile Include="Assets\Eric\Scripts\PlayerScripts\PlayerCombatScript.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\EnemyAnimatorScript.cs" />
+    <Compile Include="Assets\Eric\Scripts\HealthBarScripts\FollowTarget.cs" />
+    <Compile Include="Assets\Eric\Scripts\HealthBarScripts\EnemyHealthBar.cs" />
     <Compile Include="Assets\Scripts\old shit\PlayerMovementAlternatePhysicsBased.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\EnemyCombatScript.cs" />
+    <Compile Include="Assets\Eric\Scripts\HealthBarScripts\ProgressBar.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\enemy_player_detection.cs" />
     <Compile Include="Assets\Scripts\old shit\ScriptTofigureOutTheNameOfTheFaceButtons.cs" />
     <Compile Include="Assets\Scripts\old shit\Player.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\minion\enemy_damage_radius.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\minion\script_minion.cs" />
     <Compile Include="Assets\Eric\Scripts\PlayerScripts\NewPlayerAnimationScript.cs" />
+    <Compile Include="Assets\Eric\Scripts\HealthBarScripts\PlayerHealthBarScript.cs" />
+    <Compile Include="Assets\Eric\Scripts\EnemyScripts\DummyScripts\DummySpawner.cs" />
     <Compile Include="Assets\Scripts\old shit\PlayerDash.cs" />
     <Compile Include="Assets\Eric\Scripts\PlayerScripts\PlayerCharacterControlerMovement.cs" />
     <Compile Include="Assets\Scripts\old shit\camera.cs" />
-    <Compile Include="Assets\Eric\Scripts\EnemyScripts\DummyScript.cs" />
     <Compile Include="Assets\Scripts\old shit\PlayerAnimationScript.cs" />
+    <Compile Include="Assets\Eric\Scripts\SpriteScript.cs" />
     <Compile Include="Assets\Eric\Scripts\PlayerScripts\NewPlayerDirectionalIndicator.cs" />
     <Compile Include="Assets\Eric\Scripts\LineRendererDebugThing.cs" />
     <Compile Include="Assets\Eric\Scripts\ColorSystem\PlayerColorSystem.cs" />

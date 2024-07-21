@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//PRÓXIMA VEZ QUE ABRIR SCRIPT FAZER COM QUE CANATTACK SEJA FALSE QUANDO ESTIVER CARREGANDO/DANDO ATAQUE CARREGADO
-
 
 
 public class PlayerCombatScript : MonoBehaviour
@@ -13,6 +11,10 @@ public class PlayerCombatScript : MonoBehaviour
     [SerializeField] private bool canAttack;
     [SerializeField] public bool isAttacking;
 
+    //Health Parameters
+    [Header(" - Health Parameters")]
+    [SerializeField] private float MaxHealth = 100f;
+    [SerializeField] private int HealthPoints;
 
     //Attack related parameters
     [Header(" - General Attack Parameters")]
@@ -52,16 +54,21 @@ public class PlayerCombatScript : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private SpriteRenderer lightlyChargedWarning;
     [SerializeField] private SpriteRenderer fullyChargedWarning;
+    [SerializeField] private PlayerHealthBarScript PlayerHealthBarScriptRef;
+    [SerializeField] private Animator attackVFXAnimator;
+    [SerializeField] private SpriteRenderer attackVFXSprite;
 
 
     //Debugging
     [Header(" - Debug stuff (dont interact)")]
     [SerializeField] private PlayerCharacterControlerMovement moveScriptRef;
+    [SerializeField] private PlayerColorSystem playerColorSystemRef;
 
     private void Start()
     {
         //SettingOtherRefs
         moveScriptRef = player.GetComponent<PlayerCharacterControlerMovement>();
+        playerColorSystemRef = player.GetComponent<PlayerColorSystem>();
 
         //redundancies
         canAttack = true;
@@ -96,7 +103,8 @@ public class PlayerCombatScript : MonoBehaviour
             ReleaseChargeAttack();
         }
 
-
+        // when health is actually implemented remove the folowing
+        PlayerHealthBarScriptRef.UpdateHealthBar(HealthPoints / MaxHealth);
     }
 
     //attack function
@@ -112,33 +120,24 @@ public class PlayerCombatScript : MonoBehaviour
             //control variables
             comboTracker = 1;
 
-            //damage setup
-            damage = baseDamage * mvLightAttack1;
-
-            //parameter in question is Time the hitbox is Enabled for
-            StartCoroutine(EnableAndDisableHitbox(0.25f));
-            //time before the player can attack again
-            StartCoroutine(attackCooldown(cdLightAttack1));
+            //Calls the function that triggers the necessary functions and coroutines to attack
+            GeneralPurposeAtttackFunction(mvLightAttack1, 0.25f, cdLightAttack1);
         }
         //second attack in combo
         else if (comboTracker == 1)
         {
             comboTracker = 2;
 
-            damage = baseDamage * mvLightAttack2;
+            GeneralPurposeAtttackFunction(mvLightAttack2, 0.3f, cdLightAttack2, 0.05f);
 
-            StartCoroutine(EnableAndDisableHitbox(0.3f));
-            StartCoroutine(attackCooldown(cdLightAttack2));
+            damage = baseDamage * mvLightAttack2;
         }
         //last attack in the three-hit combo
         else if (comboTracker == 2)
         {
             comboTracker = 0;
 
-            damage = baseDamage * mvLightAttack3;
-
-            StartCoroutine(EnableAndDisableHitbox(0.5f));
-            StartCoroutine(attackCooldown(cdLightAttack3));
+            GeneralPurposeAtttackFunction(mvLightAttack3, 0.5f, cdLightAttack3, 0.15f);
         }
     }
 
@@ -199,20 +198,14 @@ public class PlayerCombatScript : MonoBehaviour
             canAttack = false;
             isHeavyAttacking = true;
 
-            damage = baseDamage * mvChargedAttack;
-
-            StartCoroutine(EnableAndDisableHitbox(0.5f));
-            StartCoroutine(attackCooldown(0.75f));
+            GeneralPurposeAtttackFunction(mvChargedAttack, 0.5f, 0.75f);
         }
         else if (isLightlyCharged)
         {
             canAttack = false;
             isHeavyAttacking = true;
 
-            damage = baseDamage * mvHeavyAttack;
-
-            StartCoroutine(EnableAndDisableHitbox(0.5f));
-            StartCoroutine(attackCooldown(0.75f));
+            GeneralPurposeAtttackFunction(mvHeavyAttack, 0.5f, 0.75f);
         }
 
         isLightlyCharged = false;
@@ -237,16 +230,36 @@ public class PlayerCombatScript : MonoBehaviour
         }
     }
 
+    // Attack Function that triggers the other functions and routines
 
+    private void GeneralPurposeAtttackFunction(float motionValue, float hitBoxDuration, float cooldownForTheAttack)
+    {
+        GeneralPurposeAtttackFunction(motionValue, hitBoxDuration, cooldownForTheAttack, 0.0f);
+    }
+    private void GeneralPurposeAtttackFunction(float motionValue, float hitBoxDuration, float cooldownForTheAttack, float delayBeforeAttacking)
+    {
+        //damage setup
+        damage = baseDamage * motionValue;
+
+        //parameter in question is Time the hitbox is Enabled for
+        StartCoroutine(EnableAndDisableHitbox(hitBoxDuration, delayBeforeAttacking));
+        //time before the player can attack again
+        StartCoroutine(attackCooldown(cooldownForTheAttack));
+
+
+    }
 
 
     //Attack related Coroutines
-    private IEnumerator EnableAndDisableHitbox(float duration)
+    private IEnumerator EnableAndDisableHitbox(float duration, float delay)
     {
+        yield return new WaitForSeconds(delay);
         attackHitbox.enabled = true;
+
+        TriggerEffect("OnAttackTrigger");
+
         yield return new WaitForSeconds(duration);
         attackHitbox.enabled = false;
-
     }
 
     //tracksTime until the player can attack again
@@ -259,4 +272,25 @@ public class PlayerCombatScript : MonoBehaviour
         moveScriptRef.canMove = true;
     }
 
+
+    // Attack Special Effects thing (I guess its practical effects but idk)
+    private void TriggerEffect(string id)
+    {
+        if (playerColorSystemRef.red)
+        {
+            attackVFXSprite.color = Color.red;
+        }
+        else if (playerColorSystemRef.green)
+        {
+            attackVFXSprite.color = Color.green;
+        }
+        else if (playerColorSystemRef.blue)
+        {
+            attackVFXSprite.color = Color.blue;
+        } 
+        attackVFXAnimator.SetTrigger(id);
+    }
+
 }
+
+        
