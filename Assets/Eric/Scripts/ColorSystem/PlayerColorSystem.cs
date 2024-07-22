@@ -37,27 +37,23 @@ public class PlayerColorSystem : MonoBehaviour
         {
             red = false;
             green = true;
-            print("Green");
             rotationTarget = 240f;
         }
         else if (green)
         {
             green = false;
             blue = true;
-            print("Blue");
             rotationTarget = 0f;
         }
         else if (blue)
         {
             blue = false;
             red = true;
-            print("Red");
             rotationTarget = 120f;
         }
         else
         {
             red = true;
-            print("Red");
             rotationTarget = 120f;
         }
         StartRotationCoroutine();

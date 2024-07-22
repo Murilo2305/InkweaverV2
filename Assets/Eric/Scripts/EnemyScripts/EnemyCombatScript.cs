@@ -24,8 +24,6 @@ public class EnemyCombatScript : MonoBehaviour
     public GameObject playerRef;
 
     [Header(" - DebugStuff")]
-    [SerializeField] PlayerCombatScript playerCombatScriptRef;
-    [SerializeField] PlayerColorSystem playerColorSystemRef;
     [SerializeField] EnemyColorSystem enemyColorSystemRef;
 
 
@@ -40,9 +38,6 @@ public class EnemyCombatScript : MonoBehaviour
 
     private void Start()
     {
-        
-        playerCombatScriptRef = playerRef.GetComponent<PlayerCombatScript>();
-        playerColorSystemRef = playerRef.GetComponent<PlayerColorSystem>();
         enemyColorSystemRef = GetComponent<EnemyColorSystem>();
         healthPoints = maxHealth;
     }
@@ -50,6 +45,8 @@ public class EnemyCombatScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        PlayerHitboxScript HitboxScriptRef = other.GetComponent<PlayerHitboxScript>();
+
         if (other.gameObject.CompareTag("PlayerAttack"))
         {
             //Staggers the enemy if possible
@@ -60,40 +57,10 @@ public class EnemyCombatScript : MonoBehaviour
             }
 
             //Subtracts hp from the attack received
-            DamageTaken(playerCombatScriptRef.damage);
+            DamageTaken(HitboxScriptRef.damage);
 
             //Stacks the ink the player had equipped at the time of the hit
-            if (playerColorSystemRef.red && enemyColorSystemRef.redStacks < enemyColorSystemRef.multiplierCap)
-            {
-                if (enemyColorSystemRef.redStacks == 0)
-                {
-                    enemyColorSystemRef.debuffsActive += 1;
-                }
-                enemyColorSystemRef.AddStacks("RED");
-
-                if (enemyColorSystemRef.redStacks == 1)
-                {
-                    StartCoroutine(RedDoT());
-                }
-            }
-            else if (playerColorSystemRef.green && enemyColorSystemRef.greenStacks < enemyColorSystemRef.multiplierCap)
-            {
-                if (enemyColorSystemRef.greenStacks == 0)
-                {
-                    enemyColorSystemRef.debuffsActive += 1;
-                }
-
-                enemyColorSystemRef.AddStacks("GREEN");
-            }
-            else if (playerColorSystemRef.blue && enemyColorSystemRef.blueStacks < enemyColorSystemRef.multiplierCap)
-            {
-                if (enemyColorSystemRef.blueStacks == 0)
-                {
-                    enemyColorSystemRef.debuffsActive += 1;
-                }
-
-                enemyColorSystemRef.AddStacks("BLUE");
-            }
+            AddInk(HitboxScriptRef.isRed, HitboxScriptRef.isGreen, HitboxScriptRef.isBlue, HitboxScriptRef.stacksOfInk);
 
             //Refreshes the ink debuff duration
             enemyColorSystemRef.debuffTimer = enemyColorSystemRef.maxDebuffTimer;
@@ -142,10 +109,6 @@ public class EnemyCombatScript : MonoBehaviour
 
     }
 
-    private void DamageTaken(float dmg)
-    {
-        DamageTaken(dmg, false);
-    }
     private void DamageTaken(float dmg, bool imediate)
     {
         healthPoints -= dmg;
@@ -161,11 +124,7 @@ public class EnemyCombatScript : MonoBehaviour
 
 
 
-    //Updates the hit bar with the "draining" animation; also if speed not provided the speed defaults to 10
-    public void UpdateHealthBar()
-    {
-        UpdateHealthBar(10);
-    }
+    
     public void UpdateHealthBar(int speed)
     {
         HealthBarScriptRef.SetProgress(healthPoints / maxHealth, speed);
@@ -182,5 +141,59 @@ public class EnemyCombatScript : MonoBehaviour
     {
         HealthBarParentObjectRef.transform.SetParent(Canvas.transform);
     }
+    private void AddInk(bool isRed, bool isGreen, bool isBlue, byte Stacks)
+    {
+        if (isRed && enemyColorSystemRef.redStacks < enemyColorSystemRef.multiplierCap)
+        {
+            if (enemyColorSystemRef.redStacks == 0)
+            {
+                enemyColorSystemRef.debuffsActive += 1;
+            }
+            enemyColorSystemRef.AddStacks("RED", Stacks);
+
+            if (enemyColorSystemRef.redStacks == 1)
+            {
+                StartCoroutine(RedDoT());
+            }
+        }
+        else if (isGreen && enemyColorSystemRef.greenStacks < enemyColorSystemRef.multiplierCap)
+        {
+            if (enemyColorSystemRef.greenStacks == 0)
+            {
+                enemyColorSystemRef.debuffsActive += 1;
+            }
+
+            enemyColorSystemRef.AddStacks("GREEN", Stacks);
+        }
+        else if (isBlue && enemyColorSystemRef.blueStacks < enemyColorSystemRef.multiplierCap)
+        {
+            if (enemyColorSystemRef.blueStacks == 0)
+            {
+                enemyColorSystemRef.debuffsActive += 1;
+            }
+
+            enemyColorSystemRef.AddStacks("BLUE", Stacks);
+        }
+    }
+
+
+
+
+
+
+
+
+    //Shortcuts to other functions
+
+    //DamageTaken shortcut without the specification if the health bar should be animated
+    private void DamageTaken(float dmg)
+    {
+        DamageTaken(dmg, false);
+    }
+
+    //Updates the hit bar with the "draining" animation; also if speed not provided the speed defaults to 10
+    public void UpdateHealthBar()
+    {
+        UpdateHealthBar(10);
+    }
 }
-       

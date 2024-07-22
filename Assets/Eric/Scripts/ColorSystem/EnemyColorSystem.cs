@@ -124,10 +124,6 @@ public class EnemyColorSystem : MonoBehaviour
         UpdateHealthBarColor();
     }
 
-    public void AddStacks(string color)
-    {
-        AddStacks(color, 1);
-    }
 
     private void UpdateHealthBarColor()
     {
@@ -187,5 +183,21 @@ public class EnemyColorSystem : MonoBehaviour
                 HealthBarScriptRef.SetBarColor(Color.white);
             }
         }
+    }
+
+
+
+
+
+
+
+
+
+    //Shortcuts to other functions
+
+    // when amount of stacks not specified default to 1
+    public void AddStacks(string color)
+    {
+        AddStacks(color, 1);
     }
 }

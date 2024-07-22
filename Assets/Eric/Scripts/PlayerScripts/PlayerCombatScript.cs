@@ -9,7 +9,7 @@ public class PlayerCombatScript : MonoBehaviour
     //Control Variables
     [Header(" - Control Variables")]
     [SerializeField] private bool canAttack;
-    [SerializeField] public bool isAttacking;
+     public bool isAttacking;
 
     //Health Parameters
     [Header(" - Health Parameters")]
@@ -19,7 +19,6 @@ public class PlayerCombatScript : MonoBehaviour
     //Attack related parameters
     [Header(" - General Attack Parameters")]
     [SerializeField] private float baseDamage = 5.0f;
-    [SerializeField] public float damage;
 
     [Header(" - Motion Values (dmg multiplier for each attack in combo)")]
     [SerializeField] private float mvLightAttack1 = 1.0f;
@@ -36,44 +35,69 @@ public class PlayerCombatScript : MonoBehaviour
     [SerializeField] private float mvChargedAttack = 2.5f;
     [SerializeField] private float timeTillCharged = 2.0f;
     [SerializeField] private float chargeTimer;
-    [SerializeField] public bool isCharging = false;
     [SerializeField] private bool isLightlyCharged = false;
-    [SerializeField] public bool isFullyCharged = false;
-    [SerializeField] public bool isHeavyAttacking;
+    public bool isCharging = false;
+    public bool isFullyCharged = false;
+    public bool isHeavyAttacking;
 
 
     [Header(" - Combo related parameters")]
-    [SerializeField] public int comboTracker;
     [SerializeField] private float currentTimer;
     [SerializeField] private float maxTimer = 0.75f;
+    public int comboTracker;
 
 
     //References
     [Header(" - References")]
-    [SerializeField] private BoxCollider attackHitbox;
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject lightAttackHitboxGameObjectRef;
+    [SerializeField] private GameObject heavyAttackHitboxGameObjectRef;
+    [SerializeField] private GameObject lightAttackHitboxGFXGameObjectRef;
+    [SerializeField] private GameObject heavyAttackHitboxGFXGameObjectRef;
+    [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private SpriteRenderer lightlyChargedWarning;
     [SerializeField] private SpriteRenderer fullyChargedWarning;
     [SerializeField] private PlayerHealthBarScript PlayerHealthBarScriptRef;
-    [SerializeField] private Animator attackVFXAnimator;
-    [SerializeField] private SpriteRenderer attackVFXSprite;
+    [SerializeField] private Transform ProjectileSpawnerTransform;
+    [SerializeField] private Transform ProjectileSpawnerTransform1;
+    [SerializeField] private Transform ProjectileSpawnerTransform2;
 
 
     //Debugging
     [Header(" - Debug stuff (dont interact)")]
     [SerializeField] private PlayerCharacterControlerMovement moveScriptRef;
     [SerializeField] private PlayerColorSystem playerColorSystemRef;
+    [SerializeField] private BoxCollider lightAttackHitbox;
+    [SerializeField] private BoxCollider heavyAttackHitbox;
+    [SerializeField] private SpriteRenderer lightAttackGFXSprite;
+    [SerializeField] private SpriteRenderer heavyAttackGFXSprite;
+    [SerializeField] private Animator lightAttackGFXAnimator;
+    [SerializeField] private Animator heavyAttackGFXAnimator;
+    [SerializeField] private PlayerHitboxScript lightAttackHitboxScriptRef;
+    [SerializeField] private PlayerHitboxScript heavyAttackHitboxScriptRef;
+
 
     private void Start()
     {
         //SettingOtherRefs
         moveScriptRef = player.GetComponent<PlayerCharacterControlerMovement>();
         playerColorSystemRef = player.GetComponent<PlayerColorSystem>();
+        lightAttackHitbox = lightAttackHitboxGameObjectRef.GetComponent<BoxCollider>();
+        heavyAttackHitbox = heavyAttackHitboxGameObjectRef.GetComponent<BoxCollider>();
+        lightAttackGFXSprite = lightAttackHitboxGFXGameObjectRef.GetComponent < SpriteRenderer>();
+        heavyAttackGFXSprite = heavyAttackHitboxGFXGameObjectRef.GetComponent < SpriteRenderer>();
+        lightAttackGFXAnimator = lightAttackHitboxGFXGameObjectRef.GetComponent<Animator>();
+        heavyAttackGFXAnimator = heavyAttackHitboxGFXGameObjectRef.GetComponent<Animator>();
+        lightAttackHitboxScriptRef = lightAttackHitboxGameObjectRef.GetComponent<PlayerHitboxScript>();
+        heavyAttackHitboxScriptRef = heavyAttackHitboxGameObjectRef.GetComponent<PlayerHitboxScript>();
+
+
 
         //redundancies
         canAttack = true;
         comboTracker = 0;
-        attackHitbox.enabled = false;
+        lightAttackHitbox.enabled = false;
+        heavyAttackHitbox.enabled = false;
         lightlyChargedWarning.enabled = false;
         fullyChargedWarning.enabled = false;
 
@@ -129,15 +153,13 @@ public class PlayerCombatScript : MonoBehaviour
             comboTracker = 2;
 
             GeneralPurposeAtttackFunction(mvLightAttack2, 0.3f, cdLightAttack2, 0.05f);
-
-            damage = baseDamage * mvLightAttack2;
         }
         //last attack in the three-hit combo
         else if (comboTracker == 2)
         {
             comboTracker = 0;
 
-            GeneralPurposeAtttackFunction(mvLightAttack3, 0.5f, cdLightAttack3, 0.15f);
+            GeneralPurposeAtttackFunction(mvLightAttack3, 0.5f, cdLightAttack3, 0.1f);
         }
     }
 
@@ -198,14 +220,16 @@ public class PlayerCombatScript : MonoBehaviour
             canAttack = false;
             isHeavyAttacking = true;
 
-            GeneralPurposeAtttackFunction(mvChargedAttack, 0.5f, 0.75f);
+            SpawnProjectiles(true);
+            GeneralPurposeAtttackFunction(mvChargedAttack, 0.5f, 0.75f, true);
         }
         else if (isLightlyCharged)
         {
             canAttack = false;
             isHeavyAttacking = true;
 
-            GeneralPurposeAtttackFunction(mvHeavyAttack, 0.5f, 0.75f);
+            SpawnProjectiles(false);
+            GeneralPurposeAtttackFunction(mvHeavyAttack, 0.5f, 0.75f, true);
         }
 
         isLightlyCharged = false;
@@ -230,36 +254,93 @@ public class PlayerCombatScript : MonoBehaviour
         }
     }
 
-    // Attack Function that triggers the other functions and routines
 
-    private void GeneralPurposeAtttackFunction(float motionValue, float hitBoxDuration, float cooldownForTheAttack)
-    {
-        GeneralPurposeAtttackFunction(motionValue, hitBoxDuration, cooldownForTheAttack, 0.0f);
-    }
-    private void GeneralPurposeAtttackFunction(float motionValue, float hitBoxDuration, float cooldownForTheAttack, float delayBeforeAttacking)
+    // Attack Function that triggers the other functions and routines
+    private void GeneralPurposeAtttackFunction(float motionValue, float hitBoxDuration, float cooldownForTheAttack, float delayBeforeAttacking, bool isHeavyAttack)
     {
         //damage setup
-        damage = baseDamage * motionValue;
+        if (isHeavyAttack)
+        {
+            heavyAttackHitboxScriptRef.damage = baseDamage * motionValue;
+        }
+        else
+        {
+            lightAttackHitboxScriptRef.damage = baseDamage * motionValue;
+        }
+
 
         //parameter in question is Time the hitbox is Enabled for
-        StartCoroutine(EnableAndDisableHitbox(hitBoxDuration, delayBeforeAttacking));
+        StartCoroutine(EnableAndDisableHitbox(hitBoxDuration, delayBeforeAttacking, isHeavyAttack));
         //time before the player can attack again
         StartCoroutine(attackCooldown(cooldownForTheAttack));
-
-
     }
+
 
 
     //Attack related Coroutines
-    private IEnumerator EnableAndDisableHitbox(float duration, float delay)
+    private IEnumerator EnableAndDisableHitbox(float duration, float delay, bool isHeavyAttack)
     {
+        if (playerColorSystemRef.red)
+        {
+            if (isHeavyAttack)
+            {
+                heavyAttackHitboxScriptRef.isRed = true;
+                heavyAttackHitboxScriptRef.isGreen = false;
+                heavyAttackHitboxScriptRef.isBlue = false;
+            }
+            else
+            {
+                lightAttackHitboxScriptRef.isRed = true;
+                lightAttackHitboxScriptRef.isGreen = false;
+                lightAttackHitboxScriptRef.isBlue = false;
+            }
+        }
+        else if (playerColorSystemRef.green)
+        {
+            if (isHeavyAttack)
+            {
+                heavyAttackHitboxScriptRef.isRed = false;
+                heavyAttackHitboxScriptRef.isGreen = true;
+                heavyAttackHitboxScriptRef.isBlue = false;
+            }
+            else
+            {
+                lightAttackHitboxScriptRef.isRed = false;
+                lightAttackHitboxScriptRef.isGreen = true;
+                lightAttackHitboxScriptRef.isBlue = false;
+            }
+        }
+        else if (playerColorSystemRef.blue)
+        {
+            if (isHeavyAttack)
+            {
+                heavyAttackHitboxScriptRef.isRed = false;
+                heavyAttackHitboxScriptRef.isGreen = false;
+                heavyAttackHitboxScriptRef.isBlue = true;
+            }
+            else
+            {
+                lightAttackHitboxScriptRef.isRed = false;
+                lightAttackHitboxScriptRef.isGreen = false;
+                lightAttackHitboxScriptRef.isBlue = true;
+            }
+        }
         yield return new WaitForSeconds(delay);
-        attackHitbox.enabled = true;
+        if (isHeavyAttack)
+        {
+            heavyAttackHitbox.enabled = true;
+        }
+        else
+        {
+            lightAttackHitbox.enabled = true;
+        }
 
-        TriggerEffect("OnAttackTrigger");
+
+        TriggerEffect(isHeavyAttack);
 
         yield return new WaitForSeconds(duration);
-        attackHitbox.enabled = false;
+        lightAttackHitbox.enabled = false;
+        heavyAttackHitbox.enabled = false;
     }
 
     //tracksTime until the player can attack again
@@ -274,22 +355,112 @@ public class PlayerCombatScript : MonoBehaviour
 
 
     // Attack Special Effects thing (I guess its practical effects but idk)
-    private void TriggerEffect(string id)
+    private void TriggerEffect(bool isHeavyAttack)
     {
         if (playerColorSystemRef.red)
         {
-            attackVFXSprite.color = Color.red;
+            lightAttackGFXSprite.color = Color.red;
+            heavyAttackGFXSprite.color = Color.red;
         }
         else if (playerColorSystemRef.green)
         {
-            attackVFXSprite.color = Color.green;
+            lightAttackGFXSprite.color = Color.green;
+            heavyAttackGFXSprite.color = Color.green;
         }
         else if (playerColorSystemRef.blue)
         {
-            attackVFXSprite.color = Color.blue;
-        } 
-        attackVFXAnimator.SetTrigger(id);
+            lightAttackGFXSprite.color = Color.blue;
+            heavyAttackGFXSprite.color = Color.blue;
+        }
+
+        if (isHeavyAttack)
+        {
+            heavyAttackGFXAnimator.SetTrigger("OnAttackTrigger");
+        }
+        else
+        {
+            lightAttackGFXAnimator.SetTrigger("OnAttackTrigger");
+        }
+
     }
+
+    // Function that spawns the Projectiles on the heavy attacks
+    private void SpawnProjectiles(bool hasBeenFullyCharged)
+    {
+        GameObject middleProjectile = Instantiate(projectilePrefab, ProjectileSpawnerTransform);
+        middleProjectile.transform.SetParent(null);
+
+        if (playerColorSystemRef.red)
+        {
+            middleProjectile.GetComponent<PlayerHitboxScript>().isRed = true;
+            middleProjectile.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.red;
+        }
+        else if (playerColorSystemRef.green)
+        {
+            middleProjectile.GetComponent<PlayerHitboxScript>().isGreen = true;
+            middleProjectile.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.green;
+        }
+        else if (playerColorSystemRef.blue)
+        {
+            middleProjectile.GetComponent<PlayerHitboxScript>().isBlue = true;
+            middleProjectile.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.blue;
+        }
+
+        if (hasBeenFullyCharged)
+        {
+            GameObject rightProjectile = Instantiate(projectilePrefab, ProjectileSpawnerTransform2);
+            rightProjectile.transform.SetParent(null);
+            GameObject leftProjectile = Instantiate(projectilePrefab, ProjectileSpawnerTransform1);
+            leftProjectile.transform.SetParent(null);
+
+            if (playerColorSystemRef.red)
+            {
+                leftProjectile.GetComponent<PlayerHitboxScript>().isRed = true;
+                rightProjectile.GetComponent<PlayerHitboxScript>().isRed = true;
+                leftProjectile.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.red;
+                rightProjectile.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.red;
+            }
+            else if (playerColorSystemRef.green)
+            {
+                leftProjectile.GetComponent<PlayerHitboxScript>().isGreen = true;
+                rightProjectile.GetComponent<PlayerHitboxScript>().isGreen = true;
+                leftProjectile.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.green;
+                rightProjectile.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.green;
+            }
+            else if (playerColorSystemRef.blue)
+            {
+                leftProjectile.GetComponent<PlayerHitboxScript>().isBlue = true;
+                rightProjectile.GetComponent<PlayerHitboxScript>().isBlue = true;
+                leftProjectile.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.blue;
+                rightProjectile.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.blue;
+            }
+        }
+
+    }
+
+
+
+
+
+    //Shortcuts to other functions
+
+    //GeneralPurposeAttackFunction shortcuts:
+    //case in which the function is called without delay or HeavyAttack specification -> defaults to no delay and light attack
+    private void GeneralPurposeAtttackFunction(float motionValue, float hitBoxDuration, float cooldownForTheAttack)
+    {
+        GeneralPurposeAtttackFunction(motionValue, hitBoxDuration, cooldownForTheAttack, 0.0f, false);
+    }
+    //case in which the function is called without delay-> defaults to no delay
+    private void GeneralPurposeAtttackFunction(float motionValue, float hitBoxDuration, float cooldownForTheAttack, bool isHeavyAttack)
+    {
+        GeneralPurposeAtttackFunction(motionValue, hitBoxDuration, cooldownForTheAttack, 0.0f, isHeavyAttack);
+    }
+    //case in which the function is called without HeavyAttack specification -> defaults to light attack
+    private void GeneralPurposeAtttackFunction(float motionValue, float hitBoxDuration, float cooldownForTheAttack, float delayBeforeAttacking)
+    {
+        GeneralPurposeAtttackFunction(motionValue, hitBoxDuration, cooldownForTheAttack, delayBeforeAttacking, false);
+    }
+   
 
 }
 
