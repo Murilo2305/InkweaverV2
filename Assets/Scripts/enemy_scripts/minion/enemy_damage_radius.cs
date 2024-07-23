@@ -9,6 +9,9 @@ public class enemy_damage_radius : MonoBehaviour
     public GameObject Nav;
     public bool Attackingg, startAttack;
     [SerializeField] float delay;
+    private bool player = false;
+    [SerializeField] GameObject PlayerDetector;
+    private GameObject PlayerRef;
     
 
     void Start()
@@ -24,82 +27,51 @@ public class enemy_damage_radius : MonoBehaviour
     void Update()
     {
         
+        if (player == true && Attackingg == false)
+        {
+
+            StartCoroutine("Attack");
+            Attackingg = true;
+
+        }
+
     }
 
     private void OnTriggerEnter (Collider other)
     {
 
-        
-        Attackingg = true;
-        if (other.gameObject.tag == "Player" && Attackingg == true && startAttack == false)
+        if(other.gameObject.tag == "Player")
         {
 
-            print("b");
-            StartCoroutine("Attack");
+            player = true;
 
-        }
-
-        
+        }      
 
     }
 
-    private void OnTriggerStay (Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-
-            StartCoroutine("AttackAgain");
-
-
-        }
-
-    }
-
+    
     private void OnTriggerExit(Collider other)
     {
 
-        if (other.gameObject.tag == "player")
+        if (other.gameObject.tag == "Player")
         {
 
-            Attackingg = false;
+            player = false;
+        
         }
 
     }
 
     IEnumerator Attack()
     {
-            Nav.GetComponent<NavMeshAgent>().SetDestination(transform.position);
-            if(Attackingg == true)
-            {
-
-                startAttack = true;
-                yield return new WaitForSeconds(delay);
-                if(Attackingg == true)
-                {
-
-                    print ("a");
-                    startAttack = false;
-
-                }
-
-
-            }
-
-    }
-
-    IEnumerator AttackAgain()
-    {
-
+            
+        PlayerRef = PlayerDetector.GetComponent<enemy_player_detection>().PLAYER;
+        print("a");
         yield return new WaitForSeconds(delay);
-
-        if(startAttack == false)
-        {
-
-            StartCoroutine("Attack");
-
-        }
-        
+        Attackingg = false;
 
     }
+
+
 
 }

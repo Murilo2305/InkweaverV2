@@ -64,8 +64,10 @@ public class enemy_hit_and_Damage : MonoBehaviour
 
         yield return new WaitForSeconds(recoverTime);
 
-        
+        isAttacking = true;
+
         wasHit = false;
+        agent.SetDestination(gameObject.GetComponent<enemy_player_detection>().playerRef);
 
     }
 

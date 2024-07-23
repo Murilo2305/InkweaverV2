@@ -6,13 +6,15 @@ public class enemy_player_detection : MonoBehaviour
 {
 
     public bool hasSeenPlayer;
-    GameObject playerRef;
+    public Vector3 playerRef;
+    public GameObject PLAYER;
 
     // Start is called before the first frame update
     void Start()
     {
         hasSeenPlayer = false;
-        playerRef = GameObject.FindGameObjectWithTag("Player");
+        playerRef = GameObject.FindGameObjectWithTag("Player").transform.position;
+        PLAYER = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
