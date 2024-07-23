@@ -4,24 +4,30 @@ using UnityEngine;
 
 public class DummySpawner : MonoBehaviour
 {
+    [Header(" - Refs")]
     [SerializeField] GameObject DummyPrefab;
-    [SerializeField] Transform DummyPosRef;
-    [SerializeField] Canvas WorldSpaceCanvas;
     [SerializeField] GameObject playerRef;
+    [SerializeField] Canvas WorldSpaceCanvas;
+    [Header(" - Enemies")]
+    [SerializeField] Transform[] DummyPosRefs;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        SpawnDummy();
+        for(int i = 0; i < DummyPosRefs.Length; i++)
+        {
+            SpawnDummy(i);
+        }
     }
 
-    void SpawnDummy()
+    void SpawnDummy(int i)
     {
-        GameObject dummyInstance = Instantiate(DummyPrefab, DummyPosRef);
+        GameObject dummyInstance = Instantiate(DummyPrefab, DummyPosRefs[i]);
         dummyInstance.GetComponent<EnemyCombatScript>().SetupHealthBar(WorldSpaceCanvas);
         dummyInstance.GetComponent<EnemyCombatScript>().playerRef = playerRef;
+        dummyInstance.name = "Dummy" + i;
         dummyInstance.transform.SetParent(null);
     }
 }

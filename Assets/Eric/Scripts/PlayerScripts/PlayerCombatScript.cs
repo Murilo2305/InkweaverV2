@@ -9,12 +9,11 @@ public class PlayerCombatScript : MonoBehaviour
     //Control Variables
     [Header(" - Control Variables")]
     [SerializeField] private bool canAttack;
-     public bool isAttacking;
 
     //Health Parameters
     [Header(" - Health Parameters")]
-    [SerializeField] private float MaxHealth = 100f;
-    [SerializeField] private int HealthPoints;
+    [SerializeField] private float maxHealth = 100f;
+    public float healthPoints = 50f;
 
     //Attack related parameters
     [Header(" - General Attack Parameters")]
@@ -36,9 +35,9 @@ public class PlayerCombatScript : MonoBehaviour
     [SerializeField] private float timeTillCharged = 2.0f;
     [SerializeField] private float chargeTimer;
     [SerializeField] private bool isLightlyCharged = false;
-    public bool isCharging = false;
     public bool isFullyCharged = false;
-    public bool isHeavyAttacking;
+    public bool isHeavyAttacking = false;
+    public bool isCharging = false;
 
 
     [Header(" - Combo related parameters")]
@@ -52,15 +51,14 @@ public class PlayerCombatScript : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject lightAttackHitboxGameObjectRef;
     [SerializeField] private GameObject heavyAttackHitboxGameObjectRef;
-    [SerializeField] private GameObject lightAttackHitboxGFXGameObjectRef;
-    [SerializeField] private GameObject heavyAttackHitboxGFXGameObjectRef;
+    [SerializeField] private GameObject attackGFXGameObjectRef;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private SpriteRenderer lightlyChargedWarning;
     [SerializeField] private SpriteRenderer fullyChargedWarning;
-    [SerializeField] private PlayerHealthBarScript PlayerHealthBarScriptRef;
     [SerializeField] private Transform ProjectileSpawnerTransform;
     [SerializeField] private Transform ProjectileSpawnerTransform1;
     [SerializeField] private Transform ProjectileSpawnerTransform2;
+    public GameObject PlayerUIRef;
 
 
     //Debugging
@@ -69,25 +67,29 @@ public class PlayerCombatScript : MonoBehaviour
     [SerializeField] private PlayerColorSystem playerColorSystemRef;
     [SerializeField] private BoxCollider lightAttackHitbox;
     [SerializeField] private BoxCollider heavyAttackHitbox;
+    [SerializeField] private SpriteRenderer playerSpriteRef;
     [SerializeField] private SpriteRenderer lightAttackGFXSprite;
     [SerializeField] private SpriteRenderer heavyAttackGFXSprite;
-    [SerializeField] private Animator lightAttackGFXAnimator;
-    [SerializeField] private Animator heavyAttackGFXAnimator;
     [SerializeField] private PlayerHitboxScript lightAttackHitboxScriptRef;
     [SerializeField] private PlayerHitboxScript heavyAttackHitboxScriptRef;
+    [SerializeField] private NewPlayerAnimationScript playerAnimationScriptRef;
+    public PlayerHealthBarScript PlayerHealthBarScriptRef;
 
 
     private void Start()
     {
         //SettingOtherRefs
+        //refs of player scripts
         moveScriptRef = player.GetComponent<PlayerCharacterControlerMovement>();
         playerColorSystemRef = player.GetComponent<PlayerColorSystem>();
+        playerAnimationScriptRef = player.transform.GetChild(0).GetComponent<NewPlayerAnimationScript>();
+        PlayerHealthBarScriptRef = PlayerUIRef.transform.GetChild(3).GetComponent<PlayerHealthBarScript>();
+        //refs of attack related things
         lightAttackHitbox = lightAttackHitboxGameObjectRef.GetComponent<BoxCollider>();
         heavyAttackHitbox = heavyAttackHitboxGameObjectRef.GetComponent<BoxCollider>();
-        lightAttackGFXSprite = lightAttackHitboxGFXGameObjectRef.GetComponent < SpriteRenderer>();
-        heavyAttackGFXSprite = heavyAttackHitboxGFXGameObjectRef.GetComponent < SpriteRenderer>();
-        lightAttackGFXAnimator = lightAttackHitboxGFXGameObjectRef.GetComponent<Animator>();
-        heavyAttackGFXAnimator = heavyAttackHitboxGFXGameObjectRef.GetComponent<Animator>();
+        playerSpriteRef = player.transform.GetChild(0).GetComponent<SpriteRenderer>();
+        lightAttackGFXSprite = attackGFXGameObjectRef.transform.GetChild(0).GetComponent<SpriteRenderer>();
+        heavyAttackGFXSprite = attackGFXGameObjectRef.transform.GetChild(1).GetComponent<SpriteRenderer>();
         lightAttackHitboxScriptRef = lightAttackHitboxGameObjectRef.GetComponent<PlayerHitboxScript>();
         heavyAttackHitboxScriptRef = heavyAttackHitboxGameObjectRef.GetComponent<PlayerHitboxScript>();
 
@@ -96,6 +98,7 @@ public class PlayerCombatScript : MonoBehaviour
         //redundancies
         canAttack = true;
         comboTracker = 0;
+        playerAnimationScriptRef.SetParameterInPlayerAnimator("ComboTracker", 0);
         lightAttackHitbox.enabled = false;
         heavyAttackHitbox.enabled = false;
         lightlyChargedWarning.enabled = false;
@@ -128,14 +131,14 @@ public class PlayerCombatScript : MonoBehaviour
         }
 
         // when health is actually implemented remove the folowing
-        PlayerHealthBarScriptRef.UpdateHealthBar(HealthPoints / MaxHealth);
+        PlayerHealthBarScriptRef.UpdateHealthBar(healthPoints / maxHealth);
     }
 
     //attack function
     private void LightAttack()
     {
         currentTimer = maxTimer;
-        isAttacking = true;
+        playerAnimationScriptRef.SetParameterInPlayerAnimator("isAttacking", true);
         moveScriptRef.canMove = false;
 
         //first attack in light attack chain
@@ -143,6 +146,16 @@ public class PlayerCombatScript : MonoBehaviour
         {
             //control variables
             comboTracker = 1;
+            playerAnimationScriptRef.SetParameterInPlayerAnimator("ComboTracker", 1);
+            
+            if (playerSpriteRef.flipX)
+            {
+                lightAttackGFXSprite.flipX = false;
+            }
+            else
+            {
+                lightAttackGFXSprite.flipX = true;
+            }
 
             //Calls the function that triggers the necessary functions and coroutines to attack
             GeneralPurposeAtttackFunction(mvLightAttack1, 0.25f, cdLightAttack1);
@@ -151,6 +164,16 @@ public class PlayerCombatScript : MonoBehaviour
         else if (comboTracker == 1)
         {
             comboTracker = 2;
+            playerAnimationScriptRef.SetParameterInPlayerAnimator("ComboTracker", 2);
+
+            if (playerSpriteRef.flipX)
+            {
+                lightAttackGFXSprite.flipX = true;
+            }
+            else
+            {
+                lightAttackGFXSprite.flipX = false;
+            }
 
             GeneralPurposeAtttackFunction(mvLightAttack2, 0.3f, cdLightAttack2, 0.05f);
         }
@@ -158,6 +181,7 @@ public class PlayerCombatScript : MonoBehaviour
         else if (comboTracker == 2)
         {
             comboTracker = 0;
+            playerAnimationScriptRef.SetParameterInPlayerAnimator("ComboTracker", 0);
 
             GeneralPurposeAtttackFunction(mvLightAttack3, 0.5f, cdLightAttack3, 0.1f);
         }
@@ -175,6 +199,7 @@ public class PlayerCombatScript : MonoBehaviour
         {
             currentTimer = 0.0f;
             comboTracker = 0;
+            playerAnimationScriptRef.SetParameterInPlayerAnimator("ComboTracker", 0);
         }
     }
 
@@ -190,6 +215,7 @@ public class PlayerCombatScript : MonoBehaviour
         //once the timer reaches half a second, determines that the player actually means to charge the attack and enters into "charging" state
         if (chargeTimer >= 0.5f)
         {
+            playerAnimationScriptRef.SetParameterInPlayerAnimator("isCharging", true);
             isCharging = true;
 
         }
@@ -204,6 +230,7 @@ public class PlayerCombatScript : MonoBehaviour
         else if (chargeTimer >= timeTillCharged && !isFullyCharged)
         {
             isFullyCharged = true;
+            playerAnimationScriptRef.SetParameterInPlayerAnimator("isFullyCharged", true);
             StartCoroutine(warnPlayerOfChargeLevel("FULL"));
         }
     }
@@ -212,12 +239,14 @@ public class PlayerCombatScript : MonoBehaviour
         //On release, resets the timer back to 0 and says that the player is no longer charging the attack
         chargeTimer = 0.0f;
 
+        playerAnimationScriptRef.SetParameterInPlayerAnimator("isCharging", false);
         isCharging = false;
 
         //Depending on the level of charge, releases a strong attack
         if (isFullyCharged)
         {
             canAttack = false;
+            playerAnimationScriptRef.SetParameterInPlayerAnimator("isHeavyAttacking", true);
             isHeavyAttacking = true;
 
             SpawnProjectiles(true);
@@ -226,6 +255,7 @@ public class PlayerCombatScript : MonoBehaviour
         else if (isLightlyCharged)
         {
             canAttack = false;
+            playerAnimationScriptRef.SetParameterInPlayerAnimator("isHeavyAttacking", true);
             isHeavyAttacking = true;
 
             SpawnProjectiles(false);
@@ -234,6 +264,7 @@ public class PlayerCombatScript : MonoBehaviour
 
         isLightlyCharged = false;
         isFullyCharged = false;
+        playerAnimationScriptRef.SetParameterInPlayerAnimator("isFullyCharged", false);
     }
 
 
@@ -348,7 +379,8 @@ public class PlayerCombatScript : MonoBehaviour
     {
         yield return new WaitForSeconds(cooldown);
         canAttack = true;
-        isAttacking = false;
+        playerAnimationScriptRef.SetParameterInPlayerAnimator("isAttacking", false);
+        playerAnimationScriptRef.SetParameterInPlayerAnimator("isHeavyAttacking", false);
         isHeavyAttacking = false;
         moveScriptRef.canMove = true;
     }
@@ -361,27 +393,39 @@ public class PlayerCombatScript : MonoBehaviour
         {
             lightAttackGFXSprite.color = Color.red;
             heavyAttackGFXSprite.color = Color.red;
+            attackGFXGameObjectRef.transform.GetChild(2).GetChild(0).GetComponent<SpriteRenderer>().color = Color.red;
+            attackGFXGameObjectRef.transform.GetChild(2).GetChild(1).GetComponent<SpriteRenderer>().color = Color.red;
         }
         else if (playerColorSystemRef.green)
         {
             lightAttackGFXSprite.color = Color.green;
             heavyAttackGFXSprite.color = Color.green;
+            attackGFXGameObjectRef.transform.GetChild(2).GetChild(0).GetComponent<SpriteRenderer>().color = Color.green;
+            attackGFXGameObjectRef.transform.GetChild(2).GetChild(1).GetComponent<SpriteRenderer>().color = Color.green;
         }
         else if (playerColorSystemRef.blue)
         {
             lightAttackGFXSprite.color = Color.blue;
             heavyAttackGFXSprite.color = Color.blue;
+            attackGFXGameObjectRef.transform.GetChild(2).GetChild(0).GetComponent<SpriteRenderer>().color = Color.blue;
+            attackGFXGameObjectRef.transform.GetChild(2).GetChild(1).GetComponent<SpriteRenderer>().color = Color.blue;
         }
 
         if (isHeavyAttack)
         {
-            heavyAttackGFXAnimator.SetTrigger("OnAttackTrigger");
+            playerAnimationScriptRef.SetTriggerInPlayerHeavyAttackEffectAnimator();
         }
         else
         {
-            lightAttackGFXAnimator.SetTrigger("OnAttackTrigger");
+            if(comboTracker == 0)
+            {
+               playerAnimationScriptRef.SetTriggerInPlayerLightAttackEffectAnimator(true);
+            }
+            else
+            {
+               playerAnimationScriptRef.SetTriggerInPlayerLightAttackEffectAnimator();
+            }
         }
-
     }
 
     // Function that spawns the Projectiles on the heavy attacks
@@ -435,8 +479,26 @@ public class PlayerCombatScript : MonoBehaviour
                 rightProjectile.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.blue;
             }
         }
-
     }
+
+    public void OnHeal(float amountOfHealing)
+    {
+        healthPoints += amountOfHealing;
+        healthPoints = Mathf.Clamp(healthPoints, Mathf.NegativeInfinity, maxHealth);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468dec02652976844b1a668d8d4c719c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
-  lifespan: 1
+  speed: 24
+  lifespan: 0.5
   animatorRef: {fileID: 8903593166910541675}
   despawnTimer: 0
   canMove: 1

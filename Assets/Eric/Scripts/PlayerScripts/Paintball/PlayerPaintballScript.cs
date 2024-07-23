@@ -40,6 +40,6 @@ public class PlayerPaintballScript : MonoBehaviour
     {
         canMove = false;
         animatorRef.SetTrigger("Splash");
-        Destroy(gameObject, 0.3f);
+        Destroy(gameObject, 0.35f);
     }
 }

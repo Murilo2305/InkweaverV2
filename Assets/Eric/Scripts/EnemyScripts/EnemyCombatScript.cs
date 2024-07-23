@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class EnemyCombatScript : MonoBehaviour
 {
+    [Header(" - Health")]
+    public float maxHealth = 20.0f;
+    public float healthPoints;
+
     [Header(" - EnemyParameters")]
     [SerializeField] private bool isStaggerable = true;
-    [SerializeField] public float maxHealth = 20.0f;
-    [SerializeField] public float healthPoints;
     [SerializeField] private float staggerTimer;
     [SerializeField] private float maxStaggerTimer = 0.3f;
     public bool isStaggered;
@@ -81,8 +83,10 @@ public class EnemyCombatScript : MonoBehaviour
         }
     }
 
-    private IEnumerator RedDoT()
+    public IEnumerator RedDoT()
     {
+        enemyColorSystemRef.redDoTApplied = true;
+
         if (enemyColorSystemRef.redStacks > 0)
         {
             yield return new WaitForSeconds((0.1f / enemyColorSystemRef.redStacks));
@@ -109,7 +113,7 @@ public class EnemyCombatScript : MonoBehaviour
 
     }
 
-    private void DamageTaken(float dmg, bool imediate)
+    public void DamageTaken(float dmg, bool imediate)
     {
         healthPoints -= dmg;
         if (imediate)
@@ -150,11 +154,6 @@ public class EnemyCombatScript : MonoBehaviour
                 enemyColorSystemRef.debuffsActive += 1;
             }
             enemyColorSystemRef.AddStacks("RED", Stacks);
-
-            if (enemyColorSystemRef.redStacks == 1)
-            {
-                StartCoroutine(RedDoT());
-            }
         }
         else if (isGreen && enemyColorSystemRef.greenStacks < enemyColorSystemRef.multiplierCap)
         {
@@ -186,7 +185,7 @@ public class EnemyCombatScript : MonoBehaviour
     //Shortcuts to other functions
 
     //DamageTaken shortcut without the specification if the health bar should be animated
-    private void DamageTaken(float dmg)
+    public void DamageTaken(float dmg)
     {
         DamageTaken(dmg, false);
     }

@@ -8,28 +8,31 @@ public class EnemyColorSystem : MonoBehaviour
     [SerializeField] private EnemyHealthBar HealthBarScriptRef;
 
     [Header(" - Overall Paramaters")]
+    [SerializeField] private bool StacksReset;
     public byte debuffsActive;
-    public byte multiplierCap; //max stacks
+    public byte multiplierCap = 10; //max stacks
 
     [Header("Timer Parameters")]
     public float debuffTimer;
-    public float maxDebuffTimer;
+    public float maxDebuffTimer = 5;
 
     [Header(" - Red parameters")]
     public byte redStacks;
-    public float damageOverTime;
-    public float activeDamage;
+    public bool redDoTApplied;
+    public float damageOverTime = 0.1f;
+    public float redActiveDamage = 15;
 
     [Header(" - Green parameters")]
     public byte greenStacks;
-    public float healthRegen;
-    public float healingBurst;
+    public float greenHealthRegen = 0.2f;
+    public float greenHealingBurst = 5.0f;
 
     [Header(" - Blue")]
+    [SerializeField] private bool canBeRooted;
     public byte blueStacks;
-    public float slow;
-    public float rootTime;
-    public float hardSlow;
+    public float blueSlow = 0.1f;
+    public float blueRootTime = 0.2f;
+    public float blueHardSlow = 0.2f;
 
 
     [Header(" - Active Combos")]
@@ -47,6 +50,24 @@ public class EnemyColorSystem : MonoBehaviour
     public float cyanHealthRegen;
     public float cyanSlowEffect;
 
+    [Header(" - DebugStuff")]
+    [SerializeField] private EnemyCombatScript enemyCombatScriptRef;
+    [SerializeField] private SpriteRenderer redColorburstVFXSprite;
+    [SerializeField] private SpriteRenderer blueColorburstVFXSprite;
+    [SerializeField] private GameObject playerRef;
+    [SerializeField] private PlayerColorSystem playerColorSystemRef;
+    [SerializeField] private PlayerHealthBarScript playerHealthBarScriptRef;
+
+    private void Start()
+    {
+        enemyCombatScriptRef = gameObject.GetComponent<EnemyCombatScript>();
+        redColorburstVFXSprite = gameObject.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<SpriteRenderer>();
+        blueColorburstVFXSprite = gameObject.transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<SpriteRenderer>();
+        playerRef = enemyCombatScriptRef.playerRef;
+        playerColorSystemRef = playerRef.GetComponent<PlayerColorSystem>();
+        playerHealthBarScriptRef = playerRef.GetComponent<PlayerCombatScript>().PlayerHealthBarScriptRef;
+    }
+
     private void Update()
     {
         if (debuffTimer > 0.0f)
@@ -55,35 +76,61 @@ public class EnemyColorSystem : MonoBehaviour
         }
         else if (debuffTimer <= 0.0f)
         {
-            debuffTimer = 0.0f;
-            redStacks = 0;
-            greenStacks = 0;
-            blueStacks = 0;
-            debuffsActive = 0;
-            magentaRB = false;
-            yellowRG = false;
-            cyanGB = false;
-            HealthBarScriptRef.SetBarColor(Color.white);
-            HealthBarScriptRef.redColorIndicator.SetActive(false);
-            HealthBarScriptRef.greenColorIndicator.SetActive(false);
-            HealthBarScriptRef.blueColorIndicator.SetActive(false);
+            ResetStacks();
+            if (playerColorSystemRef.colorburstTargets.Contains(gameObject))
+            {
+                playerColorSystemRef.colorburstTargets.Remove(gameObject);
+            }
+        }
+
+        if (greenStacks > 0)
+        {
+            playerRef.GetComponent<PlayerCombatScript>().OnHeal(greenStacks * greenHealthRegen * Time.deltaTime / debuffsActive);
+
+            playerHealthBarScriptRef.ChangeHealthBarColor(Color.green);
         }
     }
 
     public void AddStacks(string color, byte Stacks)
     {
+        StacksReset = false;
+        if (playerColorSystemRef.colorburstTargets.Contains(gameObject))
+        {
+            print("is a target");
+        }
+        else
+        {
+            print("isnt a target");
+            playerColorSystemRef.colorburstTargets.Add(gameObject);
+        }
+
+
         // Adds the stacks
-        if(Equals(color.ToUpper(), "RED"))
+        if (Equals(color.ToUpper(), "RED"))
         {
             redStacks += Stacks;
+            if (redStacks > 10)
+            {
+                redStacks = 10;
+            }
+
             if (!HealthBarScriptRef.redColorIndicator.activeSelf)
             {
                 HealthBarScriptRef.redColorIndicator.SetActive(true);
+            }
+            
+            if (!redDoTApplied)
+            {
+                StartCoroutine(enemyCombatScriptRef.RedDoT());
             }
         }
         else if (Equals(color.ToUpper(), "GREEN"))
         {
             greenStacks += Stacks;
+            if (greenStacks > 10)
+            {
+                greenStacks = 10;
+            }
             if (!HealthBarScriptRef.greenColorIndicator.activeSelf)
             {
                 HealthBarScriptRef.greenColorIndicator.SetActive(true);
@@ -92,6 +139,10 @@ public class EnemyColorSystem : MonoBehaviour
         else if (Equals(color.ToUpper(), "BLUE"))
         {
             blueStacks += Stacks;
+            if (blueStacks > 10)
+            {
+                blueStacks = 10;
+            }
             if (!HealthBarScriptRef.blueColorIndicator.activeSelf)
             {
                 HealthBarScriptRef.blueColorIndicator.SetActive(true);
@@ -120,12 +171,12 @@ public class EnemyColorSystem : MonoBehaviour
                 cyanGB = true;
             }
         }
-        
-        UpdateHealthBarColor();
+
+        UpdateEnemyHealthBarColor();
     }
 
 
-    private void UpdateHealthBarColor()
+    private void UpdateEnemyHealthBarColor()
     {
         if (redStacks > 0 && greenStacks > 0 && blueStacks > 0)
         {
@@ -185,8 +236,62 @@ public class EnemyColorSystem : MonoBehaviour
         }
     }
 
+    public void OnColorburst()
+    {
+        if (redStacks > 0)
+        {
+            enemyCombatScriptRef.DamageTaken(redStacks * redActiveDamage);
+            if (!redColorburstVFXSprite.enabled)
+            {
+                StartCoroutine(RedColorburstVFX());
+            }
+        }
 
+        if (blueStacks > 0)
+        {
+            // when enemy movement script is done make the enemy move slower based on the amount of stacks
+            if (!blueColorburstVFXSprite.enabled && canBeRooted)
+            {
+                StartCoroutine(BlueColorburstVFX(blueStacks * blueRootTime));
+            }
+        }
+    }
 
+    private IEnumerator RedColorburstVFX()
+    {
+        redColorburstVFXSprite.enabled = true;
+        yield return new WaitForSeconds(0.5f);
+        redColorburstVFXSprite.enabled = false;
+    }
+
+    private IEnumerator BlueColorburstVFX(float duration)
+    {
+        blueColorburstVFXSprite.enabled = true;
+        yield return new WaitForSeconds(duration);
+        blueColorburstVFXSprite.enabled = false;
+    }
+
+    public void ResetStacks()
+    {
+        if (!StacksReset)
+        {
+            debuffTimer = 0.0f;
+            redStacks = 0;
+            greenStacks = 0;
+            blueStacks = 0;
+            debuffsActive = 0;
+            magentaRB = false;
+            yellowRG = false;
+            cyanGB = false;
+            HealthBarScriptRef.SetBarColor(Color.white);
+            HealthBarScriptRef.redColorIndicator.SetActive(false);
+            HealthBarScriptRef.greenColorIndicator.SetActive(false);
+            HealthBarScriptRef.blueColorIndicator.SetActive(false);
+            playerHealthBarScriptRef.ChangeHealthBarColor(Color.white);
+            StacksReset = true;
+            redDoTApplied = false;
+        }
+    }
 
 
 

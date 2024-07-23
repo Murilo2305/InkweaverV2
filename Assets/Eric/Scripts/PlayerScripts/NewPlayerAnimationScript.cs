@@ -4,22 +4,27 @@ using UnityEngine;
 
 public class NewPlayerAnimationScript : MonoBehaviour
 {
-    [SerializeField] GameObject playerRef;
-    [SerializeField] Animator animator;
-    [SerializeField] SpriteRenderer spriterender;
-    //[SerializeField] float moveX;
+    [Header("Refs")]
+    [SerializeField] private GameObject playerRef;
+    [SerializeField] private GameObject verticalLightAttackGFXGameObject;
+    [SerializeField] private Animator playerAnimator;
+    [SerializeField] private Animator lightAttackGFXAnimator;
+    [SerializeField] private Animator heavyAttackGFXAnimator;
+    [SerializeField] private SpriteRenderer playerSpriterender;
+    
+    [Header("DebugStuff")]
     [SerializeField] private SpriteRenderer lightlyChargedWarning;
     [SerializeField] private SpriteRenderer fullyChargedWarning;
+
+
 
     private bool isDashing;
     private bool dashOnCooldown;
     private PlayerCharacterControlerMovement movementScriptRef;
-    private PlayerCombatScript combatScriptRef;
 
     private void Start()
     {
         movementScriptRef = playerRef.GetComponent<PlayerCharacterControlerMovement>();
-        combatScriptRef = playerRef.GetComponent<PlayerCombatScript>();
     }
         
 
@@ -30,38 +35,66 @@ public class NewPlayerAnimationScript : MonoBehaviour
         dashOnCooldown = movementScriptRef.dashOnCooldown;
         
         //movement animator parameters
-        animator.SetBool("IsDashing", isDashing);
-        animator.SetBool("DashCooldown", dashOnCooldown);
+        playerAnimator.SetBool("IsDashing", isDashing);
+        playerAnimator.SetBool("DashCooldown", dashOnCooldown);
 
-        //combat animator parameters
-        animator.SetBool("isAttacking", combatScriptRef.isAttacking);
-        animator.SetBool("isHeavyAttacking", combatScriptRef.isHeavyAttacking);
-        animator.SetBool("isCharging", combatScriptRef.isCharging);
-        animator.SetBool("isFullyCharged", combatScriptRef.isFullyCharged);
-        animator.SetInteger("ComboTracker", combatScriptRef.comboTracker);
-
-
+        //Movement animations
         if (playerRef.GetComponent<PlayerCharacterControlerMovement>().movement != new Vector3(0, 0, 0))
         {
-            animator.SetBool("IsMoving", true);
-            animator.SetFloat("PosX", playerRef.GetComponent<PlayerCharacterControlerMovement>().movement.x);
+            playerAnimator.SetBool("IsMoving", true);
+            playerAnimator.SetFloat("PosX", playerRef.GetComponent<PlayerCharacterControlerMovement>().movement.x);
         }
         else
         {
-            animator.SetBool("IsMoving", false);
+            playerAnimator.SetBool("IsMoving", false);
         }
         if (playerRef.GetComponent<PlayerCharacterControlerMovement>().movement.x > 0)
         {
-            spriterender.flipX = false;
+            playerSpriterender.flipX = false;
             lightlyChargedWarning.flipX = false;
             fullyChargedWarning.flipX = false;
         }
         else if (playerRef.GetComponent<PlayerCharacterControlerMovement>().movement.x < 0)
         {
-            spriterender.flipX = true;
+            playerSpriterender.flipX = true;
             lightlyChargedWarning.flipX = true;
             fullyChargedWarning.flipX = true;
         }
+    }
+
+    public void SetParameterInPlayerAnimator(string id, bool value)
+    {
+        playerAnimator.SetBool(id, value);
+    }
+    public void SetParameterInPlayerAnimator(string id, int value)
+    {
+        playerAnimator.SetInteger(id, value);
+    }
+    public void SetTriggerInPlayerAnimator(string id)
+    {
+        playerAnimator.SetTrigger(id);
+    }
+
+
+    public void SetTriggerInPlayerLightAttackEffectAnimator()
+    {
+        SetTriggerInPlayerLightAttackEffectAnimator(false);
+    }
+    public void SetTriggerInPlayerLightAttackEffectAnimator(bool isVerticalAttack)
+    {
+        if (!isVerticalAttack)
+        {
+            lightAttackGFXAnimator.SetTrigger("OnAttackTrigger");
+        }
+        else
+        {
+            verticalLightAttackGFXGameObject.transform.GetChild(0).GetComponent<Animator>().SetTrigger("OnAttackTrigger");
+            verticalLightAttackGFXGameObject.transform.GetChild(1).GetComponent<Animator>().SetTrigger("OnAttackTrigger");
+        }
+    }
+    public void SetTriggerInPlayerHeavyAttackEffectAnimator()
+    {
+        heavyAttackGFXAnimator.SetTrigger("OnAttackTrigger");
     }
 }
 
