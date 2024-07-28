@@ -146,13 +146,15 @@ public class PlayerColorSystem : MonoBehaviour
             playerUIColorBurstCooldownImage2.enabled = true;
             playerAnimationScriptRef.SetTriggerInPlayerAnimator("ColorBurst");
             yield return new WaitForSeconds(0.35f);
+
             foreach (GameObject enemy in colorburstTargets)
             {
                 EnemyColorSystem enemyColorSystemRef = enemy.GetComponent<EnemyColorSystem>();
 
                 enemyColorSystemRef.OnColorburst();
+                enemy.GetComponent<EnemyCombatScript>().StaggerEnemy(1.0f);
 
-                playerCombatScriptRef.OnHeal(enemyColorSystemRef.greenStacks * enemyColorSystemRef.greenHealingBurst);
+                playerCombatScriptRef.HealPlayer(enemyColorSystemRef.greenStacks * enemyColorSystemRef.greenHealingBurst);
                 if (!greenColorburstVFXSpriteRef.enabled && enemyColorSystemRef.greenStacks > 0)
                 {
                     StartCoroutine(GreenColorburstVFX());
@@ -160,8 +162,11 @@ public class PlayerColorSystem : MonoBehaviour
 
                 enemyColorSystemRef.ResetStacks();
             }
+
             colorburstTargets.Clear();
+
             yield return new WaitForSeconds(0.35f);
+
             playerMovementScriptRef.canMove = true;
         }
     }

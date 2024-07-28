@@ -6,82 +6,150 @@ using UnityEngine.AI;
 public class bull_script : MonoBehaviour
 {  
 
-    public bool SeenPlayer;
+    public bool hasSeenPlayer;
     public bool once;
-    public bool att;
-    [SerializeField] float delay1,delay2;
+    [SerializeField] float delayBeforeRush,delayInbetweenAttacks;
     [SerializeField] private NavMeshAgent agent;
-    private bool Attacking = false;
     [SerializeField] GameObject PlayerDetector;
+    public bool isAttacking;
+
+    [SerializeField] private BoxCollider attackHitboxRef;
+    [SerializeField] private EnemyCombatScript enemyCombatScriptRef;
+    [SerializeField] private BullAnimationScript bullAnimationScriptRef;
+
+    [SerializeField] private float postStaggerTimerBeforeCanAttack;
+    [SerializeField] private bool isPostStaggerTimerActive;
+
+    [SerializeField] private float timerBeforeCanAttack;
+
+    [SerializeField] private bool canAttack;
+
 
     // Start is called before the first frame update
-
-     void awake()
-    {
-
-        agent = GetComponent<NavMeshAgent>();
-
-        
-    }
-
     void Start()
     {
+        agent = GetComponent<NavMeshAgent>();
         once = true;
+        canAttack = false;
+        attackHitboxRef = gameObject.transform.GetChild(3).GetComponent<BoxCollider>();
+        enemyCombatScriptRef = gameObject.GetComponent<EnemyCombatScript>();
+        bullAnimationScriptRef = gameObject.transform.GetChild(0).GetComponent<BullAnimationScript>();
+        
+        
+        attackHitboxRef.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        SeenPlayer = PlayerDetector.GetComponent<enemy_player_detection>().hasSeenPlayer;
-        att = gameObject.GetComponent<enemy_hit_and_Damage>().isAttacking;
+        hasSeenPlayer = PlayerDetector.GetComponent<enemy_player_detection>().hasSeenPlayer;
         
-        if(SeenPlayer == true && once == true)
+        
+        if(hasSeenPlayer == true && once == true)
         {
-
-            gameObject.GetComponent<enemy_hit_and_Damage>().isAttacking = true;
+            canAttack = true;
             once = false;
-
-        }  
+        } 
         
-        if (SeenPlayer == true && att == true)
+        
+        if (hasSeenPlayer == true && canAttack == true)
         {
 
-            StartCoroutine("bullRampage");
-            gameObject.GetComponent<enemy_hit_and_Damage>().isAttacking = false;
+            StartCoroutine(bullRampage());
+            canAttack = false;
+        }
 
-        } 
+
+        if (isPostStaggerTimerActive)
+        {
+            if(postStaggerTimerBeforeCanAttack > 0)
+            {
+                postStaggerTimerBeforeCanAttack -= Time.deltaTime;
+            }
+            if(postStaggerTimerBeforeCanAttack <= 0)
+            {
+                isPostStaggerTimerActive = false;
+                postStaggerTimerBeforeCanAttack = 0;
+                timerBeforeCanAttack = 0;
+                canAttack = true;
+            }
+        }
+
+        print(agent.velocity.magnitude);
+        //this part of the script makes the landing work
+        if(isAttacking && agent.velocity.magnitude == 0.0f)
+        {
+            bullAnimationScriptRef.SetAnimatorParameter("rushStopBool", true);
+        }
+        else
+        {
+            BullAnimationScript test = bullAnimationScriptRef;
+
+            test.SetAnimatorParameter("rushStopBool", false);
+        }
     }
 
     IEnumerator bullRampage()
     {
+        print("test");
 
+        // Section 1 - Delay before the charge
         agent.SetDestination(transform.position);
 
-        yield return new WaitForSeconds(delay1);
+        bullAnimationScriptRef.SetAnimatorTrigger("triggerRushBuildup");
 
+        yield return new WaitForSeconds(delayBeforeRush);
+
+
+        // Section 2 - Bull charges toward the position the player is/was
+        isAttacking = true;
+        bullAnimationScriptRef.SetAnimatorTrigger("triggerRushStart");
         agent.SetDestination(gameObject.GetComponent<navigation>().destiny.transform.position);
 
-        Attacking = true;
+        /*During the rush the hitbox is enabled and the enemy cant be hit - Moved to animation event
+        attackHitboxRef.enabled = true;
+        enemyCombatScriptRef.isHittable = false;
+        */
 
-        yield return new WaitForSeconds(delay2);
+        //delay before the bull can attack again - This was switched to a timer based on Update() so the "StopAllCoroutines()" from the InterruptAttack() doesnt interfere with the normal delay inbetween attacks
+        yield return new WaitForSeconds(delayInbetweenAttacks);
 
-        gameObject.GetComponent<enemy_hit_and_Damage>().isAttacking = true;
+        canAttack = true;
 
-        Attacking = false;
-
+        /* moved to Animation Event
+        attackHitboxRef.enabled = false;
+        enemyCombatScriptRef.isHittable = true;
+        */
     }
 
-    void OnTriggerEnter (Collider other)
+
+    public void InterruptAttack()
     {
-        if (Attacking == true)
-        {
-            if(other.gameObject.tag == "Player")
-            {
+        StopAllCoroutines();
 
-                print("a");
+        canAttack = false;
+        postStaggerTimerBeforeCanAttack = 0.5f;
+        isPostStaggerTimerActive = true;
+        enemyCombatScriptRef.isHittable = true;
+    }
 
-            }
-        }
+    //Animation Events
+    
+    public void AnimationEventRushStart()
+    {
+        attackHitboxRef.enabled = true;
+        enemyCombatScriptRef.isHittable = false;
+    }
 
+    public void AnimationEventRushEnd()
+    {
+        attackHitboxRef.enabled = false;
+        enemyCombatScriptRef.isHittable = true;
+        isAttacking = false;
+        
+        /*
+        //this substitutes the delay on the coroutine inbetween attacks
+        timerBeforeCanAttack = delayInbetweenAttacks;
+        */    
     }
 }

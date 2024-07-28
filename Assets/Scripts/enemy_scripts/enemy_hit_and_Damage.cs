@@ -34,7 +34,7 @@ public class enemy_hit_and_Damage : MonoBehaviour
         if(wasHit == true )
         {
 
-            StartCoroutine("takingDamage");
+            StartCoroutine("OnStagger");
 
         }
 
@@ -49,22 +49,20 @@ public class enemy_hit_and_Damage : MonoBehaviour
 
     }
 
-    private IEnumerator takingDamage()
+    private IEnumerator OnStagger()
     {
-
+        // interupts the enemy's attack
         if(isAttacking == true)
         {
-
             isAttacking = false;
-
         }
 
         
+
         agent.SetDestination(transform.position);
-
         yield return new WaitForSeconds(recoverTime);
-
         isAttacking = true;
+
 
         wasHit = false;
         agent.SetDestination(gameObject.GetComponent<enemy_player_detection>().playerRef);

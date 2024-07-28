@@ -11,10 +11,13 @@ public class navigation : MonoBehaviour
     [SerializeField] private GameObject PlayerDetector;
     private bool once;
 
-    // Start is called before the first frame update
-    void awake()
-    {
 
+    
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
         agent = GetComponent<NavMeshAgent>();
         once = true;
 
@@ -24,25 +27,26 @@ public class navigation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         destiny = GameObject.FindGameObjectWithTag("Player").transform;
 
+        /*
         if(PlayerDetector.GetComponent<enemy_player_detection>().hasSeenPlayer == true && once == true)
         {
+            
 
             agent.SetDestination (destiny.transform.position);
-            StartCoroutine("Seek");
+
+
+            Seek();
             once = false;
 
         }    
+        */
     }
 
-    IEnumerator Seek()
+    private void Seek()
     {
-
-        agent.SetDestination (destiny.transform.position);
-        yield return null;
-
+        agent.SetDestination (new Vector3(destiny.transform.position.x, transform.position.y, destiny.transform.position.z));
     }
 
 }

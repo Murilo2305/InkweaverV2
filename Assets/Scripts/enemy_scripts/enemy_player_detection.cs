@@ -9,6 +9,8 @@ public class enemy_player_detection : MonoBehaviour
     public Vector3 playerRef;
     public GameObject PLAYER;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +34,7 @@ public class enemy_player_detection : MonoBehaviour
             if (hasSeenPlayer == false)
             {
 
-            hasSeenPlayer = true;
+                hasSeenPlayer = true;
 
             }
 

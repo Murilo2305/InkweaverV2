@@ -19,19 +19,17 @@ public class PlayerCombatScript : MonoBehaviour
     [Header(" - General Attack Parameters")]
     [SerializeField] private float baseDamage = 5.0f;
 
-    [Header(" - Motion Values (dmg multiplier for each attack in combo)")]
+    [Header(" - Light Attack Motion Values (dmg multiplier for each attack in combo)")]
     [SerializeField] private float mvLightAttack1 = 1.0f;
     [SerializeField] private float mvLightAttack2 = 1.2f;
     [SerializeField] private float mvLightAttack3 = 2.0f;
 
-    [Header(" - Cooldown for each light attack")]
+    [Header(" - Cooldown for light attacks")]
     [SerializeField] private float cdLightAttack1 = 0.3f;
     [SerializeField] private float cdLightAttack2 = 0.35f;
     [SerializeField] private float cdLightAttack3 = 0.75f;
 
     [Header(" - Heavy attack Parameters")]
-    [SerializeField] private float mvHeavyAttack = 1.5f;
-    [SerializeField] private float mvChargedAttack = 2.5f;
     [SerializeField] private float timeTillCharged = 2.0f;
     [SerializeField] private float chargeTimer;
     [SerializeField] private bool isLightlyCharged = false;
@@ -39,10 +37,13 @@ public class PlayerCombatScript : MonoBehaviour
     public bool isHeavyAttacking = false;
     public bool isCharging = false;
 
+    [Header(" - Heavy Attack Motion Values")]
+    [SerializeField] private float mvHeavyAttack = 1.5f;
+    [SerializeField] private float mvChargedAttack = 2.5f;
 
     [Header(" - Combo related parameters")]
-    [SerializeField] private float currentTimer;
     [SerializeField] private float maxTimer = 0.75f;
+    [SerializeField] private float currentTimer;
     public int comboTracker;
 
 
@@ -134,8 +135,22 @@ public class PlayerCombatScript : MonoBehaviour
         PlayerHealthBarScriptRef.UpdateHealthBar(healthPoints / maxHealth);
     }
 
-    //attack function
-    private void LightAttack()
+    private void OnTriggerEnter(Collider other)
+    {
+        EnemyAttackHitboxScript HitboxScriptRef = other.GetComponent<EnemyAttackHitboxScript>();
+
+        if (other.CompareTag("EnemyAttack"))
+        {
+            DamagePlayer(HitboxScriptRef.damage);
+            print("player damaged for " + HitboxScriptRef.damage);
+        }
+    }
+
+
+
+
+        //attack function
+        private void LightAttack()
     {
         currentTimer = maxTimer;
         playerAnimationScriptRef.SetParameterInPlayerAnimator("isAttacking", true);
@@ -481,10 +496,15 @@ public class PlayerCombatScript : MonoBehaviour
         }
     }
 
-    public void OnHeal(float amountOfHealing)
+    public void HealPlayer(float amountOfHealing)
     {
         healthPoints += amountOfHealing;
         healthPoints = Mathf.Clamp(healthPoints, Mathf.NegativeInfinity, maxHealth);
+    }
+    public void DamagePlayer(float amountOfDamage)
+    {
+        healthPoints -= amountOfDamage;
+        healthPoints = Mathf.Clamp(healthPoints, 0.0f, maxHealth);
     }
 
 

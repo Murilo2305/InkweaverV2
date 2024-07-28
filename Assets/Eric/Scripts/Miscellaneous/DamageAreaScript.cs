@@ -10,7 +10,7 @@ public class DamageAreaScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<PlayerCombatScript>().healthPoints -= damagePerSecond * Time.deltaTime;
+            other.GetComponent<PlayerCombatScript>().DamagePlayer(damagePerSecond * Time.deltaTime);
         }
     }
 }

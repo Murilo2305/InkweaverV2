@@ -11,8 +11,11 @@ public class EnemyCombatScript : MonoBehaviour
     [Header(" - EnemyParameters")]
     [SerializeField] private bool isStaggerable = true;
     [SerializeField] private float staggerTimer;
-    [SerializeField] private float maxStaggerTimer = 0.3f;
+    [SerializeField] private float lightStaggerDuration = 0.3f;
+    [SerializeField] private float mediumStaggerDuration = 0.5f;
+    [SerializeField] private float HeavyStaggerDuration = 1f;
     public bool isStaggered;
+    public bool isHittable;
 
     [Header(" - EnemyHealthBar")]
     [SerializeField] public EnemyHealthBar HealthBarScriptRef;
@@ -20,28 +23,35 @@ public class EnemyCombatScript : MonoBehaviour
 
     [Header(" - EnemyAttackParameters")]
 
-    [SerializeField] EnemyType enemyType;
+    public EnemyType enemyType;
 
     [Header("References")]
     public GameObject playerRef;
 
     [Header(" - DebugStuff")]
     [SerializeField] EnemyColorSystem enemyColorSystemRef;
+    [SerializeField] StaggerScript staggerScriptRef;
+
 
 
     //enemyTypeSetup
     public enum EnemyType
     {
         dummy,
-        contactDamage,
+        contactdamage,
         melee,
-        rangedProjectile
+        rangedprojectile
     }
 
     private void Start()
     {
         enemyColorSystemRef = GetComponent<EnemyColorSystem>();
+        staggerScriptRef = GetComponent<StaggerScript>();
+        
         healthPoints = maxHealth;
+        isHittable = true;
+
+        staggerScriptRef.enemyType = enemyType.ToString().ToUpper();
     }
 
 
@@ -49,17 +59,40 @@ public class EnemyCombatScript : MonoBehaviour
     {
         PlayerHitboxScript HitboxScriptRef = other.GetComponent<PlayerHitboxScript>();
 
-        if (other.gameObject.CompareTag("PlayerAttack"))
+        if (other.gameObject.CompareTag("PlayerAttack") && isHittable)
         {
             //Staggers the enemy if possible
             if (isStaggerable)
             {
                 isStaggered = true;
-                staggerTimer = maxStaggerTimer;
+                //staggerTimer = maxStaggerTimer;
+                if(HitboxScriptRef.damage <= 15)
+                {
+                    if(lightStaggerDuration > staggerTimer)
+                    {
+                        StaggerEnemy(lightStaggerDuration);
+                    }
+                }
+                else if (HitboxScriptRef.damage > 15 && HitboxScriptRef.damage <= 20)
+                {
+                    if(mediumStaggerDuration > staggerTimer)
+                    {
+                        StaggerEnemy(mediumStaggerDuration);
+                    }
+                }
+                else
+                {
+                    if(HeavyStaggerDuration > staggerTimer)
+                    {
+                        StaggerEnemy(HeavyStaggerDuration);
+                    }
+                }
+                
+                staggerScriptRef.OnStagger();
             }
 
             //Subtracts hp from the attack received
-            DamageTaken(HitboxScriptRef.damage);
+            DamageEnemy(HitboxScriptRef.damage);
 
             //Stacks the ink the player had equipped at the time of the hit
             AddInk(HitboxScriptRef.isRed, HitboxScriptRef.isGreen, HitboxScriptRef.isBlue, HitboxScriptRef.stacksOfInk);
@@ -78,8 +111,12 @@ public class EnemyCombatScript : MonoBehaviour
         }
         else
         {
-            staggerTimer = 0.0f;
-            isStaggered = false;
+            if (isStaggered) 
+            { 
+                staggerTimer = 0.0f;
+                isStaggered = false;
+                staggerScriptRef.StaggerEnd();
+            }
         }
     }
 
@@ -98,11 +135,11 @@ public class EnemyCombatScript : MonoBehaviour
 
         if (enemyColorSystemRef.debuffsActive > 0)
         { 
-            DamageTaken(enemyColorSystemRef.damageOverTime / enemyColorSystemRef.debuffsActive, true);
+            DamageEnemy(enemyColorSystemRef.damageOverTime / enemyColorSystemRef.debuffsActive, true);
         }
         else
         {
-            DamageTaken(enemyColorSystemRef.damageOverTime, true);
+            DamageEnemy(enemyColorSystemRef.damageOverTime, true);
         }
 
 
@@ -113,7 +150,7 @@ public class EnemyCombatScript : MonoBehaviour
 
     }
 
-    public void DamageTaken(float dmg, bool imediate)
+    public void DamageEnemy(float dmg, bool imediate)
     {
         healthPoints -= dmg;
         if (imediate)
@@ -175,6 +212,11 @@ public class EnemyCombatScript : MonoBehaviour
         }
     }
 
+    public void StaggerEnemy(float staggerDuration)
+    {
+        staggerTimer = staggerDuration;
+    }
+
 
 
 
@@ -185,9 +227,9 @@ public class EnemyCombatScript : MonoBehaviour
     //Shortcuts to other functions
 
     //DamageTaken shortcut without the specification if the health bar should be animated
-    public void DamageTaken(float dmg)
+    public void DamageEnemy(float dmg)
     {
-        DamageTaken(dmg, false);
+        DamageEnemy(dmg, false);
     }
 
     //Updates the hit bar with the "draining" animation; also if speed not provided the speed defaults to 10

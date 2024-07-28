@@ -12,6 +12,6 @@ public class SpriteScript : MonoBehaviour
     */
     private void LateUpdate()
     {
-        transform.rotation = Camera.main.transform.rotation;
+        transform.rotation =new Quaternion(0.0f, Camera.main.transform.rotation.y, Camera.main.transform.rotation.z, Camera.main.transform.rotation.w);
     }
 }

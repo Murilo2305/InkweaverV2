@@ -59,20 +59,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Eric\Scripts\UserInterfaceScripts\PlayerUIColorBurstCooldownScripts.cs" />
+    <Compile Include="Assets\Eric\Scripts\EnemyScripts\AnimatorScripts\BullAnimationScript.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\DummyScripts\DummyScript.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\enemy_seeking_mechanism.cs" />
     <Compile Include="Assets\Eric\Scripts\PlayerScripts\PlayerCombatScript.cs" />
+    <Compile Include="Assets\Scripts\enemy_scripts\Bull\bull_script.cs" />
     <Compile Include="Assets\Eric\Scripts\Miscellaneous\DamageAreaScript.cs" />
-    <Compile Include="Assets\Eric\Scripts\EnemyScripts\EnemyAnimatorScript.cs" />
-    <Compile Include="Assets\Eric\Scripts\UserInterfaceScripts\ProgressBar.cs" />
     <Compile Include="Assets\Eric\Scripts\UserInterfaceScripts\EnemyHealthBar.cs" />
+    <Compile Include="Assets\Eric\Scripts\UserInterfaceScripts\ProgressBar.cs" />
     <Compile Include="Assets\Eric\Scripts\PlayerScripts\PlayerHitboxScript.cs" />
+    <Compile Include="Assets\Scripts\enemy_scripts\sniper\Sniper_script.cs" />
     <Compile Include="Assets\Scripts\old shit\PlayerMovementAlternatePhysicsBased.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\EnemyCombatScript.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\enemy_player_detection.cs" />
     <Compile Include="Assets\Scripts\old shit\ScriptTofigureOutTheNameOfTheFaceButtons.cs" />
     <Compile Include="Assets\Scripts\old shit\Player.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\minion\enemy_damage_radius.cs" />
+    <Compile Include="Assets\Eric\Scripts\EnemyScripts\DummyScripts\EnemyAnimatorScript.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\minion\script_minion.cs" />
     <Compile Include="Assets\Eric\Scripts\Miscellaneous\LineRendererDebugThing.cs" />
     <Compile Include="Assets\Eric\Scripts\PlayerScripts\NewPlayerAnimationScript.cs" />
@@ -82,12 +85,18 @@
     <Compile Include="Assets\Scripts\old shit\PlayerDash.cs" />
     <Compile Include="Assets\Eric\Scripts\UserInterfaceScripts\FollowTarget.cs" />
     <Compile Include="Assets\Eric\Scripts\PlayerScripts\PlayerCharacterControlerMovement.cs" />
+    <Compile Include="Assets\Eric\Scripts\EnemyScripts\AnimatorScripts\SniperAnimationScript.cs" />
     <Compile Include="Assets\Scripts\old shit\camera.cs" />
     <Compile Include="Assets\Eric\Scripts\Miscellaneous\SpriteScript.cs" />
     <Compile Include="Assets\Scripts\old shit\PlayerAnimationScript.cs" />
+    <Compile Include="Assets\Eric\Scripts\EnemyScripts\StaggerScript.cs" />
     <Compile Include="Assets\Eric\Scripts\PlayerScripts\NewPlayerDirectionalIndicator.cs" />
     <Compile Include="Assets\Eric\Scripts\ColorSystem\PlayerColorSystem.cs" />
+    <Compile Include="Assets\Eric\Scripts\EnemyScripts\AnimatorScripts\MinionAnimationScript.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\enemy_hit_and_Damage.cs" />
+    <Compile Include="Assets\Eric\Scripts\EnemyScripts\EnemyAttackHitboxScript.cs" />
+    <Compile Include="Assets\Scripts\enemy_scripts\minion\minion_seeking_mechanism.cs" />
+    <Compile Include="Assets\Scripts\enemy_scripts\sniper\Bullet_Script.cs" />
     <Compile Include="Assets\Scripts\old shit\PlayerDirectionalIndicator.cs" />
     <Compile Include="Assets\Eric\Scripts\ColorSystem\EnemyColorSystem.cs" />
     <Compile Include="Assets\Scripts\old shit\PlayerMovement.cs" />

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyColorSystem : MonoBehaviour
 {
@@ -30,9 +31,10 @@ public class EnemyColorSystem : MonoBehaviour
     [Header(" - Blue")]
     [SerializeField] private bool canBeRooted;
     public byte blueStacks;
-    public float blueSlow = 0.1f;
+    public float blueSlow = 0.05f;
     public float blueRootTime = 0.2f;
-    public float blueHardSlow = 0.2f;
+    public float blueHardSlow = 0.075f;
+    public bool isRooted;
 
 
     [Header(" - Active Combos")]
@@ -57,6 +59,9 @@ public class EnemyColorSystem : MonoBehaviour
     [SerializeField] private GameObject playerRef;
     [SerializeField] private PlayerColorSystem playerColorSystemRef;
     [SerializeField] private PlayerHealthBarScript playerHealthBarScriptRef;
+    [SerializeField] private NavMeshAgent navMeshAgentRef;
+    [SerializeField] private float enemyDefaultSpeed;
+
 
     private void Start()
     {
@@ -66,10 +71,18 @@ public class EnemyColorSystem : MonoBehaviour
         playerRef = enemyCombatScriptRef.playerRef;
         playerColorSystemRef = playerRef.GetComponent<PlayerColorSystem>();
         playerHealthBarScriptRef = playerRef.GetComponent<PlayerCombatScript>().PlayerHealthBarScriptRef;
+        navMeshAgentRef = gameObject.GetComponent<NavMeshAgent>();
+
+        enemyDefaultSpeed = navMeshAgentRef.speed;
     }
 
     private void Update()
     {
+        // improvised code to make the health bar work may delete later
+        playerHealthBarScriptRef = playerRef.GetComponent<PlayerCombatScript>().PlayerHealthBarScriptRef;
+
+
+
         if (debuffTimer > 0.0f)
         {
             debuffTimer -= Time.deltaTime;
@@ -85,24 +98,36 @@ public class EnemyColorSystem : MonoBehaviour
 
         if (greenStacks > 0)
         {
-            playerRef.GetComponent<PlayerCombatScript>().OnHeal(greenStacks * greenHealthRegen * Time.deltaTime / debuffsActive);
+            playerRef.GetComponent<PlayerCombatScript>().HealPlayer(greenStacks * greenHealthRegen * Time.deltaTime / debuffsActive);
 
             playerHealthBarScriptRef.ChangeHealthBarColor(Color.green);
+        }
+
+        if (blueStacks > 0)
+        {
+            if (enemyCombatScriptRef.enemyType.ToString().ToUpper().Equals("MELEE"))
+            {
+                navMeshAgentRef.speed = enemyDefaultSpeed * (1 - (blueSlow * blueStacks));
+            }
+        }
+        if (isRooted)
+        {
+            navMeshAgentRef.speed = 0f;
+        }
+        else if (!isRooted && blueStacks == 0)
+        {
+            navMeshAgentRef.speed = enemyDefaultSpeed;
         }
     }
 
     public void AddStacks(string color, byte Stacks)
     {
         StacksReset = false;
-        if (playerColorSystemRef.colorburstTargets.Contains(gameObject))
+        if (!playerColorSystemRef.colorburstTargets.Contains(gameObject))
         {
-            print("is a target");
-        }
-        else
-        {
-            print("isnt a target");
             playerColorSystemRef.colorburstTargets.Add(gameObject);
         }
+       
 
 
         // Adds the stacks
@@ -240,7 +265,10 @@ public class EnemyColorSystem : MonoBehaviour
     {
         if (redStacks > 0)
         {
-            enemyCombatScriptRef.DamageTaken(redStacks * redActiveDamage);
+            enemyCombatScriptRef.DamageEnemy(redStacks * redActiveDamage);
+
+            RedColorburstStagger();
+
             if (!redColorburstVFXSprite.enabled)
             {
                 StartCoroutine(RedColorburstVFX());
@@ -252,9 +280,16 @@ public class EnemyColorSystem : MonoBehaviour
             // when enemy movement script is done make the enemy move slower based on the amount of stacks
             if (!blueColorburstVFXSprite.enabled && canBeRooted)
             {
-                StartCoroutine(BlueColorburstVFX(blueStacks * blueRootTime));
+                StartCoroutine(BlueColorburst(blueStacks * blueRootTime));
             }
         }
+    }
+
+    private void RedColorburstStagger()
+    {
+        enemyCombatScriptRef.isStaggered = true;
+        enemyCombatScriptRef.StaggerEnemy(1.0f);
+        gameObject.GetComponent<StaggerScript>().OnStagger();
     }
 
     private IEnumerator RedColorburstVFX()
@@ -264,10 +299,14 @@ public class EnemyColorSystem : MonoBehaviour
         redColorburstVFXSprite.enabled = false;
     }
 
-    private IEnumerator BlueColorburstVFX(float duration)
+    private IEnumerator BlueColorburst(float duration)
     {
         blueColorburstVFXSprite.enabled = true;
+        isRooted = true;
+
         yield return new WaitForSeconds(duration);
+
+        isRooted = false;
         blueColorburstVFXSprite.enabled = false;
     }
 
@@ -290,6 +329,7 @@ public class EnemyColorSystem : MonoBehaviour
             playerHealthBarScriptRef.ChangeHealthBarColor(Color.white);
             StacksReset = true;
             redDoTApplied = false;
+            navMeshAgentRef.speed = enemyDefaultSpeed;
         }
     }
 

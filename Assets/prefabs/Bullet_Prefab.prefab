@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 105170586924335890}
   - component: {fileID: 9013699529350332727}
   - component: {fileID: 3742785810469234658}
+  - component: {fileID: 2014828988012353404}
   m_Layer: 0
   m_Name: Bullet_Prefab
-  m_TagString: Untagged
+  m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,4 +119,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8837560d12fa1aa46a65dc1f8884c14f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {x: 0, y: 0, z: 0}
+  lifespan: 1
+  timer: 0
   Speed: 20
+--- !u!114 &2014828988012353404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777555849163341703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b84e154653f482a4287700355b79bda8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10

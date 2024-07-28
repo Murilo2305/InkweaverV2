@@ -65,7 +65,6 @@ public class PlayerCharacterControlerMovement : MonoBehaviour
         //dashing
         if (Input.GetButtonDown("Jump") && canDash && movement != new Vector3(0.0f, 0.0f, 0.0f) && !combatScriptRef.isHeavyAttacking && !combatScriptRef.isCharging)
         {
-            print("test");
             isDashing = true;
             canDash = false;
             canMove = false;
