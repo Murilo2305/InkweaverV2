@@ -8,6 +8,14 @@ public class camera : MonoBehaviour
     public GameObject playerref;
     private Vector3 pos;
 
+    //Adicionado pelo Murilo
+    void Start()
+    {
+
+        playerref = GameObject.FindGameObjectWithTag("Player");
+
+    }
+
     void Update()
     {
         pos = new Vector3(playerref.transform.position.x, playerref.transform.position.y + 6, playerref.transform.position.z - 10);
