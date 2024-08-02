@@ -45,12 +45,15 @@ public class EnemyColorSystem : MonoBehaviour
     [Header(" - Combo parameters")]
     [SerializeField] private float baseEffectDuration;
     //magenta
-    [SerializeField] private float magentaDefenseMultiplier;
+    [SerializeField] private float magentaDamageTakenMultiplier = 1.25f;
     //Yellow
-    [SerializeField] private float yellowLifeSteal;
+    public float yellowLifeStealPercentage = 0.15f;
+    public bool isWithYellowLifestealMark;
     //Cyan
-    public float cyanHealthRegen;
-    public float cyanSlowEffect;
+    [SerializeField] private float cyanHealthRegen = 0.2f;
+    public bool isSlowedByCyan;
+    public float cyanSlowEffect = 0.5f;
+    //flat value
 
     [Header(" - DebugStuff")]
     [SerializeField] private EnemyCombatScript enemyCombatScriptRef;
@@ -58,6 +61,7 @@ public class EnemyColorSystem : MonoBehaviour
     [SerializeField] private SpriteRenderer blueColorburstVFXSprite;
     [SerializeField] private GameObject playerRef;
     [SerializeField] private PlayerColorSystem playerColorSystemRef;
+    [SerializeField] private PlayerCombatScript playerCombatScriptRef;
     [SerializeField] private PlayerHealthBarScript playerHealthBarScriptRef;
     [SerializeField] private NavMeshAgent navMeshAgentRef;
     [SerializeField] private float enemyDefaultSpeed;
@@ -71,6 +75,7 @@ public class EnemyColorSystem : MonoBehaviour
         playerRef = enemyCombatScriptRef.playerRef;
         playerColorSystemRef = playerRef.GetComponent<PlayerColorSystem>();
         playerHealthBarScriptRef = playerRef.GetComponent<PlayerCombatScript>().PlayerHealthBarScriptRef;
+        playerCombatScriptRef = playerRef.GetComponent<PlayerCombatScript>();
         navMeshAgentRef = gameObject.GetComponent<NavMeshAgent>();
 
         enemyDefaultSpeed = navMeshAgentRef.speed;
@@ -98,18 +103,32 @@ public class EnemyColorSystem : MonoBehaviour
 
         if (greenStacks > 0)
         {
-            playerRef.GetComponent<PlayerCombatScript>().HealPlayer(greenStacks * greenHealthRegen * Time.deltaTime / debuffsActive);
+            playerCombatScriptRef.HealPlayer(greenStacks * greenHealthRegen * Time.deltaTime / debuffsActive);
+            playerHealthBarScriptRef.TurnOnIndicator("green");
 
-            playerHealthBarScriptRef.ChangeHealthBarColor(Color.green);
-        }
-
-        if (blueStacks > 0)
-        {
-            if (enemyCombatScriptRef.enemyType.ToString().ToUpper().Equals("MELEE"))
+            if (!playerHealthBarScriptRef.GetHealthBarColor().Equals(Color.green))
             {
-                navMeshAgentRef.speed = enemyDefaultSpeed * (1 - (blueSlow * blueStacks));
+                playerHealthBarScriptRef.ChangeHealthBarColor(Color.green);
             }
         }
+
+        if(blueStacks > 0 && isSlowedByCyan)
+        {
+            navMeshAgentRef.speed = enemyDefaultSpeed * (1 - (blueSlow * blueStacks)) - cyanSlowEffect;
+            navMeshAgentRef.speed = Mathf.Clamp(navMeshAgentRef.speed, 0.1f, Mathf.Infinity);
+        }
+        else if (blueStacks > 0)
+        {
+            navMeshAgentRef.speed = enemyDefaultSpeed * (1 - (blueSlow * blueStacks));         
+            navMeshAgentRef.speed = Mathf.Clamp(navMeshAgentRef.speed, 0.1f, Mathf.Infinity);
+        }
+        else if (isSlowedByCyan)
+        {
+            navMeshAgentRef.speed = enemyDefaultSpeed - cyanSlowEffect;
+            navMeshAgentRef.speed = Mathf.Clamp(navMeshAgentRef.speed, 0.25f, Mathf.Infinity);
+        }
+
+
         if (isRooted)
         {
             navMeshAgentRef.speed = 0f;
@@ -139,10 +158,7 @@ public class EnemyColorSystem : MonoBehaviour
                 redStacks = 10;
             }
 
-            if (!HealthBarScriptRef.redColorIndicator.activeSelf)
-            {
-                HealthBarScriptRef.redColorIndicator.SetActive(true);
-            }
+            HealthBarScriptRef.TurnOnEffectIndicator(color);
             
             if (!redDoTApplied)
             {
@@ -156,10 +172,9 @@ public class EnemyColorSystem : MonoBehaviour
             {
                 greenStacks = 10;
             }
-            if (!HealthBarScriptRef.greenColorIndicator.activeSelf)
-            {
-                HealthBarScriptRef.greenColorIndicator.SetActive(true);
-            }
+
+            HealthBarScriptRef.TurnOnEffectIndicator(color);
+            
         }
         else if (Equals(color.ToUpper(), "BLUE"))
         {
@@ -168,10 +183,8 @@ public class EnemyColorSystem : MonoBehaviour
             {
                 blueStacks = 10;
             }
-            if (!HealthBarScriptRef.blueColorIndicator.activeSelf)
-            {
-                HealthBarScriptRef.blueColorIndicator.SetActive(true);
-            }
+
+            HealthBarScriptRef.TurnOnEffectIndicator(color);
         }
 
         // Checks to see if the stacks added created any color combos
@@ -195,6 +208,11 @@ public class EnemyColorSystem : MonoBehaviour
             {
                 cyanGB = true;
             }
+        }
+
+        if(magentaRB && cyanGB && yellowRG)
+        {
+            magentaRB = cyanGB = yellowRG = false;
         }
 
         UpdateEnemyHealthBarColor();
@@ -277,11 +295,31 @@ public class EnemyColorSystem : MonoBehaviour
 
         if (blueStacks > 0)
         {
-            // when enemy movement script is done make the enemy move slower based on the amount of stacks
             if (!blueColorburstVFXSprite.enabled && canBeRooted)
             {
                 StartCoroutine(BlueColorburst(blueStacks * blueRootTime));
             }
+        }
+
+        if (magentaRB)
+        {
+            StartCoroutine(MagentaColorburst());
+        }
+        else if (yellowRG)
+        {
+            StartCoroutine(YellowColorburst());
+        }
+        else if (cyanGB)
+        {
+            GameObject CyanAOE = Instantiate(playerColorSystemRef.cyanColorburstAOEPrefab, gameObject.transform);
+            
+            CyanAOEScript aoeScriptRef = CyanAOE.transform.GetChild(1).GetComponent<CyanAOEScript>();
+
+            aoeScriptRef.aoeLifespan = playerColorSystemRef.maxCooldown - 1.0f;
+            aoeScriptRef.cyanHealthRegen = cyanHealthRegen;
+            aoeScriptRef.StartLifespanDecay();
+
+            CyanAOE.transform.SetParent(null);
         }
     }
 
@@ -310,6 +348,44 @@ public class EnemyColorSystem : MonoBehaviour
         blueColorburstVFXSprite.enabled = false;
     }
 
+    private IEnumerator MagentaColorburst()
+    {
+        HealthBarScriptRef.TurnOnEffectIndicator("MAGENTA");
+        enemyCombatScriptRef.SetDamageTakenMultiplier(magentaDamageTakenMultiplier);
+
+        yield return new WaitForSeconds(playerColorSystemRef.maxCooldown);
+        
+        HealthBarScriptRef.TurnOffEffectIndicator("Magenta");
+        enemyCombatScriptRef.SetDamageTakenMultiplier(); 
+    }
+
+    private IEnumerator YellowColorburst()
+    {
+        HealthBarScriptRef.TurnOnEffectIndicator("Yellow");
+        isWithYellowLifestealMark = true;
+
+        yield return new WaitForSeconds(playerColorSystemRef.maxCooldown);
+        
+        HealthBarScriptRef.TurnOffEffectIndicator("yellow"); 
+        isWithYellowLifestealMark = false;
+    }
+    public IEnumerator YellowLifestealHeal(float lifeStealed)
+    {
+        playerCombatScriptRef.HealPlayer(lifeStealed);
+
+        if (!playerHealthBarScriptRef.GetHealthBarColor().Equals(Color.yellow))
+        {
+            playerHealthBarScriptRef.ChangeHealthBarColor(Color.yellow);
+        }
+
+        playerHealthBarScriptRef.TurnOnIndicator("Yellow");
+
+        yield return new WaitForSeconds(0.15f);
+
+        playerHealthBarScriptRef.TurnOffIndicator("Yellow");
+        playerHealthBarScriptRef.ChangeHealthBarColor(Color.white);
+    }
+
     public void ResetStacks()
     {
         if (!StacksReset)
@@ -326,10 +402,13 @@ public class EnemyColorSystem : MonoBehaviour
             HealthBarScriptRef.redColorIndicator.SetActive(false);
             HealthBarScriptRef.greenColorIndicator.SetActive(false);
             HealthBarScriptRef.blueColorIndicator.SetActive(false);
+            HealthBarScriptRef.bleedIndicator.SetActive(false);
+            HealthBarScriptRef.blueSlowIndicator.SetActive(false);
             playerHealthBarScriptRef.ChangeHealthBarColor(Color.white);
             StacksReset = true;
             redDoTApplied = false;
             navMeshAgentRef.speed = enemyDefaultSpeed;
+            playerHealthBarScriptRef.TurnOffIndicator("green");
         }
     }
 

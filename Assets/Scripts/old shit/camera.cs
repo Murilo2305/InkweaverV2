@@ -18,6 +18,11 @@ public class camera : MonoBehaviour
 
     void Update()
     {
+        if(playerref == null)
+        {
+            playerref = GameObject.FindGameObjectWithTag("Player");
+        }
+
         pos = new Vector3(playerref.transform.position.x, playerref.transform.position.y + 6, playerref.transform.position.z - 10);
         transform.SetPositionAndRotation(pos, rot);
     }

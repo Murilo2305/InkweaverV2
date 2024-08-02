@@ -8,21 +8,25 @@ public class PlayerColorSystem : MonoBehaviour
     public List<GameObject> colorburstTargets;
 
     [Header(" - Colorburst parameteres")]
-    [SerializeField] private float maxCooldown = 5.0f;
     [SerializeField] private float cooldownTimer;
     [SerializeField] private bool canColorburst;
+    public float maxCooldown = 5.0f;
 
     [Header(" - Active color")]
     public bool red;
     public bool green;
     public bool blue;
 
-    [Header(" - References")]
-    [SerializeField] private RectTransform UIColorwheelRef;
-
     [Header(" - Rotatation Values")]
     [SerializeField] int rotationController;
     [SerializeField] float rotationTarget;
+
+    [Header(" - Cyan Control Variables")]
+    public float cyanControlTimer;
+    public bool isWithCyanIndicatorsOn;
+
+    [Header(" - Refs")]
+    public GameObject cyanColorburstAOEPrefab;
 
     [Header(" - DebugStuff")]
     [SerializeField] private PlayerCombatScript playerCombatScriptRef;
@@ -32,6 +36,8 @@ public class PlayerColorSystem : MonoBehaviour
     [SerializeField] private PlayerUIColorBurstCooldownScripts playerUIColorBurstCooldownScriptRef;
     [SerializeField] private Image playerUIColorBurstCooldownImage1;
     [SerializeField] private Image playerUIColorBurstCooldownImage2;
+    [SerializeField] private RectTransform UIColorwheelRef;
+    public PlayerHealthBarScript playerHealthBarScriptRef;
 
     private void Start()
     {
@@ -42,7 +48,7 @@ public class PlayerColorSystem : MonoBehaviour
         playerUIColorBurstCooldownScriptRef = playerCombatScriptRef.PlayerUIRef.transform.GetChild(0).GetChild(0).GetComponent<PlayerUIColorBurstCooldownScripts>();
         playerUIColorBurstCooldownImage1 = playerCombatScriptRef.PlayerUIRef.transform.GetChild(0).GetComponent<Image>();
         playerUIColorBurstCooldownImage2 = playerCombatScriptRef.PlayerUIRef.transform.GetChild(0).GetChild(0).GetComponent<Image>();
-
+        UIColorwheelRef = playerCombatScriptRef.PlayerUIRef.transform.GetChild(1).GetComponent<RectTransform>();
     }
 
     private void Update()
@@ -72,6 +78,21 @@ public class PlayerColorSystem : MonoBehaviour
         }
 
         playerUIColorBurstCooldownScriptRef.SetCooldownDisplay(cooldownTimer / maxCooldown);
+
+        if (isWithCyanIndicatorsOn)
+        {
+            if(cyanControlTimer > 0.0f)
+            {
+                cyanControlTimer -= Time.deltaTime;
+            }
+            if(cyanControlTimer <= 0)
+            {
+                cyanControlTimer = 0.0f;
+                isWithCyanIndicatorsOn = false;
+                playerHealthBarScriptRef.TurnOffIndicator("Cyan");
+                playerHealthBarScriptRef.ChangeHealthBarColor(Color.white);
+            }
+        }
     }
 
 

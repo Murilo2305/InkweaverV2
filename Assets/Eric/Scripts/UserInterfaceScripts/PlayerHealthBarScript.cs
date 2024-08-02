@@ -6,7 +6,39 @@ using UnityEngine.UI;
 public class PlayerHealthBarScript : MonoBehaviour
 {
     [SerializeField] private Image ProgressImage;
+    [SerializeField] private Color tempColor;
+    [SerializeField] private GameObject GreenHealthRegenIndicator;
+    [SerializeField] private GameObject CyanHealthRegenIndicator;
+    [SerializeField] private GameObject YellowHealingIndicator;
     private Coroutine AnimationCoroutine;
+
+    // timer made so the health bar doesnt violently flash yellow when an enemy with the lifesteal mark receives a dot
+    public float yellowHealthBarControlTimer;
+
+    private void Start()
+    {
+        GreenHealthRegenIndicator = gameObject.transform.parent.GetChild(4).gameObject;
+        CyanHealthRegenIndicator = gameObject.transform.parent.GetChild(5).gameObject;
+        YellowHealingIndicator = gameObject.transform.parent.GetChild(6).gameObject;
+
+        tempColor = Color.white;
+    }
+
+    private void Update()
+    {
+        if (yellowHealthBarControlTimer > 0.0f)
+        {
+            yellowHealthBarControlTimer -= Time.deltaTime;
+        }
+        else if (yellowHealthBarControlTimer <= 0)
+        {
+            yellowHealthBarControlTimer = 0;
+            if (YellowHealingIndicator.activeSelf)
+            {
+                YellowHealingIndicator.SetActive(false);
+            }
+        }
+    }
 
     public void UpdateHealthBar(float healthToMaxHealthRatio)
     {
@@ -45,6 +77,51 @@ public class PlayerHealthBarScript : MonoBehaviour
         if(!ProgressImage.color.Equals(color))
         {
             ProgressImage.color = color;
+        }
+    }
+
+    public Color GetHealthBarColor()
+    {
+        return ProgressImage.color;
+    }
+
+    public void TurnOnIndicator(string color)
+    {
+        color = color.ToUpper();
+
+        if (color.Equals("GREEN"))
+        {
+            GreenHealthRegenIndicator.SetActive(true);
+        }
+        if (color.Equals("CYAN"))
+        {
+            CyanHealthRegenIndicator.SetActive(true);
+        }
+        if (color.Equals("YELLOW"))
+        {
+            YellowHealingIndicator.SetActive(true);
+            yellowHealthBarControlTimer = 0.15f;
+        }
+    }
+
+    public void TurnOffIndicator(string color)
+    {
+        color = color.ToUpper();
+
+        if (color.Equals("GREEN"))
+        {
+            GreenHealthRegenIndicator.SetActive(false);
+        }
+        if (color.Equals("CYAN"))
+        {
+            CyanHealthRegenIndicator.SetActive(false);
+        }
+        if (color.Equals("YELLOW"))
+        {
+            if (yellowHealthBarControlTimer <= 0.0f)
+            {
+                YellowHealingIndicator.SetActive(false);
+            }
         }
     }
 }

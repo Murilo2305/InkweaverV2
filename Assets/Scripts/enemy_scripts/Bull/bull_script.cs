@@ -20,8 +20,6 @@ public class bull_script : MonoBehaviour
     [SerializeField] private float postStaggerTimerBeforeCanAttack;
     [SerializeField] private bool isPostStaggerTimerActive;
 
-    [SerializeField] private float timerBeforeCanAttack;
-
     [SerializeField] private bool canAttack;
 
 
@@ -31,7 +29,7 @@ public class bull_script : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         once = true;
         canAttack = false;
-        attackHitboxRef = gameObject.transform.GetChild(3).GetComponent<BoxCollider>();
+        attackHitboxRef = gameObject.transform.GetChild(2).GetComponent<BoxCollider>();
         enemyCombatScriptRef = gameObject.GetComponent<EnemyCombatScript>();
         bullAnimationScriptRef = gameObject.transform.GetChild(0).GetComponent<BullAnimationScript>();
         
@@ -70,12 +68,12 @@ public class bull_script : MonoBehaviour
             {
                 isPostStaggerTimerActive = false;
                 postStaggerTimerBeforeCanAttack = 0;
-                timerBeforeCanAttack = 0;
                 canAttack = true;
             }
         }
 
-        print(agent.velocity.magnitude);
+        //print(agent.velocity.magnitude);
+
         //this part of the script makes the landing work
         if(isAttacking && agent.velocity.magnitude == 0.0f)
         {
@@ -137,12 +135,14 @@ public class bull_script : MonoBehaviour
     
     public void AnimationEventRushStart()
     {
+        print("rush start");
         attackHitboxRef.enabled = true;
         enemyCombatScriptRef.isHittable = false;
     }
 
     public void AnimationEventRushEnd()
     {
+        print("rush end");
         attackHitboxRef.enabled = false;
         enemyCombatScriptRef.isHittable = true;
         isAttacking = false;

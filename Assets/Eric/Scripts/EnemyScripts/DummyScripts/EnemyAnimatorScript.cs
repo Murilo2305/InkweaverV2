@@ -6,10 +6,10 @@ public class EnemyAnimatorScript : MonoBehaviour
 {
     [Header(" - References")]
     [SerializeField] Animator animatorRef;
-    [SerializeField] EnemyCombatScript combatScriptRef;
+    [SerializeField] StaggerScript staggerScriptRef;
 
     private void Update()
     {
-        animatorRef.SetBool("isStaggered", combatScriptRef.isStaggered);
+        animatorRef.SetBool("isStaggered", staggerScriptRef.isStaggered);
     }
 }

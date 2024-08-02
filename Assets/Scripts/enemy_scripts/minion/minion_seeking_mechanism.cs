@@ -18,8 +18,8 @@ public class minion_seeking_mechanism : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        minionAnimationScriptRef = gameObject.transform.GetChild(0).GetComponent<MinionAnimationScript>();
-        damageRadiusScriptRef = gameObject.transform.GetChild(3).GetComponent<enemy_damage_radius>();
+        minionAnimationScriptRef = gameObject.GetComponentInChildren<MinionAnimationScript>();
+        damageRadiusScriptRef = gameObject.GetComponentInChildren<enemy_damage_radius>();
         agent = GetComponent<NavMeshAgent>();
         staggerScriptRef = GetComponent<StaggerScript>();
         isMoving = false;

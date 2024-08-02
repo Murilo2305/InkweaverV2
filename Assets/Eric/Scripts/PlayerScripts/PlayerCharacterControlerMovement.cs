@@ -7,16 +7,16 @@ public class PlayerCharacterControlerMovement : MonoBehaviour
 
     [Header(" - Movement Paramenters:")]
     [SerializeField] private float speed = 10.0f;
-    [SerializeField] public bool canMove;
+    public bool canMove;
 
-    [SerializeField] public Vector3 movement;
+    public Vector3 movement;
 
     [Header(" - Dash Parameters:")]
     [SerializeField] private Transform dash;
 
-    [SerializeField] public bool isDashing;
-    [SerializeField] public bool dashOnCooldown;
-    [SerializeField] private bool canDash;
+    public bool isDashing;
+    public bool dashOnCooldown;
+    public bool canDash;
 
     [SerializeField] private float dashCooldown = 0.33f;
     [SerializeField] private float dashSpeed;
@@ -84,7 +84,7 @@ public class PlayerCharacterControlerMovement : MonoBehaviour
         verticalmovement = Input.GetAxisRaw("Vertical");
 
 
-        if (canMove && !combatScriptRef.isHeavyAttacking)
+        if (canMove)
         {
             if (combatScriptRef.isCharging)
             {

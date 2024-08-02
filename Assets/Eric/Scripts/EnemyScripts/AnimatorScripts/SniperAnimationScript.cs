@@ -10,6 +10,7 @@ public class SniperAnimationScript : MonoBehaviour
     [SerializeField] private NavMeshAgent navMeshAgentRef;
     [SerializeField] private Sniper_script sniperScriptRef;
     [SerializeField] private StaggerScript staggerScriptRef;
+    [SerializeField] private EnemyCombatScript enemyCombatScriptRef;
 
     private void Start()
     {
@@ -18,6 +19,7 @@ public class SniperAnimationScript : MonoBehaviour
         navMeshAgentRef = gameObject.transform.parent.GetComponent<NavMeshAgent>();
         sniperScriptRef = gameObject.transform.parent.GetComponent<Sniper_script>();
         staggerScriptRef = gameObject.transform.parent.GetComponent<StaggerScript>();
+        enemyCombatScriptRef = gameObject.transform.parent.GetComponent<EnemyCombatScript>();
     }
 
     private void Update()
@@ -41,6 +43,7 @@ public class SniperAnimationScript : MonoBehaviour
         }
 
         SetAnimatorParameter("isStaggered", staggerScriptRef.isStaggered);
+        SetAnimatorParameter("isDead", enemyCombatScriptRef.isDead);
     }
 
     public void SetAnimatorParameter(string id, bool value)

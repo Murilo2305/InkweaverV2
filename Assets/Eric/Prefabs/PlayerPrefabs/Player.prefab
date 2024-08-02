@@ -772,7 +772,6 @@ MonoBehaviour:
   ProjectileSpawnerTransform: {fileID: 8350499025856552620}
   ProjectileSpawnerTransform1: {fileID: 6672532708182439332}
   ProjectileSpawnerTransform2: {fileID: 8100708230340487691}
-  PlayerUIRef: {fileID: 0}
   moveScriptRef: {fileID: 0}
   playerColorSystemRef: {fileID: 0}
   lightAttackHitbox: {fileID: 3406262893783309285}
@@ -783,6 +782,7 @@ MonoBehaviour:
   lightAttackHitboxScriptRef: {fileID: 0}
   heavyAttackHitboxScriptRef: {fileID: 0}
   playerAnimationScriptRef: {fileID: 0}
+  PlayerUIRef: {fileID: 0}
   PlayerHealthBarScriptRef: {fileID: 0}
 --- !u!114 &1490169034500845902
 MonoBehaviour:
@@ -797,15 +797,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorburstTargets: []
-  maxCooldown: 5
   cooldownTimer: 0
   canColorburst: 0
+  maxCooldown: 5
   red: 1
   green: 0
   blue: 0
-  UIColorwheelRef: {fileID: 0}
   rotationController: 0
   rotationTarget: 120
+  cyanColorburstAOEPrefab: {fileID: 2185366316117148300, guid: 23012abbd8bddfd459e0dc1cef83e849, type: 3}
   playerCombatScriptRef: {fileID: 0}
   playerMovementScriptRef: {fileID: 0}
   playerAnimationScriptRef: {fileID: 0}
@@ -813,6 +813,7 @@ MonoBehaviour:
   playerUIColorBurstCooldownScriptRef: {fileID: 0}
   playerUIColorBurstCooldownImage1: {fileID: 0}
   playerUIColorBurstCooldownImage2: {fileID: 0}
+  UIColorwheelRef: {fileID: 0}
 --- !u!143 &8906745885740316294
 CharacterController:
   m_ObjectHideFlags: 0

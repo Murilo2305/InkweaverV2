@@ -59,7 +59,6 @@ public class PlayerCombatScript : MonoBehaviour
     [SerializeField] private Transform ProjectileSpawnerTransform;
     [SerializeField] private Transform ProjectileSpawnerTransform1;
     [SerializeField] private Transform ProjectileSpawnerTransform2;
-    public GameObject PlayerUIRef;
 
 
     //Debugging
@@ -74,12 +73,15 @@ public class PlayerCombatScript : MonoBehaviour
     [SerializeField] private PlayerHitboxScript lightAttackHitboxScriptRef;
     [SerializeField] private PlayerHitboxScript heavyAttackHitboxScriptRef;
     [SerializeField] private NewPlayerAnimationScript playerAnimationScriptRef;
+    public GameObject PlayerUIRef;
     public PlayerHealthBarScript PlayerHealthBarScriptRef;
 
 
     private void Start()
     {
         //SettingOtherRefs
+        //refs of UI
+        PlayerUIRef = GameObject.FindGameObjectWithTag("CanvasParentObject").transform.GetChild(1).GetChild(0).gameObject;
         //refs of player scripts
         moveScriptRef = player.GetComponent<PlayerCharacterControlerMovement>();
         playerColorSystemRef = player.GetComponent<PlayerColorSystem>();
@@ -94,6 +96,8 @@ public class PlayerCombatScript : MonoBehaviour
         lightAttackHitboxScriptRef = lightAttackHitboxGameObjectRef.GetComponent<PlayerHitboxScript>();
         heavyAttackHitboxScriptRef = heavyAttackHitboxGameObjectRef.GetComponent<PlayerHitboxScript>();
 
+        //Setting Refs in other scripts
+        playerColorSystemRef.playerHealthBarScriptRef = PlayerHealthBarScriptRef;
 
 
         //redundancies
@@ -155,6 +159,7 @@ public class PlayerCombatScript : MonoBehaviour
         currentTimer = maxTimer;
         playerAnimationScriptRef.SetParameterInPlayerAnimator("isAttacking", true);
         moveScriptRef.canMove = false;
+        moveScriptRef.canDash = false;
 
         //first attack in light attack chain
         if (comboTracker == 0)
@@ -260,6 +265,8 @@ public class PlayerCombatScript : MonoBehaviour
         //Depending on the level of charge, releases a strong attack
         if (isFullyCharged)
         {
+            moveScriptRef.canMove = false;
+            moveScriptRef.canDash = false;
             canAttack = false;
             playerAnimationScriptRef.SetParameterInPlayerAnimator("isHeavyAttacking", true);
             isHeavyAttacking = true;
@@ -269,6 +276,8 @@ public class PlayerCombatScript : MonoBehaviour
         }
         else if (isLightlyCharged)
         {
+            moveScriptRef.canMove = false;
+            moveScriptRef.canDash = false;
             canAttack = false;
             playerAnimationScriptRef.SetParameterInPlayerAnimator("isHeavyAttacking", true);
             isHeavyAttacking = true;
@@ -398,6 +407,7 @@ public class PlayerCombatScript : MonoBehaviour
         playerAnimationScriptRef.SetParameterInPlayerAnimator("isHeavyAttacking", false);
         isHeavyAttacking = false;
         moveScriptRef.canMove = true;
+        moveScriptRef.canDash = true;
     }
 
 

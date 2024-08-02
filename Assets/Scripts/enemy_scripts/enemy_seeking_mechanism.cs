@@ -9,7 +9,8 @@ public class navigation : MonoBehaviour
     [SerializeField] private NavMeshAgent agent;
     public Transform destiny;
     [SerializeField] private GameObject PlayerDetector;
-    private bool once;
+
+    //private bool once;
 
 
     
@@ -19,8 +20,8 @@ public class navigation : MonoBehaviour
     {
         
         agent = GetComponent<NavMeshAgent>();
-        once = true;
 
+        //once = true;
         
     }
 

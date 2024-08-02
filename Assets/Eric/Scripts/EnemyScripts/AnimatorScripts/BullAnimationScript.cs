@@ -10,6 +10,7 @@ public class BullAnimationScript : MonoBehaviour
     [SerializeField] private NavMeshAgent navMeshAgentRef;
     [SerializeField] private bull_script bullScriptRef;
     [SerializeField] private StaggerScript staggerScriptRef;
+    [SerializeField] private EnemyCombatScript enemyCombatScriptRef;
 
     private void Start()
     {
@@ -18,6 +19,7 @@ public class BullAnimationScript : MonoBehaviour
         navMeshAgentRef = gameObject.transform.parent.GetComponent<NavMeshAgent>();
         bullScriptRef = gameObject.transform.parent.GetComponent<bull_script>();
         staggerScriptRef = gameObject.transform.parent.GetComponent<StaggerScript>();
+        enemyCombatScriptRef = gameObject.transform.parent.GetComponent<EnemyCombatScript>();
     }
 
     private void Update()
@@ -34,6 +36,7 @@ public class BullAnimationScript : MonoBehaviour
 
         SetAnimatorParameter("isStaggered", staggerScriptRef.isStaggered);
         SetAnimatorParameter("isAttacking", bullScriptRef.isAttacking);
+        SetAnimatorParameter("isDead", enemyCombatScriptRef.isDead);
     }
 
     public void SetAnimatorParameter(string id, bool value)

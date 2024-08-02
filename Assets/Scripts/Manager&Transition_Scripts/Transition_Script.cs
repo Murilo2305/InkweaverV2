@@ -10,19 +10,11 @@ public class Transition_Script : MonoBehaviour
     public string NextScene;
     [SerializeField] bool CanGoOn;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         
         CanGoOn = GameManager.GetComponent<GameManager_Script>().StageCleared;
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-
 
     }
 

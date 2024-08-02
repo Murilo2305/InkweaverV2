@@ -12,14 +12,37 @@ public class EnemyHealthBar : MonoBehaviour
 {
     [SerializeField] private float DefaultSpeed = 1f;
     [SerializeField] private Image ProgressImage;
+    
 
     [Header(" - Reference to the color indicators")]
     public GameObject redColorIndicator;
     public GameObject greenColorIndicator;
     public GameObject blueColorIndicator;
+    public GameObject magentaDefenseDownIndicator;
+    public GameObject cyanSlowIndicator;
+    public GameObject yellowLifestealIndicator;
+    public GameObject blueSlowIndicator;
+    public GameObject bleedIndicator;
 
     private Coroutine AnimationCoroutine;
 
+    private void Start()
+    {
+        redColorIndicator = gameObject.transform.GetChild(0).gameObject;
+        greenColorIndicator = gameObject.transform.GetChild(1).gameObject;
+        blueColorIndicator = gameObject.transform.GetChild(2).gameObject;
+        magentaDefenseDownIndicator = gameObject.transform.GetChild(3).gameObject;
+        cyanSlowIndicator = gameObject.transform.GetChild(4).gameObject;
+        yellowLifestealIndicator = gameObject.transform.GetChild(5).gameObject;
+        blueSlowIndicator = gameObject.transform.GetChild(6).gameObject;
+        bleedIndicator = gameObject.transform.GetChild(7).gameObject;
+
+        yellowLifestealIndicator.SetActive(false);
+        cyanSlowIndicator.SetActive(false);
+        magentaDefenseDownIndicator.SetActive(false);
+    }
+
+    
 
     //funcao de conveniencia
     public void SetProgress(float Progress)
@@ -81,5 +104,98 @@ public class EnemyHealthBar : MonoBehaviour
     public Color GetBarColor()
     {
         return (ProgressImage.color);
+    }
+
+    public void TurnOnEffectIndicator(string color)
+    {
+        color = color.ToUpper();
+
+        if (color.Equals("RED"))
+        {
+            if (!redColorIndicator.activeSelf)
+            {
+                redColorIndicator.SetActive(true);
+            }
+            if (!bleedIndicator.activeSelf)
+            {
+                bleedIndicator.SetActive(true);
+            }
+        } 
+        else if (color.Equals("GREEN"))
+        {
+            if (!greenColorIndicator.activeSelf)
+            {
+                greenColorIndicator.SetActive(true);
+            }
+        }
+        else if (color.Equals("BLUE"))
+        {
+            if (!blueColorIndicator.activeSelf)
+            {
+                blueColorIndicator.SetActive(true);
+            }
+            if (!blueSlowIndicator.activeSelf)
+            {
+                blueSlowIndicator.SetActive(true);
+            }
+        }
+        else if (color.Equals("MAGENTA"))
+        {
+            magentaDefenseDownIndicator.SetActive(true);
+        }
+        else if (color.Equals("CYAN"))
+        {
+            cyanSlowIndicator.SetActive(true);
+        }
+        else if (color.Equals("YELLOW"))
+        {
+            yellowLifestealIndicator.SetActive(true);
+        }
+    }
+    public void TurnOffEffectIndicator(string color)
+    {
+        color = color.ToUpper();
+
+        if (color.Equals("RED"))
+        {
+            if (!redColorIndicator.activeSelf)
+            {
+                redColorIndicator.SetActive(false);
+            }
+            if (!bleedIndicator.activeSelf)
+            {
+                bleedIndicator.SetActive(false);
+            }
+        } 
+        else if (color.Equals("GREEN"))
+        {
+            if (!greenColorIndicator.activeSelf)
+            {
+                greenColorIndicator.SetActive(false);
+            }
+        }
+        else if (color.Equals("BLUE"))
+        {
+            if (!blueColorIndicator.activeSelf)
+            {
+                blueColorIndicator.SetActive(false);
+            }
+            if (!blueSlowIndicator.activeSelf)
+            {
+                blueSlowIndicator.SetActive(false);
+            }
+        }
+        else if (color.Equals("MAGENTA"))
+        {
+            magentaDefenseDownIndicator.SetActive(false);
+        }
+        else if (color.Equals("CYAN"))
+        {
+            cyanSlowIndicator.SetActive(false);
+        }
+        else if (color.Equals("YELLOW"))
+        {
+            yellowLifestealIndicator.SetActive(false);
+        }
     }
 }

@@ -7,6 +7,8 @@ TagManager:
   - PlayerAttack
   - Enemy
   - EnemyAttack
+  - CanvasParentObject
+  - EnemySpawnPositionRef
   layers:
   - Default
   - TransparentFX

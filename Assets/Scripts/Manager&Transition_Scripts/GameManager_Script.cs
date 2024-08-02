@@ -8,16 +8,16 @@ public class GameManager_Script : MonoBehaviour
     [SerializeField] GameObject PlayerRef;
     [SerializeField] Camera MainCamera;
     [SerializeField] Vector3 PlayerStartPos;
-    [SerializeField] GameObject[] enemies;
+    [SerializeField] List<GameObject> enemies;
+    [SerializeField] EnemySpawnerScript enemySpawnerScriptRef;
     public bool StageCleared;
 
     // Start is called before the first frame update
 
     void Start()
     {
-        
         Instantiate(PlayerRef,PlayerStartPos,PlayerRef.transform.rotation);
-
+        enemySpawnerScriptRef.SpawnEnemies();
     }
 
     // Update is called once per frame
@@ -39,5 +39,6 @@ public class GameManager_Script : MonoBehaviour
         }
 
     }
+
 }
 

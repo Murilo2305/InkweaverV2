@@ -32,7 +32,7 @@ public class StaggerScript : MonoBehaviour
             GetComponent<minion_seeking_mechanism>().isMoving = false;
 
             // interupts the enemy's attack
-            gameObject.transform.GetChild(3).GetComponent<enemy_damage_radius>().InterruptAttack();
+            gameObject.transform.GetComponentInChildren<enemy_damage_radius>().InterruptAttack();
         }
         if(enemyType.Equals("RANGEDPROJECTILE"))
         {
@@ -58,7 +58,7 @@ public class StaggerScript : MonoBehaviour
         if (enemyType.Equals("MELEE"))
         {
             //melee enemy == minion
-            gameObject.transform.GetChild(3).GetComponent<enemy_damage_radius>().timeBeforeEnemyCanAttack = 1f;
+            gameObject.transform.GetComponentInChildren<enemy_damage_radius>().timeBeforeEnemyCanAttack = 1f;
         }
         if (enemyType.Equals("RANGED PROJECTILE"))
         {

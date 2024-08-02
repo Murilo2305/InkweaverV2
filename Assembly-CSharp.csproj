@@ -77,6 +77,7 @@
     <Compile Include="Assets\Scripts\enemy_scripts\minion\enemy_damage_radius.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\DummyScripts\EnemyAnimatorScript.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\minion\script_minion.cs" />
+    <Compile Include="Assets\Eric\Scripts\ColorSystem\CyanAOEScript.cs" />
     <Compile Include="Assets\Eric\Scripts\Miscellaneous\LineRendererDebugThing.cs" />
     <Compile Include="Assets\Eric\Scripts\PlayerScripts\NewPlayerAnimationScript.cs" />
     <Compile Include="Assets\Eric\Scripts\PlayerScripts\Paintball\PlayerPaintballScript.cs" />
@@ -87,6 +88,9 @@
     <Compile Include="Assets\Eric\Scripts\PlayerScripts\PlayerCharacterControlerMovement.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\AnimatorScripts\SniperAnimationScript.cs" />
     <Compile Include="Assets\Scripts\old shit\camera.cs" />
+    <Compile Include="Assets\Scripts\Manager&amp;Transition_Scripts\Transition_Script.cs" />
+    <Compile Include="Assets\Scripts\Manager&amp;Transition_Scripts\GameManager_Script.cs" />
+    <Compile Include="Assets\Eric\Scripts\EnemyScripts\EnemySpawnPosRefScript.cs" />
     <Compile Include="Assets\Eric\Scripts\Miscellaneous\SpriteScript.cs" />
     <Compile Include="Assets\Scripts\old shit\PlayerAnimationScript.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\StaggerScript.cs" />
@@ -98,6 +102,7 @@
     <Compile Include="Assets\Scripts\enemy_scripts\minion\minion_seeking_mechanism.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\sniper\Bullet_Script.cs" />
     <Compile Include="Assets\Scripts\old shit\PlayerDirectionalIndicator.cs" />
+    <Compile Include="Assets\Eric\Scripts\EnemyScripts\EnemySpawnerScript.cs" />
     <Compile Include="Assets\Eric\Scripts\ColorSystem\EnemyColorSystem.cs" />
     <Compile Include="Assets\Scripts\old shit\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\old shit\PlayerMesh.cs" />

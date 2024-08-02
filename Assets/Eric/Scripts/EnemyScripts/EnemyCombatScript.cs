@@ -14,8 +14,10 @@ public class EnemyCombatScript : MonoBehaviour
     [SerializeField] private float lightStaggerDuration = 0.3f;
     [SerializeField] private float mediumStaggerDuration = 0.5f;
     [SerializeField] private float HeavyStaggerDuration = 1f;
+    [SerializeField] private float damageTakenMultiplier = 1.0f;
     public bool isStaggered;
     public bool isHittable;
+    public bool isDead;
 
     [Header(" - EnemyHealthBar")]
     [SerializeField] public EnemyHealthBar HealthBarScriptRef;
@@ -31,6 +33,7 @@ public class EnemyCombatScript : MonoBehaviour
     [Header(" - DebugStuff")]
     [SerializeField] EnemyColorSystem enemyColorSystemRef;
     [SerializeField] StaggerScript staggerScriptRef;
+    [SerializeField] private PlayerCombatScript playerCombatScriptRef;
 
 
 
@@ -47,11 +50,35 @@ public class EnemyCombatScript : MonoBehaviour
     {
         enemyColorSystemRef = GetComponent<EnemyColorSystem>();
         staggerScriptRef = GetComponent<StaggerScript>();
+        playerCombatScriptRef = playerRef.GetComponent<PlayerCombatScript>();
         
         healthPoints = maxHealth;
         isHittable = true;
 
         staggerScriptRef.enemyType = enemyType.ToString().ToUpper();
+    }
+
+    private void Update()
+    {
+        //Counts down the time staggered until the enemy goes back to normal
+        if (staggerTimer > 0)
+        {
+            staggerTimer -= Time.deltaTime;
+        }
+        else
+        {
+            if (isStaggered) 
+            { 
+                staggerTimer = 0.0f;
+                isStaggered = false;
+                staggerScriptRef.StaggerEnd();
+            }
+        }
+
+        if(healthPoints <= 0.0f && !enemyType.ToString().ToUpper().Equals("DUMMY"))
+        {
+            EnemyDied();
+        }
     }
 
 
@@ -102,22 +129,9 @@ public class EnemyCombatScript : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void OnDestroy()
     {
-        //Counts down the time staggered until the enemy goes back to normal
-        if (staggerTimer > 0)
-        {
-            staggerTimer -= Time.deltaTime;
-        }
-        else
-        {
-            if (isStaggered) 
-            { 
-                staggerTimer = 0.0f;
-                isStaggered = false;
-                staggerScriptRef.StaggerEnd();
-            }
-        }
+        Destroy(HealthBarParentObjectRef);
     }
 
     public IEnumerator RedDoT()
@@ -152,7 +166,14 @@ public class EnemyCombatScript : MonoBehaviour
 
     public void DamageEnemy(float dmg, bool imediate)
     {
-        healthPoints -= dmg;
+        healthPoints -= dmg * damageTakenMultiplier;
+
+        if (enemyColorSystemRef.isWithYellowLifestealMark)
+        {
+            StartCoroutine(enemyColorSystemRef.YellowLifestealHeal(dmg * enemyColorSystemRef.yellowLifeStealPercentage));
+        }
+
+
         if (imediate)
         {
             InstantUpdateHealthBar();
@@ -217,8 +238,23 @@ public class EnemyCombatScript : MonoBehaviour
         staggerTimer = staggerDuration;
     }
 
+    private void EnemyDied()
+    {
+        isDead = true;
+        Destroy(gameObject, 1f);
+    }
+
+    public void SetDamageTakenMultiplier(float multiplier)
+    {
+        damageTakenMultiplier = multiplier;
+    }
 
 
+
+
+
+
+    
 
 
 
@@ -237,4 +273,11 @@ public class EnemyCombatScript : MonoBehaviour
     {
         UpdateHealthBar(10);
     }
+
+    //if SetDamageTakenMukltiplier is called without a float it goes back to 1.0f
+    public void SetDamageTakenMultiplier()
+    {
+        SetDamageTakenMultiplier(1.0f);
+    }
+
 }

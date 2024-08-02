@@ -26,7 +26,7 @@ public class Sniper_script : MonoBehaviour
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
-        PlayerDetector = gameObject.transform.GetChild(2).gameObject;
+        PlayerDetector = gameObject.transform.GetChild(1).gameObject;
         agent = gameObject.GetComponent<NavMeshAgent>();
         sniperAnimationScriptRef = gameObject.transform.GetChild(0).GetComponent<SniperAnimationScript>();
     }
