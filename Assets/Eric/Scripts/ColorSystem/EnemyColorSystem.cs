@@ -52,8 +52,10 @@ public class EnemyColorSystem : MonoBehaviour
     //Cyan
     [SerializeField] private float cyanHealthRegen = 0.2f;
     public bool isSlowedByCyan;
-    public float cyanSlowEffect = 0.5f;
     //flat value
+    public float cyanSlowEffect = 1f;
+    public bool isWithCyanIndicatorsOn;
+    public float cyanControlTimer;
 
     [Header(" - DebugStuff")]
     [SerializeField] private EnemyCombatScript enemyCombatScriptRef;
@@ -136,6 +138,22 @@ public class EnemyColorSystem : MonoBehaviour
         else if (!isRooted && blueStacks == 0)
         {
             navMeshAgentRef.speed = enemyDefaultSpeed;
+        }
+
+        if (isWithCyanIndicatorsOn)
+        {
+            if (cyanControlTimer > 0.0f)
+            {
+                cyanControlTimer -= Time.deltaTime;
+            }
+            if (cyanControlTimer <= 0)
+            {
+                cyanControlTimer = 0.0f;
+                isWithCyanIndicatorsOn = false;
+                HealthBarScriptRef.TurnOffEffectIndicator("Cyan");
+                HealthBarScriptRef.SetBarColor(Color.white);
+                isSlowedByCyan = false;
+            }
         }
     }
 
@@ -295,9 +313,9 @@ public class EnemyColorSystem : MonoBehaviour
 
         if (blueStacks > 0)
         {
-            if (!blueColorburstVFXSprite.enabled && canBeRooted)
+            if (!blueColorburstVFXSprite.enabled)
             {
-                StartCoroutine(BlueColorburst(blueStacks * blueRootTime));
+                StartCoroutine(BlueColorburst(blueStacks * blueRootTime, canBeRooted));
             }
         }
 
@@ -337,14 +355,31 @@ public class EnemyColorSystem : MonoBehaviour
         redColorburstVFXSprite.enabled = false;
     }
 
-    private IEnumerator BlueColorburst(float duration)
+    private IEnumerator BlueColorburst(float duration, bool CanBeRooted)
     {
         blueColorburstVFXSprite.enabled = true;
-        isRooted = true;
+        if (CanBeRooted)
+        {
+            isRooted = true;
+        }
+        else
+        {
+            blueSlow = 0.075f;
+            AddStacks("Blue", 5);
+        }
 
         yield return new WaitForSeconds(duration);
 
-        isRooted = false;
+        if (CanBeRooted)
+        {
+            isRooted = false;
+        }
+        else
+        {
+            blueSlow = 0.05f;
+        }
+
+
         blueColorburstVFXSprite.enabled = false;
     }
 

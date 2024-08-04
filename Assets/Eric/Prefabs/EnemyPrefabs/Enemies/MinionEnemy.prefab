@@ -1671,8 +1671,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d70df6e5fc50ba46acc0fe4751fc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1000
-  healthPoints: 1000
+  maxHealth: 300
+  healthPoints: 300
   isStaggerable: 1
   staggerTimer: 0
   lightStaggerDuration: 0.3
@@ -1746,8 +1746,11 @@ MonoBehaviour:
   magentaDamageTakenMultiplier: 1.25
   yellowLifeStealPercentage: 0.15
   isWithYellowLifestealMark: 0
-  cyanHealthRegen: 0
-  cyanSlowEffect: 0
+  cyanHealthRegen: 0.2
+  isSlowedByCyan: 0
+  cyanSlowEffect: 1
+  isWithCyanIndicatorsOn: 0
+  cyanControlTimer: 0
   enemyCombatScriptRef: {fileID: 0}
   redColorburstVFXSprite: {fileID: 0}
   blueColorburstVFXSprite: {fileID: 0}

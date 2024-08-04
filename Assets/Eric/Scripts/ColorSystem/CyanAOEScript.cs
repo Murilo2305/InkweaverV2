@@ -39,6 +39,8 @@ public class CyanAOEScript : MonoBehaviour
         {
             other.gameObject.GetComponent<EnemyCombatScript>().HealthBarScriptRef.TurnOnEffectIndicator("cyan");
             other.gameObject.GetComponent<EnemyColorSystem>().isSlowedByCyan = true;
+            other.gameObject.GetComponent<EnemyColorSystem>().cyanControlTimer = 0.1f;
+            other.gameObject.GetComponent<EnemyColorSystem>().isWithCyanIndicatorsOn = true;
         }
     }
 
@@ -55,6 +57,8 @@ public class CyanAOEScript : MonoBehaviour
         {
             other.gameObject.GetComponent<EnemyCombatScript>().HealthBarScriptRef.TurnOffEffectIndicator("cyan");
             other.gameObject.GetComponent<EnemyColorSystem>().isSlowedByCyan = true;
+            other.gameObject.GetComponent<EnemyColorSystem>().cyanControlTimer = 0f;
+            other.gameObject.GetComponent<EnemyColorSystem>().isWithCyanIndicatorsOn = false;
         }
     }
 

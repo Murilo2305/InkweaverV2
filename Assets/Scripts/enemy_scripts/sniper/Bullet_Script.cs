@@ -42,7 +42,10 @@ public class Bullet_Script : MonoBehaviour
 
         if(other.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
+            if (!other.gameObject.GetComponent<PlayerCombatScript>().isInvulnerable)
+            {
+                Destroy(gameObject);
+            }
         }
 
     }

@@ -170,18 +170,21 @@ public class PlayerColorSystem : MonoBehaviour
 
             foreach (GameObject enemy in colorburstTargets)
             {
-                EnemyColorSystem enemyColorSystemRef = enemy.GetComponent<EnemyColorSystem>();
-
-                enemyColorSystemRef.OnColorburst();
-                enemy.GetComponent<EnemyCombatScript>().StaggerEnemy(1.0f);
-
-                playerCombatScriptRef.HealPlayer(enemyColorSystemRef.greenStacks * enemyColorSystemRef.greenHealingBurst);
-                if (!greenColorburstVFXSpriteRef.enabled && enemyColorSystemRef.greenStacks > 0)
+                if(enemy != null)
                 {
-                    StartCoroutine(GreenColorburstVFX());
-                }
+                    EnemyColorSystem enemyColorSystemRef = enemy.GetComponent<EnemyColorSystem>();
 
-                enemyColorSystemRef.ResetStacks();
+                    enemyColorSystemRef.OnColorburst();
+                    enemy.GetComponent<EnemyCombatScript>().StaggerEnemy(1.0f);
+
+                    playerCombatScriptRef.HealPlayer(enemyColorSystemRef.greenStacks * enemyColorSystemRef.greenHealingBurst);
+                    if (!greenColorburstVFXSpriteRef.enabled && enemyColorSystemRef.greenStacks > 0)
+                    {
+                        StartCoroutine(GreenColorburstVFX());
+                    }
+
+                    enemyColorSystemRef.ResetStacks();
+                }
             }
 
             colorburstTargets.Clear();

@@ -9,6 +9,7 @@ public class PlayerCombatScript : MonoBehaviour
     //Control Variables
     [Header(" - Control Variables")]
     [SerializeField] private bool canAttack;
+    public bool isInvulnerable;
 
     //Health Parameters
     [Header(" - Health Parameters")]
@@ -108,7 +109,7 @@ public class PlayerCombatScript : MonoBehaviour
         heavyAttackHitbox.enabled = false;
         lightlyChargedWarning.enabled = false;
         fullyChargedWarning.enabled = false;
-
+        isInvulnerable = false;
 
     }
 
@@ -153,59 +154,59 @@ public class PlayerCombatScript : MonoBehaviour
 
 
 
-        //attack function
-        private void LightAttack()
+    //attack function
+    private void LightAttack()
+{
+    currentTimer = maxTimer;
+    playerAnimationScriptRef.SetParameterInPlayerAnimator("isAttacking", true);
+    moveScriptRef.canMove = false;
+    moveScriptRef.canDash = false;
+
+    //first attack in light attack chain
+    if (comboTracker == 0)
     {
-        currentTimer = maxTimer;
-        playerAnimationScriptRef.SetParameterInPlayerAnimator("isAttacking", true);
-        moveScriptRef.canMove = false;
-        moveScriptRef.canDash = false;
-
-        //first attack in light attack chain
-        if (comboTracker == 0)
-        {
-            //control variables
-            comboTracker = 1;
-            playerAnimationScriptRef.SetParameterInPlayerAnimator("ComboTracker", 1);
+        //control variables
+        comboTracker = 1;
+        playerAnimationScriptRef.SetParameterInPlayerAnimator("ComboTracker", 1);
             
-            if (playerSpriteRef.flipX)
-            {
-                lightAttackGFXSprite.flipX = false;
-            }
-            else
-            {
-                lightAttackGFXSprite.flipX = true;
-            }
-
-            //Calls the function that triggers the necessary functions and coroutines to attack
-            GeneralPurposeAtttackFunction(mvLightAttack1, 0.25f, cdLightAttack1);
-        }
-        //second attack in combo
-        else if (comboTracker == 1)
+        if (playerSpriteRef.flipX)
         {
-            comboTracker = 2;
-            playerAnimationScriptRef.SetParameterInPlayerAnimator("ComboTracker", 2);
-
-            if (playerSpriteRef.flipX)
-            {
-                lightAttackGFXSprite.flipX = true;
-            }
-            else
-            {
-                lightAttackGFXSprite.flipX = false;
-            }
-
-            GeneralPurposeAtttackFunction(mvLightAttack2, 0.3f, cdLightAttack2, 0.05f);
+            lightAttackGFXSprite.flipX = false;
         }
-        //last attack in the three-hit combo
-        else if (comboTracker == 2)
+        else
         {
-            comboTracker = 0;
-            playerAnimationScriptRef.SetParameterInPlayerAnimator("ComboTracker", 0);
-
-            GeneralPurposeAtttackFunction(mvLightAttack3, 0.5f, cdLightAttack3, 0.1f);
+            lightAttackGFXSprite.flipX = true;
         }
+
+        //Calls the function that triggers the necessary functions and coroutines to attack
+        GeneralPurposeAtttackFunction(mvLightAttack1, 0.25f, cdLightAttack1);
     }
+    //second attack in combo
+    else if (comboTracker == 1)
+    {
+        comboTracker = 2;
+        playerAnimationScriptRef.SetParameterInPlayerAnimator("ComboTracker", 2);
+
+        if (playerSpriteRef.flipX)
+        {
+            lightAttackGFXSprite.flipX = true;
+        }
+        else
+        {
+            lightAttackGFXSprite.flipX = false;
+        }
+
+        GeneralPurposeAtttackFunction(mvLightAttack2, 0.3f, cdLightAttack2, 0.05f);
+    }
+    //last attack in the three-hit combo
+    else if (comboTracker == 2)
+    {
+        comboTracker = 0;
+        playerAnimationScriptRef.SetParameterInPlayerAnimator("ComboTracker", 0);
+
+        GeneralPurposeAtttackFunction(mvLightAttack3, 0.5f, cdLightAttack3, 0.1f);
+    }
+}
 
     //Combo DecayFunction
     private void ComboDecay()
@@ -513,8 +514,11 @@ public class PlayerCombatScript : MonoBehaviour
     }
     public void DamagePlayer(float amountOfDamage)
     {
-        healthPoints -= amountOfDamage;
-        healthPoints = Mathf.Clamp(healthPoints, 0.0f, maxHealth);
+        if (!isInvulnerable)
+        {
+            healthPoints -= amountOfDamage;
+            healthPoints = Mathf.Clamp(healthPoints, 0.0f, maxHealth);
+        }
     }
 
 

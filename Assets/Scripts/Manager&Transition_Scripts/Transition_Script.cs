@@ -11,7 +11,7 @@ public class Transition_Script : MonoBehaviour
     [SerializeField] bool CanGoOn;
 
 
-    void Start()
+    void Update()
     {
         
         CanGoOn = GameManager.GetComponent<GameManager_Script>().StageCleared;
@@ -28,6 +28,7 @@ public class Transition_Script : MonoBehaviour
             {
 
                 SceneManager.LoadScene(NextScene);
+                print("next Stage");
 
             }
 

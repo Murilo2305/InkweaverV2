@@ -109,10 +109,12 @@ public class PlayerCharacterControlerMovement : MonoBehaviour
     {
         dash.SetParent(null);
 
+        combatScriptRef.isInvulnerable = true;
+
         while (Vector3.Distance(transform.position, dash.position) > 0)
         {
             //remember to alter the direction of raycast bc it isnt working properly
-            if (Physics.Raycast(transform.position, movement, 1.0f))
+            if (Physics.Raycast(transform.position, movement, 1.0f, LayerMask.GetMask("Wall")))
             {
                 break;
             }
@@ -125,6 +127,7 @@ public class PlayerCharacterControlerMovement : MonoBehaviour
 
         isDashing = false;
         dashOnCooldown = true;
+        combatScriptRef.isInvulnerable = false;
 
         yield return new WaitForSeconds(dashCooldown);
 
