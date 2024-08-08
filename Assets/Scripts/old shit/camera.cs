@@ -23,7 +23,7 @@ public class camera : MonoBehaviour
             playerref = GameObject.FindGameObjectWithTag("Player");
         }
 
-        pos = new Vector3(playerref.transform.position.x, playerref.transform.position.y + 6, playerref.transform.position.z - 10);
+        pos = new Vector3(playerref.transform.position.x, playerref.transform.position.y + 6.78f, playerref.transform.position.z - 8.28f);
         transform.SetPositionAndRotation(pos, rot);
     }
 }
