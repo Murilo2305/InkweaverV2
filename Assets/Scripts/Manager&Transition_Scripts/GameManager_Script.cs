@@ -10,19 +10,29 @@ public class GameManager_Script : MonoBehaviour
     [SerializeField] Vector3 PlayerStartPos;
     [SerializeField] List<GameObject> enemies;
     [SerializeField] EnemySpawnerScript enemySpawnerScriptRef;
+    [SerializeField] GameObject PauseSystem;
     public bool StageCleared;
 
     // Start is called before the first frame update
 
     void Start()
     {
-        Instantiate(PlayerRef,PlayerStartPos,PlayerRef.transform.rotation);
+        //Instantiate(PlayerRef,PlayerStartPos,PlayerRef.transform.rotation);
         enemySpawnerScriptRef.SpawnEnemies();
+        Time.timeScale = 1.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+
+            PauseSystem.SetActive(true);
+            Time.timeScale = 0;
+
+        }
         
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 

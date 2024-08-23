@@ -16,6 +16,9 @@ public class PlayerCombatScript : MonoBehaviour
     [SerializeField] private float maxHealth = 100f;
     public float healthPoints = 50f;
 
+    //By Murilo
+    public bool IsDying;
+
     //Attack related parameters
     [Header(" - General Attack Parameters")]
     [SerializeField] private float baseDamage = 5.0f;
@@ -119,7 +122,7 @@ public class PlayerCombatScript : MonoBehaviour
         ComboDecay();
 
         //Attacks if button is pressed down and released quickly
-        if (Input.GetButtonDown("Fire1") && canAttack)
+        if (Input.GetButtonDown("Fire1") && canAttack && Time.timeScale != 0.0f)
         {
             canAttack = false;
 
@@ -138,6 +141,23 @@ public class PlayerCombatScript : MonoBehaviour
 
         // when health is actually implemented remove the folowing
         PlayerHealthBarScriptRef.UpdateHealthBar(healthPoints / maxHealth);
+
+        //By Murilo
+
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+
+            healthPoints = 0.0f;
+
+        }
+
+        if(healthPoints == 0.0f)
+        {
+
+            IsDying = true;
+
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -165,6 +185,7 @@ public class PlayerCombatScript : MonoBehaviour
     //first attack in light attack chain
     if (comboTracker == 0)
     {
+        
         //control variables
         comboTracker = 1;
         playerAnimationScriptRef.SetParameterInPlayerAnimator("ComboTracker", 1);
@@ -180,6 +201,7 @@ public class PlayerCombatScript : MonoBehaviour
 
         //Calls the function that triggers the necessary functions and coroutines to attack
         GeneralPurposeAtttackFunction(mvLightAttack1, 0.25f, cdLightAttack1);
+
     }
     //second attack in combo
     else if (comboTracker == 1)
@@ -520,23 +542,6 @@ public class PlayerCombatScript : MonoBehaviour
             healthPoints = Mathf.Clamp(healthPoints, 0.0f, maxHealth);
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     //Shortcuts to other functions
 

@@ -22,9 +22,21 @@ public class NewPlayerAnimationScript : MonoBehaviour
     private bool dashOnCooldown;
     private PlayerCharacterControlerMovement movementScriptRef;
 
+    //By Murilo
+
+    private bool IsDying;
+    private PlayerCombatScript CombatScript;
+    public Animator DeathAnimator;
+    public GameObject DeathMenuSystem;
+
     private void Start()
     {
+        
         movementScriptRef = playerRef.GetComponent<PlayerCharacterControlerMovement>();
+
+        //By Murilo
+        CombatScript = playerRef.GetComponent<PlayerCombatScript>();
+
     }
         
 
@@ -33,10 +45,26 @@ public class NewPlayerAnimationScript : MonoBehaviour
     {
         isDashing = movementScriptRef.isDashing;
         dashOnCooldown = movementScriptRef.dashOnCooldown;
+
+        //by Murilo
+        IsDying = CombatScript.IsDying;
         
         //movement animator parameters
         playerAnimator.SetBool("IsDashing", isDashing);
         playerAnimator.SetBool("DashCooldown", dashOnCooldown);
+
+        //By Murilo
+
+        if(IsDying == true)
+        {
+
+            Death();
+
+        }
+
+        //By Murilo
+
+        DeathAnimator.SetBool("IsDying", IsDying);
 
         //Movement animations
         if (playerRef.GetComponent<PlayerCharacterControlerMovement>().movement != new Vector3(0, 0, 0))
@@ -60,6 +88,17 @@ public class NewPlayerAnimationScript : MonoBehaviour
             lightlyChargedWarning.flipX = true;
             fullyChargedWarning.flipX = true;
         }
+
+        //By Murilo
+
+        if(IsAnimationAtEnd(DeathAnimator,"PlaceholderDeathAnim"))
+        {
+
+            playerRef.SetActive(false);
+            DeathMenuSystem.SetActive(true);
+
+        }
+
     }
 
     public void SetParameterInPlayerAnimator(string id, bool value)
@@ -96,5 +135,38 @@ public class NewPlayerAnimationScript : MonoBehaviour
     {
         heavyAttackGFXAnimator.SetTrigger("OnAttackTrigger");
     }
+
+
+    //By Murilo
+    public void Death()
+    {
+
+        playerSpriterender.enabled = false;
+        DeathAnimator.gameObject.SetActive(true);
+        Time.timeScale = 0.0f;
+    
+    }
+
+    //By Murilo
+    bool IsAnimationAtEnd(Animator anim, string animName)
+    {
+
+        AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
+        if (stateInfo.IsName(animName))
+        {
+    
+            if (stateInfo.normalizedTime >= 1.0f)
+            {
+                
+                return true;
+
+            }
+
+        }
+
+        return false;
+
+    }
+
 }
 

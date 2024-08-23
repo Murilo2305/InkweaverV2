@@ -53,7 +53,7 @@ public class PlayerColorSystem : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Fire3"))
+        if (Input.GetButtonDown("Fire3") && Time.timeScale != 0.0f)
         {
             SwitchColor();
         }
