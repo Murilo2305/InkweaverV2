@@ -53,7 +53,7 @@
     <UnityVersion>2022.3.10f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\2022.3.10f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\2022.3.10f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
@@ -85,9 +85,11 @@
     <Compile Include="Assets\Eric\Scripts\UserInterfaceScripts\PlayerHealthBarScript.cs" />
     <Compile Include="Assets\Scripts\old shit\PlayerDash.cs" />
     <Compile Include="Assets\Eric\Scripts\UserInterfaceScripts\FollowTarget.cs" />
+    <Compile Include="Assets\Scripts\Manager&amp;Transition_Scripts\Pause_System_Script.cs" />
     <Compile Include="Assets\Eric\Scripts\PlayerScripts\PlayerCharacterControlerMovement.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\AnimatorScripts\SniperAnimationScript.cs" />
     <Compile Include="Assets\Scripts\old shit\camera.cs" />
+    <Compile Include="Assets\Scripts\Manager&amp;Transition_Scripts\DeathMenu_Script.cs" />
     <Compile Include="Assets\Scripts\Manager&amp;Transition_Scripts\Transition_Script.cs" />
     <Compile Include="Assets\Scripts\Manager&amp;Transition_Scripts\GameManager_Script.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\EnemySpawnPosRefScript.cs" />

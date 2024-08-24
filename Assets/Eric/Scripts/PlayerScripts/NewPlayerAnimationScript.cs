@@ -11,28 +11,30 @@ public class NewPlayerAnimationScript : MonoBehaviour
     [SerializeField] private Animator lightAttackGFXAnimator;
     [SerializeField] private Animator heavyAttackGFXAnimator;
     [SerializeField] private SpriteRenderer playerSpriterender;
-    
+
     [Header("DebugStuff")]
     [SerializeField] private SpriteRenderer lightlyChargedWarning;
     [SerializeField] private SpriteRenderer fullyChargedWarning;
 
 
 
+    private bool deathAnimationHasBeenTriggered = false;
     private bool isDashing;
     private bool dashOnCooldown;
     private PlayerCharacterControlerMovement movementScriptRef;
 
     //By Murilo
 
-    private bool IsDying;
+    [SerializeField] private bool IsDying;
     private PlayerCombatScript CombatScript;
-    public Animator DeathAnimator;
     public GameObject DeathMenuSystem;
 
     private void Start()
     {
         
         movementScriptRef = playerRef.GetComponent<PlayerCharacterControlerMovement>();
+
+        DeathMenuSystem = GameObject.FindGameObjectWithTag("CanvasParentObject").transform.GetChild(2).gameObject;
 
         //By Murilo
         CombatScript = playerRef.GetComponent<PlayerCombatScript>();
@@ -62,10 +64,6 @@ public class NewPlayerAnimationScript : MonoBehaviour
 
         }
 
-        //By Murilo
-
-        DeathAnimator.SetBool("IsDying", IsDying);
-
         //Movement animations
         if (playerRef.GetComponent<PlayerCharacterControlerMovement>().movement != new Vector3(0, 0, 0))
         {
@@ -91,7 +89,7 @@ public class NewPlayerAnimationScript : MonoBehaviour
 
         //By Murilo
 
-        if(IsAnimationAtEnd(DeathAnimator,"PlaceholderDeathAnim"))
+        if(IsAnimationAtEnd(playerAnimator,"PlaceholderDeathAnim"))
         {
 
             playerRef.SetActive(false);
@@ -140,10 +138,15 @@ public class NewPlayerAnimationScript : MonoBehaviour
     //By Murilo
     public void Death()
     {
-
-        playerSpriterender.enabled = false;
-        DeathAnimator.gameObject.SetActive(true);
+        playerAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
         Time.timeScale = 0.0f;
+
+        if (!deathAnimationHasBeenTriggered)
+        {
+            deathAnimationHasBeenTriggered = true;
+            playerAnimator.SetTrigger("isDead");
+        }
+
     
     }
 

@@ -17,7 +17,7 @@ public class GameManager_Script : MonoBehaviour
 
     void Start()
     {
-        //Instantiate(PlayerRef,PlayerStartPos,PlayerRef.transform.rotation);
+        Instantiate(PlayerRef,PlayerStartPos,PlayerRef.transform.rotation);
         enemySpawnerScriptRef.SpawnEnemies();
         Time.timeScale = 1.0f;
     }
