@@ -9,6 +9,8 @@ TagManager:
   - EnemyAttack
   - CanvasParentObject
   - EnemySpawnPositionRef
+  - DeathMenuSystem
+  - DashDirection
   layers:
   - Default
   - TransparentFX

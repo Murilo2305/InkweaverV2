@@ -89,7 +89,7 @@ public class PlayerCombatScript : MonoBehaviour
         //refs of player scripts
         moveScriptRef = player.GetComponent<PlayerCharacterControlerMovement>();
         playerColorSystemRef = player.GetComponent<PlayerColorSystem>();
-        playerAnimationScriptRef = player.transform.GetChild(0).GetComponent<NewPlayerAnimationScript>();
+        playerAnimationScriptRef = player.transform.GetChild(2).GetComponent<NewPlayerAnimationScript>();
         PlayerHealthBarScriptRef = PlayerUIRef.transform.GetChild(3).GetComponent<PlayerHealthBarScript>();
         //refs of attack related things
         lightAttackHitbox = lightAttackHitboxGameObjectRef.GetComponent<BoxCollider>();

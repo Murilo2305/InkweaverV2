@@ -15,11 +15,19 @@ public class GameManager_Script : MonoBehaviour
 
     // Start is called before the first frame update
 
+    void Awake()
+    {
+
+        Time.timeScale = 1.0f;
+
+    }
+
     void Start()
     {
+
         Instantiate(PlayerRef,PlayerStartPos,PlayerRef.transform.rotation);
         enemySpawnerScriptRef.SpawnEnemies();
-        Time.timeScale = 1.0f;
+        
     }
 
     // Update is called once per frame

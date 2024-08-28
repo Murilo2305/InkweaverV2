@@ -66,7 +66,7 @@ public class EnemyColorSystem : MonoBehaviour
     [SerializeField] private PlayerCombatScript playerCombatScriptRef;
     [SerializeField] private PlayerHealthBarScript playerHealthBarScriptRef;
     [SerializeField] private NavMeshAgent navMeshAgentRef;
-    [SerializeField] private float enemyDefaultSpeed;
+    [SerializeField] public float enemyDefaultSpeed;
 
 
     private void Start()
@@ -135,7 +135,7 @@ public class EnemyColorSystem : MonoBehaviour
         {
             navMeshAgentRef.speed = 0f;
         }
-        else if (!isRooted && blueStacks == 0)
+        else if (!isRooted && blueStacks == 0 && gameObject.name != "BullEnemy")
         {
             navMeshAgentRef.speed = enemyDefaultSpeed;
         }

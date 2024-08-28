@@ -8,7 +8,7 @@ public class bull_script : MonoBehaviour
 
     public bool hasSeenPlayer;
     public bool once;
-    [SerializeField] float delayBeforeRush,delayInbetweenAttacks;
+    [SerializeField] float minDelayBeforeRush,maxDelayBeforeRush,delayInbetweenAttacks;
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] GameObject PlayerDetector;
     public bool isAttacking;
@@ -22,6 +22,11 @@ public class bull_script : MonoBehaviour
 
     [SerializeField] private bool canAttack;
 
+    //By Murilo
+    [SerializeField] float dashSpeed;
+    [SerializeField] EnemyColorSystem SelfColorSystem;
+    public Vector3 targetpos;
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +38,9 @@ public class bull_script : MonoBehaviour
         enemyCombatScriptRef = gameObject.GetComponent<EnemyCombatScript>();
         bullAnimationScriptRef = gameObject.transform.GetChild(0).GetComponent<BullAnimationScript>();
         
+        //By MUrilo
+        SelfColorSystem = gameObject.GetComponent<EnemyColorSystem>();
+        
         
         attackHitboxRef.enabled = false;
     }
@@ -40,6 +48,9 @@ public class bull_script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        print(agent.speed);
+
         hasSeenPlayer = PlayerDetector.GetComponent<enemy_player_detection>().hasSeenPlayer;
         
         
@@ -85,10 +96,16 @@ public class bull_script : MonoBehaviour
 
             test.SetAnimatorParameter("rushStopBool", false);
         }
+
+        //byMurilo
+
+        targetpos = gameObject.GetComponent<navigation>().destiny.transform.position;
+
     }
 
     IEnumerator bullRampage()
     {
+        agent.speed = dashSpeed;
         print("test");
 
         // Section 1 - Delay before the charge
@@ -96,13 +113,14 @@ public class bull_script : MonoBehaviour
 
         bullAnimationScriptRef.SetAnimatorTrigger("triggerRushBuildup");
 
-        yield return new WaitForSeconds(delayBeforeRush);
-
+        
+        yield return new WaitForSeconds (Random.Range(minDelayBeforeRush,maxDelayBeforeRush));
 
         // Section 2 - Bull charges toward the position the player is/was
+        print("a");
         isAttacking = true;
         bullAnimationScriptRef.SetAnimatorTrigger("triggerRushStart");
-        agent.SetDestination(gameObject.GetComponent<navigation>().destiny.transform.position);
+        agent.SetDestination(targetpos); 
 
         /*During the rush the hitbox is enabled and the enemy cant be hit - Moved to animation event
         attackHitboxRef.enabled = true;
@@ -110,7 +128,10 @@ public class bull_script : MonoBehaviour
         */
 
         //delay before the bull can attack again - This was switched to a timer based on Update() so the "StopAllCoroutines()" from the InterruptAttack() doesnt interfere with the normal delay inbetween attacks
+        
+        
         yield return new WaitForSeconds(delayInbetweenAttacks);
+        
 
         canAttack = true;
 

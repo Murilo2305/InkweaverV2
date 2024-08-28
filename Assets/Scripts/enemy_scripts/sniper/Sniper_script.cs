@@ -33,6 +33,7 @@ public class Sniper_script : MonoBehaviour
     void Update()
     {
 
+        agent.SetDestination(Player.transform.position);
 
         Distance = Vector3.Distance(gameObject.transform.position, Player.transform.position);
 
@@ -51,6 +52,11 @@ public class Sniper_script : MonoBehaviour
                 StartCoroutine(shoot());
                 MinimumCooldownBetweenShots = 3.0f;
                 canShoot = false;
+            }else
+            {
+
+                agent.SetDestination(Player.transform.position);
+
             }
         }
         else if (Distance > ShotDistance && once == false && !IsShooting)
@@ -58,6 +64,11 @@ public class Sniper_script : MonoBehaviour
 
 
             StartCoroutine(Repositioning());
+
+        }else
+        {
+
+            agent.SetDestination(Player.transform.position);
 
         }
 
@@ -118,9 +129,11 @@ public class Sniper_script : MonoBehaviour
     }
 
     public void InterruptAttack() 
-    {
+    {   
+        
         StopAllCoroutines();
         IsShooting = false;
+        canMove = true;
         MinimumCooldownBetweenShots = 2.0f;
     }
 }

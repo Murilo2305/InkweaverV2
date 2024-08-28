@@ -129,6 +129,8 @@ public class PlayerCharacterControlerMovement : MonoBehaviour
         dashOnCooldown = true;
         combatScriptRef.isInvulnerable = false;
 
+        canMove = true;
+
         yield return new WaitForSeconds(dashCooldown);
 
         dashOnCooldown = false;
