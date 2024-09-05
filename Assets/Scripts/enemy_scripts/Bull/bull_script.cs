@@ -49,7 +49,7 @@ public class bull_script : MonoBehaviour
     void Update()
     {
 
-        print(agent.speed);
+//        print(agent.speed);
 
         hasSeenPlayer = PlayerDetector.GetComponent<enemy_player_detection>().hasSeenPlayer;
         
@@ -58,14 +58,34 @@ public class bull_script : MonoBehaviour
         {
             canAttack = true;
             once = false;
-        } 
+        }
+
+        Vector3 directionToPlayer = targetpos - transform.position;
+
+        Debug.DrawRay(transform.position,directionToPlayer, Color.red);
         
-        
+    
         if (hasSeenPlayer == true && canAttack == true)
         {
+            RaycastHit hit;
+            Ray ray = new Ray(transform.position, directionToPlayer);
+            
 
-            StartCoroutine(bullRampage());
-            canAttack = false;
+
+            if (Physics.Raycast(ray, out hit, 5f, LayerMask.GetMask("Wall")) && hit.collider != null)
+            {
+                
+
+                StartCoroutine(bullRampage());
+                canAttack = false;
+            }
+            else
+            {
+
+                agent.SetDestination(transform.position);
+                print("test");
+            }
+
         }
 
 

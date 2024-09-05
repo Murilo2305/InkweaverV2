@@ -2093,7 +2093,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.63
-  m_Speed: 15
+  m_Speed: 100
   m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -2134,7 +2134,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasSeenPlayer: 0
   once: 0
-  delayBeforeRush: 1
+  minDelayBeforeRush: 0
+  maxDelayBeforeRush: 0
   delayInbetweenAttacks: 3
   agent: {fileID: 0}
   PlayerDetector: {fileID: 6223965393308161177}
@@ -2145,6 +2146,9 @@ MonoBehaviour:
   postStaggerTimerBeforeCanAttack: 0
   isPostStaggerTimerActive: 0
   canAttack: 0
+  dashSpeed: 100
+  SelfColorSystem: {fileID: 0}
+  targetpos: {x: 0, y: 0, z: 0}
 --- !u!1 &7013547871965189820
 GameObject:
   m_ObjectHideFlags: 0

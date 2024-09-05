@@ -144,7 +144,7 @@ public class NewPlayerAnimationScript : MonoBehaviour
         if (!deathAnimationHasBeenTriggered)
         {
             deathAnimationHasBeenTriggered = true;
-            playerAnimator.SetTrigger("isDead");
+            playerAnimator.SetTrigger("IsDead");
         }
 
     

@@ -11,6 +11,7 @@ TagManager:
   - EnemySpawnPositionRef
   - DeathMenuSystem
   - DashDirection
+  - Wall
   layers:
   - Default
   - TransparentFX

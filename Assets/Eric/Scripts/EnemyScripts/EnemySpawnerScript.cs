@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EnemySpawnerScript : MonoBehaviour
@@ -10,7 +11,7 @@ public class EnemySpawnerScript : MonoBehaviour
     [SerializeField] GameObject BullPrefab;
     [SerializeField] GameObject DummyPrefab;
     [Header(" - Enemies")]
-    [SerializeField] GameObject[] EnemyPosRefs;
+    [SerializeField] List<GameObject> EnemyPosRefs;
     [Header(" - Debug stuff")]
     public GameObject playerRef;
     public Canvas WorldSpaceCanvas;
@@ -22,9 +23,10 @@ public class EnemySpawnerScript : MonoBehaviour
 
     private void SpawnEnemiesInEnemyPosRef()
     {
-        for (int i = 0; i < EnemyPosRefs.Length; i++)
+        for (int i = 0; i < EnemyPosRefs.Count; i++)
         {
             SpawnEnemy(i);
+            print(i);
         }
     }
 
@@ -63,7 +65,9 @@ public class EnemySpawnerScript : MonoBehaviour
 
     public void SpawnEnemies()
     {
-        EnemyPosRefs = GameObject.FindGameObjectsWithTag("EnemySpawnPositionRef");
+        EnemyPosRefs.AddRange(GameObject.FindGameObjectsWithTag("EnemySpawnPositionRef"));
+      
+            
         playerRef = GameObject.FindGameObjectWithTag("Player");
         WorldSpaceCanvas = GameObject.FindGameObjectWithTag("CanvasParentObject").transform.GetChild(0).GetComponent<Canvas>();
 
