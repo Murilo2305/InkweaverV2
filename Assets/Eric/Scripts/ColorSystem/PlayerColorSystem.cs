@@ -43,7 +43,7 @@ public class PlayerColorSystem : MonoBehaviour
     {
         playerCombatScriptRef = gameObject.GetComponent<PlayerCombatScript>();
         playerMovementScriptRef = gameObject.GetComponent<PlayerCharacterControlerMovement>();
-        playerAnimationScriptRef = gameObject.transform.GetChild(0).GetComponent<NewPlayerAnimationScript>();
+        playerAnimationScriptRef = gameObject.transform.GetChild(2).GetComponent<NewPlayerAnimationScript>();
         greenColorburstVFXSpriteRef = gameObject.transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>();
         playerUIColorBurstCooldownScriptRef = playerCombatScriptRef.PlayerUIRef.transform.GetChild(0).GetChild(0).GetComponent<PlayerUIColorBurstCooldownScripts>();
         playerUIColorBurstCooldownImage1 = playerCombatScriptRef.PlayerUIRef.transform.GetChild(0).GetComponent<Image>();
