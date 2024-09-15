@@ -2146,7 +2146,7 @@ MonoBehaviour:
   postStaggerTimerBeforeCanAttack: 0
   isPostStaggerTimerActive: 0
   canAttack: 0
-  dashSpeed: 100
+  dashSpeed: 1000
   SelfColorSystem: {fileID: 0}
   targetpos: {x: 0, y: 0, z: 0}
 --- !u!1 &7013547871965189820

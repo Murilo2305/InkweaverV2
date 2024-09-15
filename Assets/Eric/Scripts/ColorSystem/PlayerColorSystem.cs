@@ -32,6 +32,8 @@ public class PlayerColorSystem : MonoBehaviour
     [SerializeField] private PlayerCombatScript playerCombatScriptRef;
     [SerializeField] private PlayerCharacterControlerMovement playerMovementScriptRef;
     [SerializeField] private NewPlayerAnimationScript playerAnimationScriptRef;
+    [SerializeField] private BrushTipScript BrushTipScriptRef;
+    [SerializeField] private GameObject PlayerRef;
     [SerializeField] private SpriteRenderer greenColorburstVFXSpriteRef;
     [SerializeField] private PlayerUIColorBurstCooldownScripts playerUIColorBurstCooldownScriptRef;
     [SerializeField] private Image playerUIColorBurstCooldownImage1;
@@ -49,6 +51,8 @@ public class PlayerColorSystem : MonoBehaviour
         playerUIColorBurstCooldownImage1 = playerCombatScriptRef.PlayerUIRef.transform.GetChild(0).GetComponent<Image>();
         playerUIColorBurstCooldownImage2 = playerCombatScriptRef.PlayerUIRef.transform.GetChild(0).GetChild(0).GetComponent<Image>();
         UIColorwheelRef = playerCombatScriptRef.PlayerUIRef.transform.GetChild(1).GetComponent<RectTransform>();
+        PlayerRef = GameObject.FindGameObjectWithTag("Player");
+        BrushTipScriptRef = PlayerRef.transform.GetChild(3).GetComponent<BrushTipScript>();
     }
 
     private void Update()
@@ -166,6 +170,7 @@ public class PlayerColorSystem : MonoBehaviour
             playerUIColorBurstCooldownImage1.enabled = true;
             playerUIColorBurstCooldownImage2.enabled = true;
             playerAnimationScriptRef.SetTriggerInPlayerAnimator("ColorBurst");
+            BrushTipScriptRef.SetTriggerInBrushTip("ColorBurst");
             yield return new WaitForSeconds(0.35f);
 
             foreach (GameObject enemy in colorburstTargets)

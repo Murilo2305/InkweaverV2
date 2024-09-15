@@ -12,6 +12,7 @@ TagManager:
   - DeathMenuSystem
   - DashDirection
   - Wall
+  - PlayerAnimator
   layers:
   - Default
   - TransparentFX

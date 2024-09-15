@@ -72,7 +72,7 @@ public class bull_script : MonoBehaviour
             
 
 
-            if (Physics.Raycast(ray, out hit, 5f, LayerMask.GetMask("Wall")) && hit.collider != null)
+            if (Physics.Raycast(ray, out hit, 5f, LayerMask.GetMask("Wall")) == false )
             {
                 
 
@@ -82,7 +82,7 @@ public class bull_script : MonoBehaviour
             else
             {
 
-                agent.SetDestination(transform.position);
+                agent.SetDestination(targetpos);
                 print("test");
             }
 
@@ -140,7 +140,7 @@ public class bull_script : MonoBehaviour
         print("a");
         isAttacking = true;
         bullAnimationScriptRef.SetAnimatorTrigger("triggerRushStart");
-        agent.SetDestination(targetpos); 
+        agent.SetDestination(gameObject.GetComponent<navigation>().destiny.transform.position); 
 
         /*During the rush the hitbox is enabled and the enemy cant be hit - Moved to animation event
         attackHitboxRef.enabled = true;
@@ -154,6 +154,7 @@ public class bull_script : MonoBehaviour
         
 
         canAttack = true;
+        agent.speed = SelfColorSystem.enemyDefaultSpeed;
 
         /* moved to Animation Event
         attackHitboxRef.enabled = false;

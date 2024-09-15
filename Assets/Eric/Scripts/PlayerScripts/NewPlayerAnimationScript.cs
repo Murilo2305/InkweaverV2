@@ -28,8 +28,9 @@ public class NewPlayerAnimationScript : MonoBehaviour
     [SerializeField] private bool IsDying;
     private PlayerCombatScript CombatScript;
     public GameObject DeathMenuSystem;
+    public Animator BrushTipAnimator;
 
-    private void Start()
+    void Start()
     {
         
         movementScriptRef = playerRef.GetComponent<PlayerCharacterControlerMovement>();
@@ -38,6 +39,8 @@ public class NewPlayerAnimationScript : MonoBehaviour
 
         //By Murilo
         CombatScript = playerRef.GetComponent<PlayerCombatScript>();
+
+        BrushTipAnimator = playerRef.transform.GetChild(3).gameObject.GetComponent<Animator>();
 
     }
         
@@ -89,7 +92,7 @@ public class NewPlayerAnimationScript : MonoBehaviour
 
         //By Murilo
 
-        if(IsAnimationAtEnd(playerAnimator,"PlaceholderDeathAnim"))
+        if(IsAnimationAtEnd(playerAnimator,"DeathAnim"))
         {
 
             playerRef.SetActive(false);
@@ -144,7 +147,8 @@ public class NewPlayerAnimationScript : MonoBehaviour
         if (!deathAnimationHasBeenTriggered)
         {
             deathAnimationHasBeenTriggered = true;
-            playerAnimator.SetTrigger("IsDead");
+            playerAnimator.SetTrigger("IsDying");
+            BrushTipAnimator.SetTrigger("IsDying");
         }
 
     

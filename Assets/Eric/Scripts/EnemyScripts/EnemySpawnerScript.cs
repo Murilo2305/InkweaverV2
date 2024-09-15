@@ -72,5 +72,6 @@ public class EnemySpawnerScript : MonoBehaviour
         WorldSpaceCanvas = GameObject.FindGameObjectWithTag("CanvasParentObject").transform.GetChild(0).GetComponent<Canvas>();
 
         SpawnEnemiesInEnemyPosRef();
+        
     }
 }
