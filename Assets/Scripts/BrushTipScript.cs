@@ -8,7 +8,12 @@ public class BrushTipScript : MonoBehaviour
     public GameObject playerRef;
     public Animator PlayerAnim;
     public SpriteRenderer BrushTipSR;
+
+    [SerializeField] private SpriteRenderer PlayerSR;
+
     public PlayerColorSystem PlayerCS;
+
+
 
     void Start()
     {
@@ -16,6 +21,7 @@ public class BrushTipScript : MonoBehaviour
         playerRef = GameObject.FindGameObjectWithTag("Player");
         PlayerAnim = GameObject.FindGameObjectWithTag("PlayerAnimator").gameObject.GetComponent<Animator>();
         BrushTipSR = gameObject.GetComponent<SpriteRenderer>();
+        PlayerSR = PlayerAnim.gameObject.GetComponent<SpriteRenderer>();
         PlayerCS = playerRef.GetComponent<PlayerColorSystem>();
     }
 
@@ -40,7 +46,8 @@ public class BrushTipScript : MonoBehaviour
             BrushTipSR.color = Color.green;
 
         }
-        
+
+        /*
         if (playerRef.GetComponent<PlayerCharacterControlerMovement>().movement.x > 0 && playerRef != null)
         {
             BrushTipSR.flipX = false;
@@ -79,6 +86,12 @@ public class BrushTipScript : MonoBehaviour
             anim.SetBool("IsMoving",false);
 
         }
+        */
+
+        BrushTipSR.flipX = PlayerSR.flipX;
+
+
+        anim.SetBool("IsMoving", PlayerAnim.GetBool("IsMoving"));
 
         anim.SetBool("IsDashing",PlayerAnim.GetBool("IsDashing"));
         anim.SetBool("IsAttacking",PlayerAnim.GetBool("isAttacking"));
@@ -86,7 +99,10 @@ public class BrushTipScript : MonoBehaviour
         anim.SetBool("IsCharging",PlayerAnim.GetBool("isCharging"));
         anim.SetBool("IsFullyCharged",PlayerAnim.GetBool("isFullyCharged"));
         anim.SetBool("IsHeavyAttacking",PlayerAnim.GetBool("isHeavyAttacking"));
-    
+
+
+        print(anim.speed);
+        print(PlayerAnim.speed);
     }
 
      public void SetTriggerInBrushTip(string id)
