@@ -211,6 +211,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 420693530}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &211931323 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4674179360606667017, guid: 6b3cbf8ccef998c43ba5d3abde863986, type: 3}
+  m_PrefabInstance: {fileID: 914273592}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &283842322
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -453,10 +458,6 @@ PrefabInstance:
       propertyPath: DeathMenuSystem
       value: 
       objectReference: {fileID: 789490521}
-    - target: {fileID: 3402675588081475031, guid: eb2e8d6ea29c926418d4fd78f8c65938, type: 3}
-      propertyPath: m_TagString
-      value: PlayerAnimator
-      objectReference: {fileID: 0}
     - target: {fileID: 4494597437527333103, guid: eb2e8d6ea29c926418d4fd78f8c65938, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -509,13 +510,17 @@ PrefabInstance:
       propertyPath: DeathMenuSystem
       value: 
       objectReference: {fileID: 789490521}
-    - target: {fileID: 7959904588614231496, guid: eb2e8d6ea29c926418d4fd78f8c65938, type: 3}
-      propertyPath: m_Size.x
-      value: 18.45045
+    - target: {fileID: 7039010798567070757, guid: eb2e8d6ea29c926418d4fd78f8c65938, type: 3}
+      propertyPath: FirstFrameOffSet
+      value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7959904588614231496, guid: eb2e8d6ea29c926418d4fd78f8c65938, type: 3}
-      propertyPath: m_Size.y
-      value: 18.45045
+    - target: {fileID: 7039010798567070757, guid: eb2e8d6ea29c926418d4fd78f8c65938, type: 3}
+      propertyPath: ThirdFrameOffSet
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7039010798567070757, guid: eb2e8d6ea29c926418d4fd78f8c65938, type: 3}
+      propertyPath: SecondFrameOffSet
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -960,6 +965,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game_Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 4330959673110724210, guid: bbeb7b6e4ac64cb43b9800108cae17fe, type: 3}
+      propertyPath: MainCamera
+      value: 
+      objectReference: {fileID: 211931323}
     - target: {fileID: 4330959673110724210, guid: bbeb7b6e4ac64cb43b9800108cae17fe, type: 3}
       propertyPath: PauseSystem
       value: 
