@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class bull_script : MonoBehaviour
-{  
-
+{
     public bool hasSeenPlayer;
     public bool once;
     [SerializeField] float minDelayBeforeRush,maxDelayBeforeRush,delayInbetweenAttacks;
@@ -27,8 +26,10 @@ public class bull_script : MonoBehaviour
     [SerializeField] EnemyColorSystem SelfColorSystem;
     public Vector3 targetpos;
 
+    [SerializeField] private GameObject playerRef;
+    [SerializeField] private Vector3 dashTargetPositionReference;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -40,19 +41,17 @@ public class bull_script : MonoBehaviour
         
         //By MUrilo
         SelfColorSystem = gameObject.GetComponent<EnemyColorSystem>();
-        
-        
+
+        playerRef = GameObject.FindGameObjectWithTag("Player");
+
         attackHitboxRef.enabled = false;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
 
-//        print(agent.speed);
-
         hasSeenPlayer = PlayerDetector.GetComponent<enemy_player_detection>().hasSeenPlayer;
-        
         
         if(hasSeenPlayer == true && once == true)
         {
@@ -63,6 +62,7 @@ public class bull_script : MonoBehaviour
         Vector3 directionToPlayer = targetpos - transform.position;
 
         Debug.DrawRay(transform.position,directionToPlayer, Color.red);
+        Debug.DrawRay(transform.position, Vector3.forward * 10f, Color.green);
         
     
         if (hasSeenPlayer == true && canAttack == true)
@@ -72,10 +72,8 @@ public class bull_script : MonoBehaviour
             
 
 
-            if (Physics.Raycast(ray, out hit, 5f, LayerMask.GetMask("Wall")) == false )
+            if (Physics.Raycast(ray, out hit, 5f, LayerMask.GetMask("Wall")) == false && Vector3.Distance(transform.position, targetpos) <= 5f)
             {
-                
-
                 StartCoroutine(bullRampage());
                 canAttack = false;
             }
@@ -103,63 +101,48 @@ public class bull_script : MonoBehaviour
             }
         }
 
-        //print(agent.velocity.magnitude);
 
-        //this part of the script makes the landing work
-        if(isAttacking && agent.velocity.magnitude == 0.0f)
-        {
-            bullAnimationScriptRef.SetAnimatorParameter("rushStopBool", true);
-        }
-        else
-        {
-            BullAnimationScript test = bullAnimationScriptRef;
-
-            test.SetAnimatorParameter("rushStopBool", false);
-        }
 
         //byMurilo
 
         targetpos = gameObject.GetComponent<navigation>().destiny.transform.position;
 
+
+        if (isAttacking)
+        {
+            transform.Translate(dashTargetPositionReference * dashSpeed * Time.deltaTime, Space.World);
+            agent.SetDestination(transform.position);
+        }
     }
 
     IEnumerator bullRampage()
     {
-        agent.speed = dashSpeed;
-        print("test");
 
-        // Section 1 - Delay before the charge
+        agent.speed = 0;
         agent.SetDestination(transform.position);
 
         bullAnimationScriptRef.SetAnimatorTrigger("triggerRushBuildup");
 
-        
-        yield return new WaitForSeconds (Random.Range(minDelayBeforeRush,maxDelayBeforeRush));
+        yield return new WaitForSeconds(Random.Range(minDelayBeforeRush, maxDelayBeforeRush));
 
-        // Section 2 - Bull charges toward the position the player is/was
-        print("a");
-        isAttacking = true;
         bullAnimationScriptRef.SetAnimatorTrigger("triggerRushStart");
-        agent.SetDestination(gameObject.GetComponent<navigation>().destiny.transform.position); 
+        dashTargetPositionReference = Vector3.Normalize(playerRef.transform.position - transform.position);
 
-        /*During the rush the hitbox is enabled and the enemy cant be hit - Moved to animation event
-        attackHitboxRef.enabled = true;
-        enemyCombatScriptRef.isHittable = false;
-        */
+        yield return new WaitForSeconds(0.75f);
+        
+        bullAnimationScriptRef.SetAnimatorParameter("rushStopBool", true);
+    
+        
 
-        //delay before the bull can attack again - This was switched to a timer based on Update() so the "StopAllCoroutines()" from the InterruptAttack() doesnt interfere with the normal delay inbetween attacks
-        
-        
         yield return new WaitForSeconds(delayInbetweenAttacks);
         
 
         canAttack = true;
         agent.speed = SelfColorSystem.enemyDefaultSpeed;
 
-        /* moved to Animation Event
-        attackHitboxRef.enabled = false;
-        enemyCombatScriptRef.isHittable = true;
-        */
+
+
+
     }
 
 
@@ -171,7 +154,12 @@ public class bull_script : MonoBehaviour
         postStaggerTimerBeforeCanAttack = 0.5f;
         isPostStaggerTimerActive = true;
         enemyCombatScriptRef.isHittable = true;
+
+        attackHitboxRef.enabled = false;
+        enemyCombatScriptRef.isHittable = true;
+        isAttacking = false;
     }
+
 
     //Animation Events
     
@@ -180,6 +168,7 @@ public class bull_script : MonoBehaviour
         print("rush start");
         attackHitboxRef.enabled = true;
         enemyCombatScriptRef.isHittable = false;
+        isAttacking = true;
     }
 
     public void AnimationEventRushEnd()
@@ -188,10 +177,8 @@ public class bull_script : MonoBehaviour
         attackHitboxRef.enabled = false;
         enemyCombatScriptRef.isHittable = true;
         isAttacking = false;
-        
-        /*
-        //this substitutes the delay on the coroutine inbetween attacks
-        timerBeforeCanAttack = delayInbetweenAttacks;
-        */    
+        bullAnimationScriptRef.SetAnimatorParameter("rushStopBool", false);
+
+        agent.SetDestination(targetpos);
     }
 }

@@ -28,19 +28,19 @@ public class BrushTipScript : MonoBehaviour
     void Update()
     {
 
-        if(PlayerCS.red == true)
+        if (PlayerCS.red == true)
         {
 
             BrushTipSR.color = Color.red;
 
         }
-        if(PlayerCS.blue == true)
+        if (PlayerCS.blue == true)
         {
 
             BrushTipSR.color = Color.blue;
 
         }
-        if(PlayerCS.green == true)
+        if (PlayerCS.green == true)
         {
 
             BrushTipSR.color = Color.green;
@@ -90,8 +90,14 @@ public class BrushTipScript : MonoBehaviour
 
         BrushTipSR.flipX = PlayerSR.flipX;
 
-
-        anim.SetBool("IsMoving", PlayerAnim.GetBool("IsMoving"));
+        if (anim.GetBool("IsHeavyAttacking"))
+        {
+            anim.SetBool("IsMoving", false);
+        }
+        else
+        {
+            anim.SetBool("IsMoving", PlayerAnim.GetBool("IsMoving"));
+        }
 
         anim.SetBool("IsDashing",PlayerAnim.GetBool("IsDashing"));
         anim.SetBool("IsAttacking",PlayerAnim.GetBool("isAttacking"));
@@ -99,10 +105,6 @@ public class BrushTipScript : MonoBehaviour
         anim.SetBool("IsCharging",PlayerAnim.GetBool("isCharging"));
         anim.SetBool("IsFullyCharged",PlayerAnim.GetBool("isFullyCharged"));
         anim.SetBool("IsHeavyAttacking",PlayerAnim.GetBool("isHeavyAttacking"));
-
-
-        print(anim.speed);
-        print(PlayerAnim.speed);
     }
 
      public void SetTriggerInBrushTip(string id)

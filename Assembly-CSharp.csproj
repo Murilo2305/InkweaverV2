@@ -101,6 +101,7 @@
     <Compile Include="Assets\Eric\Scripts\ColorSystem\PlayerColorSystem.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\AnimatorScripts\MinionAnimationScript.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\enemy_hit_and_Damage.cs" />
+    <Compile Include="Assets\Eric\Scripts\PlayerScripts\DashAfterImageScript.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\EnemyAttackHitboxScript.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\minion\minion_seeking_mechanism.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\sniper\Bullet_Script.cs" />

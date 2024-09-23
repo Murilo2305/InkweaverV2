@@ -8,4 +8,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Stages/Stage1/Stage1_Segment1.unity
     guid: 4c988e29ccfebf8488d621bb8cf2f65a
+  - enabled: 1
+    path: Assets/Stages/Stage1/Stage1_Segment2.unity
+    guid: cc4bedd4de9d8ba4397a36024ecb1fa7
+  - enabled: 1
+    path: Assets/Stages/Stage1/Stage1_Segment3.unity
+    guid: f783e108521304148a9e325baf232fde
+  - enabled: 1
+    path: Assets/Stages/Stage1/Stage1_Segment4.unity
+    guid: 44d6179b5bbd81d4996c71bf9b74eef6
+  - enabled: 1
+    path: Assets/Stages/Stage1/Stage1_Segment5.unity
+    guid: 03921aec166be6642bef68dbdda7d119
+  - enabled: 1
+    path: Assets/Stages/Stage1/Stage1_Segment6.unity
+    guid: d8a4a158a982ac441bf61575382b120a
+  - enabled: 1
+    path: Assets/Stages/Stage1/Stage1_Segment7.unity
+    guid: d5ef13b01ff421e468853b93848f1817
   m_configObjects: {}
