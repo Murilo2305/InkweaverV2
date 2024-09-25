@@ -24,6 +24,16 @@ public class Pause_System_Script : MonoBehaviour
 
         PauseSystem.SetActive(false);
         Time.timeScale = 1.0f;
+        print("a");
 
     }
+
+    public void Quit()
+    {
+
+        Application.Quit();
+        print("a");
+
+    }
+
 }
