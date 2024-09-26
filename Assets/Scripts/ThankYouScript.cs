@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Pause_System_Script : MonoBehaviour
+public class ThankYouScript : MonoBehaviour
 {
-
-    [SerializeField] GameObject PauseSystem;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -20,12 +17,11 @@ public class Pause_System_Script : MonoBehaviour
         
     }
 
-    public void Resume()
+    public void Retry()
     {
 
-        PauseSystem.SetActive(false);
-        Time.timeScale = 1.0f;
         print("a");
+        SceneManager.LoadScene("Stage1_Segment1");
 
     }
 
@@ -33,15 +29,6 @@ public class Pause_System_Script : MonoBehaviour
     {
 
         Application.Quit();
-        print("a");
 
     }
-
-    public void Restart()
-    {
-
-        SceneManager.LoadScene("Stage1_Segment1");
-
-    }
-
 }
