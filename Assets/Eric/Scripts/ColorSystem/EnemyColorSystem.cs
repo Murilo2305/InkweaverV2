@@ -15,7 +15,7 @@ public class EnemyColorSystem : MonoBehaviour
 
     [Header("Timer Parameters")]
     public float debuffTimer;
-    public float maxDebuffTimer = 5;
+    public float maxDebuffTimer = 8;
 
     [Header(" - Red parameters")]
     public byte redStacks;

@@ -24,8 +24,8 @@ public class Pause_System_Script : MonoBehaviour
     {
 
         PauseSystem.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1.0f;
-        print("a");
 
     }
 

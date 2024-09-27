@@ -2032,14 +2032,14 @@ MonoBehaviour:
   debuffsActive: 0
   multiplierCap: 10
   debuffTimer: 0
-  maxDebuffTimer: 5
+  maxDebuffTimer: 8
   redStacks: 0
   redDoTApplied: 0
   damageOverTime: 0.1
   redActiveDamage: 15
   greenStacks: 0
   greenHealthRegen: 0.2
-  greenHealingBurst: 5
+  greenHealingBurst: 9
   canBeRooted: 0
   blueStacks: 0
   blueSlow: 0.05
@@ -2151,7 +2151,6 @@ MonoBehaviour:
   targetpos: {x: 0, y: 0, z: 0}
   playerRef: {fileID: 0}
   dashTargetPositionReference: {x: 0, y: 0, z: 0}
-  rigidBodyRef: {fileID: 0}
 --- !u!1 &7013547871965189820
 GameObject:
   m_ObjectHideFlags: 0

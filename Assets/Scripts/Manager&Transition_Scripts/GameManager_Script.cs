@@ -25,6 +25,7 @@ public class GameManager_Script : MonoBehaviour
     void Start()
     {
 
+
         Instantiate(PlayerRef,PlayerStartPos,PlayerRef.transform.rotation);
         enemySpawnerScriptRef.SpawnEnemies();
         
@@ -33,12 +34,12 @@ public class GameManager_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print(Cursor.lockState);
 
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
 
-            PauseSystem.SetActive(true);
-            Time.timeScale = 0;
+            PauseGame();
 
         }
         
@@ -58,5 +59,12 @@ public class GameManager_Script : MonoBehaviour
 
     }
 
+
+    private void PauseGame()
+    {
+        PauseSystem.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 0;
+    }
 }
 

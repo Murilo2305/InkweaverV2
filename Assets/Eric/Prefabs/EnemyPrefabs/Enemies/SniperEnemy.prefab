@@ -282,7 +282,7 @@ MonoBehaviour:
   debuffsActive: 0
   multiplierCap: 10
   debuffTimer: 0
-  maxDebuffTimer: 5
+  maxDebuffTimer: 8
   redStacks: 0
   redDoTApplied: 0
   damageOverTime: 0.1
