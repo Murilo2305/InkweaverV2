@@ -8,16 +8,9 @@ public class Pause_System_Script : MonoBehaviour
 
     [SerializeField] GameObject PauseSystem;
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void Resume()

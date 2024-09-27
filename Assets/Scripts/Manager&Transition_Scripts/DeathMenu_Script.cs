@@ -5,16 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class DeathMenu_Script : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    
+    void OnEnable()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void retry()

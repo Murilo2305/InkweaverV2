@@ -3334,6 +3334,10 @@ PrefabInstance:
       propertyPath: m_ReferencePixelsPerUnit
       value: 95
       objectReference: {fileID: 0}
+    - target: {fileID: 7473412293432365034, guid: b3fdcbbfe230ed149bfd5c09b9b37ff5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7895137691827540269, guid: b3fdcbbfe230ed149bfd5c09b9b37ff5, type: 3}
       propertyPath: m_Name
       value: Canvases

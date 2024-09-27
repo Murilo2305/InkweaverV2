@@ -25,7 +25,7 @@ public class GameManager_Script : MonoBehaviour
     void Start()
     {
 
-
+        Cursor.lockState = CursorLockMode.Locked;
         Instantiate(PlayerRef,PlayerStartPos,PlayerRef.transform.rotation);
         enemySpawnerScriptRef.SpawnEnemies();
         
