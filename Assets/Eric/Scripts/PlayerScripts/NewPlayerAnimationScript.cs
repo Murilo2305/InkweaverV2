@@ -29,9 +29,17 @@ public class NewPlayerAnimationScript : MonoBehaviour
     private PlayerCombatScript CombatScript;
     public GameObject DeathMenuSystem;
     public Animator BrushTipAnimator;
+    [SerializeField] GameObject BrushTipGFX;
 
     void Start()
     {
+
+        BrushTipGFX = playerRef.transform.GetChild(3).gameObject;
+
+        transform.position = new Vector3(0f,1.73f,transform.position.z);
+        transform.localScale = new Vector3(0.2f,0.2f,0.2f);
+        BrushTipGFX.transform.position = new Vector3(0f,1.73f,BrushTipGFX.transform.position.z);
+        BrushTipGFX.transform.localScale = new Vector3(0.2f,0.2f,0.2f);
         
         movementScriptRef = playerRef.GetComponent<PlayerCharacterControlerMovement>();
 
@@ -147,6 +155,22 @@ public class NewPlayerAnimationScript : MonoBehaviour
         if (!deathAnimationHasBeenTriggered)
         {
             deathAnimationHasBeenTriggered = true;
+            if(playerSpriterender.flipX == false)
+            {
+            transform.position = new Vector3(transform.position.x+0.97f,transform.position.y-0.41f,transform.position.z);
+            }else
+            {
+            transform.position = new Vector3(transform.position.x-0.97f,transform.position.y-0.41f,transform.position.z);
+            }
+            transform.localScale = new Vector3(0.23f,0.23f,0.2f);
+            if(playerSpriterender.flipX == true)
+            {
+            BrushTipGFX.transform.position = new Vector3(BrushTipGFX.transform.position.x-0.97f,BrushTipGFX.transform.position.y-0.41f,BrushTipGFX.transform.position.z);
+            }else
+            {
+            BrushTipGFX.transform.position = new Vector3(BrushTipGFX.transform.position.x+0.97f,BrushTipGFX.transform.position.y-0.41f,BrushTipGFX.transform.position.z);
+            }
+            BrushTipGFX.transform.localScale = new Vector3(0.23f,0.23f,0.2f);
             playerAnimator.SetTrigger("IsDying");
             BrushTipAnimator.SetTrigger("IsDying");
         }
