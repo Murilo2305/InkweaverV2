@@ -39,6 +39,8 @@ public class EnemyCombatScript : MonoBehaviour
 
     [SerializeField] GameObject Cam;
     [SerializeField] CamShake_Script CamManager;
+    [SerializeField] Animator CamAnim;
+    [SerializeField] GameObject ActualCamera;
 
 
 
@@ -62,7 +64,9 @@ public class EnemyCombatScript : MonoBehaviour
 
         staggerScriptRef.enemyType = enemyType.ToString().ToUpper();
         Cam = GameObject.FindGameObjectWithTag("CamManager");
+        ActualCamera = Cam.transform.GetChild(0).gameObject;
         CamManager = Cam.GetComponent<CamShake_Script>();
+        CamAnim = ActualCamera.GetComponent<Animator>();
     }
 
     private void Update()
@@ -127,8 +131,12 @@ public class EnemyCombatScript : MonoBehaviour
 
             //Subtracts hp from the attack received
             DamageEnemy(HitboxScriptRef.damage);
+            if(CamAnim.GetBool("Shake1") == false && CamAnim.GetBool("Shake2") == false && CamAnim.GetBool("Shake3") == false)
+            {
+                
             CamManager.Shake();
-            
+
+            }
 
             //Stacks the ink the player had equipped at the time of the hit
             AddInk(HitboxScriptRef.isRed, HitboxScriptRef.isGreen, HitboxScriptRef.isBlue, HitboxScriptRef.stacksOfInk);
