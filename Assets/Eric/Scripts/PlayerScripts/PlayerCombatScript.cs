@@ -82,8 +82,7 @@ public class PlayerCombatScript : MonoBehaviour
 
      // By Murilo
 
-    
-
+    [SerializeField] DamageVignete_Script Vignete;
 
     private void Start()
     {
@@ -108,7 +107,7 @@ public class PlayerCombatScript : MonoBehaviour
         playerColorSystemRef.playerHealthBarScriptRef = PlayerHealthBarScriptRef;
 
         
-        
+        Vignete = GameObject.FindGameObjectWithTag("DamageVignete").gameObject.GetComponent<DamageVignete_Script>();
 
 
         //redundancies
@@ -541,6 +540,7 @@ public class PlayerCombatScript : MonoBehaviour
         {
             healthPoints -= amountOfDamage;
             healthPoints = Mathf.Clamp(healthPoints, 0.0f, maxHealth);
+            Vignete.Fade();
         }
     }
 
