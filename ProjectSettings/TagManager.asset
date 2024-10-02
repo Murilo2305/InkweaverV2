@@ -13,6 +13,7 @@ TagManager:
   - DashDirection
   - Wall
   - PlayerAnimator
+  - CamManager
   layers:
   - Default
   - TransparentFX

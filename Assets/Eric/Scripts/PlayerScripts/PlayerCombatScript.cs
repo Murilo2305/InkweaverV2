@@ -80,6 +80,10 @@ public class PlayerCombatScript : MonoBehaviour
     public GameObject PlayerUIRef;
     public PlayerHealthBarScript PlayerHealthBarScriptRef;
 
+     // By Murilo
+
+    
+
 
     private void Start()
     {
@@ -102,6 +106,9 @@ public class PlayerCombatScript : MonoBehaviour
 
         //Setting Refs in other scripts
         playerColorSystemRef.playerHealthBarScriptRef = PlayerHealthBarScriptRef;
+
+        
+        
 
 
         //redundancies
@@ -143,13 +150,6 @@ public class PlayerCombatScript : MonoBehaviour
         PlayerHealthBarScriptRef.UpdateHealthBar(healthPoints / maxHealth);
 
         //By Murilo
-
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
-
-            healthPoints = 0.0f;
-
-        }
 
         if(healthPoints == 0.0f)
         {
@@ -351,6 +351,7 @@ public class PlayerCombatScript : MonoBehaviour
         StartCoroutine(EnableAndDisableHitbox(hitBoxDuration, delayBeforeAttacking, isHeavyAttack));
         //time before the player can attack again
         StartCoroutine(attackCooldown(cooldownForTheAttack));
+        
     }
 
 
@@ -550,16 +551,19 @@ public class PlayerCombatScript : MonoBehaviour
     private void GeneralPurposeAtttackFunction(float motionValue, float hitBoxDuration, float cooldownForTheAttack)
     {
         GeneralPurposeAtttackFunction(motionValue, hitBoxDuration, cooldownForTheAttack, 0.0f, false);
+        
     }
     //case in which the function is called without delay-> defaults to no delay
     private void GeneralPurposeAtttackFunction(float motionValue, float hitBoxDuration, float cooldownForTheAttack, bool isHeavyAttack)
     {
         GeneralPurposeAtttackFunction(motionValue, hitBoxDuration, cooldownForTheAttack, 0.0f, isHeavyAttack);
+        
     }
     //case in which the function is called without HeavyAttack specification -> defaults to light attack
     private void GeneralPurposeAtttackFunction(float motionValue, float hitBoxDuration, float cooldownForTheAttack, float delayBeforeAttacking)
     {
         GeneralPurposeAtttackFunction(motionValue, hitBoxDuration, cooldownForTheAttack, delayBeforeAttacking, false);
+        
     }
    
 

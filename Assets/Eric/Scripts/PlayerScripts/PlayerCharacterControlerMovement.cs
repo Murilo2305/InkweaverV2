@@ -62,6 +62,8 @@ public class PlayerCharacterControlerMovement : MonoBehaviour
         //Move script set to its own function
         PlayerMove();
 
+        transform.position = new Vector3(transform.position.x,0f,transform.position.z);
+
         //dashing
         if (Input.GetButtonDown("Jump") && canDash && movement != new Vector3(0.0f, 0.0f, 0.0f) && !combatScriptRef.isHeavyAttacking && !combatScriptRef.isCharging)
         {

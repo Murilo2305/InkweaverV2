@@ -35,6 +35,11 @@ public class EnemyCombatScript : MonoBehaviour
     [SerializeField] StaggerScript staggerScriptRef;
     [SerializeField] private PlayerCombatScript playerCombatScriptRef;
 
+    // By Murilo
+
+    [SerializeField] GameObject Cam;
+    [SerializeField] CamShake_Script CamManager;
+
 
 
     //enemyTypeSetup
@@ -56,6 +61,8 @@ public class EnemyCombatScript : MonoBehaviour
         isHittable = true;
 
         staggerScriptRef.enemyType = enemyType.ToString().ToUpper();
+        Cam = GameObject.FindGameObjectWithTag("CamManager");
+        CamManager = Cam.GetComponent<CamShake_Script>();
     }
 
     private void Update()
@@ -120,6 +127,8 @@ public class EnemyCombatScript : MonoBehaviour
 
             //Subtracts hp from the attack received
             DamageEnemy(HitboxScriptRef.damage);
+            CamManager.Shake();
+            
 
             //Stacks the ink the player had equipped at the time of the hit
             AddInk(HitboxScriptRef.isRed, HitboxScriptRef.isGreen, HitboxScriptRef.isBlue, HitboxScriptRef.stacksOfInk);
@@ -177,6 +186,7 @@ public class EnemyCombatScript : MonoBehaviour
         if (imediate)
         {
             InstantUpdateHealthBar();
+
         }
         else
         {
@@ -231,6 +241,7 @@ public class EnemyCombatScript : MonoBehaviour
 
             enemyColorSystemRef.AddStacks("BLUE", Stacks);
         }
+        
     }
 
     public void StaggerEnemy(float staggerDuration)
