@@ -95,12 +95,14 @@
     <Compile Include="Assets\Scripts\Manager&amp;Transition_Scripts\Transition_Script.cs" />
     <Compile Include="Assets\Scripts\Manager&amp;Transition_Scripts\GameManager_Script.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\EnemySpawnPosRefScript.cs" />
+    <Compile Include="Assets\Scripts\Manager&amp;Transition_Scripts\CamShake_Script.cs" />
     <Compile Include="Assets\Eric\Scripts\Miscellaneous\SpriteScript.cs" />
     <Compile Include="Assets\Scripts\old shit\PlayerAnimationScript.cs" />
     <Compile Include="Assets\Scripts\BrushTipScript.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\StaggerScript.cs" />
     <Compile Include="Assets\Eric\Scripts\PlayerScripts\NewPlayerDirectionalIndicator.cs" />
     <Compile Include="Assets\Eric\Scripts\ColorSystem\PlayerColorSystem.cs" />
+    <Compile Include="Assets\Scripts\Manager&amp;Transition_Scripts\DamageVignete_Script.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\AnimatorScripts\MinionAnimationScript.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\enemy_hit_and_Damage.cs" />
     <Compile Include="Assets\Eric\Scripts\PlayerScripts\DashAfterImageScript.cs" />
