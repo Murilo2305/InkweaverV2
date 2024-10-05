@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Stages/Tutorial_Stage2.unity
     guid: 04bd8b825511b6343886ca30a3b70165
   - enabled: 1
+    path: Assets/Stages/Tutorial_Stage3.unity
+    guid: 9f7579e9c51c85a44ac24204b0143c3b
+  - enabled: 1
     path: Assets/Stages/Stage1/Stage1_Segment1.unity
     guid: 4c988e29ccfebf8488d621bb8cf2f65a
   - enabled: 1

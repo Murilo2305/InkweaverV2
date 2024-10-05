@@ -1944,7 +1944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6439286391966408827, guid: 363679b09089f7d4090ae4924c2c0ff0, type: 3}
       propertyPath: NextScene
-      value: Stage1_Segment1
+      value: Tutorial_Stage3
       objectReference: {fileID: 0}
     - target: {fileID: 6439286391966408827, guid: 363679b09089f7d4090ae4924c2c0ff0, type: 3}
       propertyPath: GameManager
