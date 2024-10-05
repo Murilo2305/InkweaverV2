@@ -94,6 +94,7 @@
     <Compile Include="Assets\Scripts\Manager&amp;Transition_Scripts\DeathMenu_Script.cs" />
     <Compile Include="Assets\Scripts\Manager&amp;Transition_Scripts\Transition_Script.cs" />
     <Compile Include="Assets\Scripts\Manager&amp;Transition_Scripts\GameManager_Script.cs" />
+    <Compile Include="Assets\Eric\Scripts\InputScript\Byjedimndtrick\InputUtility.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\EnemySpawnPosRefScript.cs" />
     <Compile Include="Assets\Scripts\Manager&amp;Transition_Scripts\CamShake_Script.cs" />
     <Compile Include="Assets\Eric\Scripts\Miscellaneous\SpriteScript.cs" />
