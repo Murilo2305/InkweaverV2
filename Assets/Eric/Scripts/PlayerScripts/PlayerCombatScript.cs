@@ -84,6 +84,7 @@ public class PlayerCombatScript : MonoBehaviour
 
     [SerializeField] DamageVignete_Script Vignete;
 
+    
     private void Start()
     {
         //SettingOtherRefs
@@ -128,19 +129,19 @@ public class PlayerCombatScript : MonoBehaviour
         ComboDecay();
 
         //Attacks if button is pressed down and released quickly
-        if (Input.GetButtonDown("Fire1") && canAttack && Time.timeScale != 0.0f)
+        if ((Input.GetButtonDown("Fire1") && canAttack && Time.timeScale != 0.0f) || (InputUtility.RTriggerPulled && canAttack && Time.timeScale != 0.0f))
         {
             canAttack = false;
 
             LightAttack();
         }
         //If the player holds down, calls up the charging function
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Fire1") || InputUtility.RTriggerHeld)
         {
             ChargingAttack();
         }
         //on release, calls the charge attack function
-        if (Input.GetButtonUp("Fire1"))
+        if (Input.GetButtonUp("Fire1") || InputUtility.RTriggerReleased)
         {
             ReleaseChargeAttack();
         }
@@ -156,6 +157,12 @@ public class PlayerCombatScript : MonoBehaviour
             IsDying = true;
 
         }
+
+
+
+        print(Input.GetAxis("RTrigger"));
+        
+     
 
     }
 
@@ -543,6 +550,17 @@ public class PlayerCombatScript : MonoBehaviour
             Vignete.Fade();
         }
     }
+
+   
+
+
+
+
+
+
+
+
+
 
     //Shortcuts to other functions
 

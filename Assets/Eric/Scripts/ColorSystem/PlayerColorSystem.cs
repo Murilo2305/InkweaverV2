@@ -61,7 +61,7 @@ public class PlayerColorSystem : MonoBehaviour
         {
             SwitchColor();
         }
-        if (Input.GetButtonDown("Fire2"))
+        if (Input.GetButtonDown("Fire2") || InputUtility.LTriggerPulled)
         {
             StartCoroutine(Colorburst());
         }
