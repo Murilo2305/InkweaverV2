@@ -8,7 +8,7 @@ public class enemy_player_detection : MonoBehaviour
     public bool hasSeenPlayer;
     public Vector3 playerRef;
     public GameObject PLAYER;
-
+    public bool isMoving;
 
 
     // Start is called before the first frame update
@@ -26,6 +26,8 @@ public class enemy_player_detection : MonoBehaviour
     void Update()
     {
         
+        isMoving = hasSeenPlayer;
+
     }
 
     private void OnTriggerEnter(Collider other)

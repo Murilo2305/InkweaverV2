@@ -686,8 +686,8 @@ Transform:
   m_GameObject: {fileID: 2104032409219961330}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.028, y: 1.092, z: 0}
-  m_LocalScale: {x: 0.26, y: 0.26, z: 0.26}
+  m_LocalPosition: {x: -0.028, y: 1.56, z: 0}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7654384085101747549}
@@ -735,7 +735,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 713c65c3fbc8cce49a49b9a1cc37cdb0, type: 3}
-  m_Color: {r: 1, g: 0.07075471, b: 0.07075471, a: 1}
+  m_Color: {r: 0.990566, g: 0.990566, b: 0.990566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2015,6 +2015,10 @@ MonoBehaviour:
   enemyColorSystemRef: {fileID: 0}
   staggerScriptRef: {fileID: 0}
   playerCombatScriptRef: {fileID: 0}
+  Cam: {fileID: 0}
+  CamManager: {fileID: 0}
+  CamAnim: {fileID: 0}
+  ActualCamera: {fileID: 0}
 --- !u!114 &6677854887286072815
 MonoBehaviour:
   m_ObjectHideFlags: 0

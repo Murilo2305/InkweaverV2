@@ -28,10 +28,12 @@ public class bull_script : MonoBehaviour
 
     [SerializeField] private GameObject playerRef;
     [SerializeField] private Vector3 dashTargetPositionReference;
+    public GameObject Self;
 
 
     void Start()
     {
+        Self = gameObject;  
         agent = GetComponent<NavMeshAgent>();
         once = true;
         canAttack = false;

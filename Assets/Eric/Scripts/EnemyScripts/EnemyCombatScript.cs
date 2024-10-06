@@ -41,6 +41,9 @@ public class EnemyCombatScript : MonoBehaviour
     [SerializeField] CamShake_Script CamManager;
     [SerializeField] Animator CamAnim;
     [SerializeField] GameObject ActualCamera;
+    public BullAnimationScript bullAnimScript;
+    public SniperAnimationScript SniperAnimScript;
+    public MinionAnimationScript MinionAnimScript;
 
 
 
@@ -55,6 +58,32 @@ public class EnemyCombatScript : MonoBehaviour
 
     private void Start()
     {
+
+        if(enemyType.ToString().ToUpper().Equals("CONTACTDAMAGE"))
+        {
+
+            bullAnimScript = gameObject.transform.GetChild(0).GetComponent<BullAnimationScript>();
+
+        }else if(enemyType.ToString().ToUpper().Equals("RANGEDPROJECTILE"))
+        {
+
+            SniperAnimScript = gameObject.transform.GetChild(0).GetComponent<SniperAnimationScript>();
+
+        }else if(enemyType.ToString().ToUpper().Equals("MELEE"))
+        {
+
+            MinionAnimScript = gameObject.transform.GetChild(0).GetComponent<MinionAnimationScript>();
+
+        }else
+        {
+
+            SniperAnimScript = null;
+            bullAnimScript = null;
+            MinionAnimScript = null;
+
+        }
+
+
         enemyColorSystemRef = GetComponent<EnemyColorSystem>();
         staggerScriptRef = GetComponent<StaggerScript>();
         playerCombatScriptRef = playerRef.GetComponent<PlayerCombatScript>();
@@ -67,6 +96,7 @@ public class EnemyCombatScript : MonoBehaviour
         ActualCamera = Cam.transform.GetChild(0).gameObject;
         CamManager = Cam.GetComponent<CamShake_Script>();
         CamAnim = ActualCamera.GetComponent<Animator>();
+
     }
 
     private void Update()
@@ -88,7 +118,43 @@ public class EnemyCombatScript : MonoBehaviour
 
         if(healthPoints <= 0.0f && !enemyType.ToString().ToUpper().Equals("DUMMY"))
         {
-            EnemyDied();
+            isDead = true;
+            if(enemyType.ToString().ToUpper().Equals("CONTACTDAMAGE"))
+            {
+                
+                if(bullAnimScript.CanDestroySelf == true)
+                {
+
+                    EnemyDied();
+
+                }
+            
+            }
+
+            if(enemyType.ToString().ToUpper().Equals("RANGEDPROJECTILE"))
+            {
+                isDead = true;
+                if(SniperAnimScript.CanDestroySelf == true)
+                {
+
+                    EnemyDied();
+
+                }
+            
+            }
+
+            if(enemyType.ToString().ToUpper().Equals("MELEE"))
+            {
+                isDead = true;
+                if(MinionAnimScript.CanDestroySelf == true)
+                {
+
+                    EnemyDied();
+
+                }
+            
+            }
+
         }
     }
 
