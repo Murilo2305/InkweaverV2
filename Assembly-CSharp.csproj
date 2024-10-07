@@ -74,6 +74,7 @@
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\EnemyCombatScript.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\enemy_player_detection.cs" />
     <Compile Include="Assets\Scripts\old shit\ScriptTofigureOutTheNameOfTheFaceButtons.cs" />
+    <Compile Include="Assets\Eric\Scripts\Miscellaneous\DamagePlayer.cs" />
     <Compile Include="Assets\Scripts\old shit\Player.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\minion\enemy_damage_radius.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\DummyScripts\EnemyAnimatorScript.cs" />

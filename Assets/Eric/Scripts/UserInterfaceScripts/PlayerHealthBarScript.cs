@@ -64,7 +64,7 @@ public class PlayerHealthBarScript : MonoBehaviour
         while (time < 1)
         {
             ProgressImage.fillAmount = Mathf.Lerp(initialProgress, Progress, time);
-            time += Time.deltaTime * Speed;
+            time += Time.unscaledDeltaTime * Speed;
             yield return null;
         }
 

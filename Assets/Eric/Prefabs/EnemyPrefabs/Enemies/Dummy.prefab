@@ -1319,8 +1319,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d70df6e5fc50ba46acc0fe4751fc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  healthPoints: 100
+  maxHealth: 1000
+  healthPoints: 1000
   isStaggerable: 1
   staggerTimer: 0
   lightStaggerDuration: 0.3
@@ -1337,6 +1337,13 @@ MonoBehaviour:
   enemyColorSystemRef: {fileID: 0}
   staggerScriptRef: {fileID: 0}
   playerCombatScriptRef: {fileID: 0}
+  Cam: {fileID: 0}
+  CamManager: {fileID: 0}
+  CamAnim: {fileID: 0}
+  ActualCamera: {fileID: 0}
+  bullAnimScript: {fileID: 0}
+  SniperAnimScript: {fileID: 0}
+  MinionAnimScript: {fileID: 0}
 --- !u!114 &7853184320848853740
 MonoBehaviour:
   m_ObjectHideFlags: 0

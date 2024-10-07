@@ -36,7 +36,7 @@ public class GameManager_Script : MonoBehaviour
     {
         print(Cursor.lockState);
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetButtonDown("PauseButton"))
         {
 
             PauseGame();

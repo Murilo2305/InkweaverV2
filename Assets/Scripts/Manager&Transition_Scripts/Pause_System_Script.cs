@@ -8,6 +8,17 @@ public class Pause_System_Script : MonoBehaviour
 
     [SerializeField] GameObject PauseSystem;
 
+    private void Update()
+    {
+        if (PauseSystem.activeSelf)
+        {
+            if (Input.GetButtonDown("PauseButton"))
+            {
+                Resume();    
+            }
+        }
+    }
+
     private void OnEnable()
     {
         Cursor.lockState = CursorLockMode.None;
