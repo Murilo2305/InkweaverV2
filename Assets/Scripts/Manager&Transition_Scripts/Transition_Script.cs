@@ -10,11 +10,29 @@ public class Transition_Script : MonoBehaviour
     public string NextScene;
     [SerializeField] bool CanGoOn;
 
+    [SerializeField] private SpriteRenderer ActiveSprite, DeactiveSprite;
+
+    private void Start()
+    {
+        ActiveSprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        DeactiveSprite = transform.GetChild(1).GetComponent<SpriteRenderer>();
+    }
 
     void Update()
     {
         
         CanGoOn = GameManager.GetComponent<GameManager_Script>().StageCleared;
+
+        if (CanGoOn)
+        {
+            ActiveSprite.enabled = true;
+            DeactiveSprite.enabled = false;
+        }
+        else
+        {
+            ActiveSprite.enabled = false;
+            DeactiveSprite.enabled = true;
+        }
 
     }
 

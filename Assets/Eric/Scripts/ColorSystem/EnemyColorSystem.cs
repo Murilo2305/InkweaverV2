@@ -157,6 +157,19 @@ public class EnemyColorSystem : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        HealthBarScriptRef.SetBarColor(Color.white);
+        HealthBarScriptRef.redColorIndicator.SetActive(false);
+        HealthBarScriptRef.greenColorIndicator.SetActive(false);
+        HealthBarScriptRef.blueColorIndicator.SetActive(false);
+        HealthBarScriptRef.bleedIndicator.SetActive(false);
+        HealthBarScriptRef.blueSlowIndicator.SetActive(false);
+        playerHealthBarScriptRef.ChangeHealthBarColor(Color.white);
+        playerHealthBarScriptRef.TurnOffIndicator("green");
+        playerHealthBarScriptRef.TurnOffIndicator("Yellow");
+    }
+
     public void AddStacks(string color, byte Stacks)
     {
         StacksReset = false;

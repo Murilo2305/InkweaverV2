@@ -21,4 +21,9 @@ public class DeathMenu_Script : MonoBehaviour
 
     }
 
+    public void QuitApplication()
+    {
+        Application.Quit();
+    }
+
 }

@@ -48,4 +48,9 @@ public class Pause_System_Script : MonoBehaviour
 
     }
 
+    public void QuitApplication()
+    {
+        Application.Quit();
+    }
+
 }

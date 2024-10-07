@@ -155,10 +155,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 166554720}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &157886532
 MonoBehaviour:
@@ -450,10 +450,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 166554720}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.007}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 576, y: 293}
-  m_SizeDelta: {x: 439.743, y: 439.743}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -384, y: -247}
+  m_SizeDelta: {x: 439.74304, y: 439.74304}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &627473626
 MonoBehaviour:
@@ -1377,15 +1377,15 @@ RectTransform:
   m_GameObject: {fileID: 1786073343}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 15.916409, y: 15.916409, z: 15.916409}
+  m_LocalScale: {x: 1.1246955, y: 1.1246955, z: 1.1246955}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 166554720}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1786073345
 MonoBehaviour:
@@ -1596,6 +1596,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 483760722809360455, guid: 363679b09089f7d4090ae4924c2c0ff0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 094fd06dc78ba9a4d9aea9502c77c3cc, type: 3}
+    - target: {fileID: 2727210362277119181, guid: 363679b09089f7d4090ae4924c2c0ff0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f5d8ea12ba9d44b4db63a14adaa312d4, type: 3}
     - target: {fileID: 2748724035333049535, guid: 363679b09089f7d4090ae4924c2c0ff0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

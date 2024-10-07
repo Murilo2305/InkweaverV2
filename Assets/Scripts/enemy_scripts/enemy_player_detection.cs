@@ -18,6 +18,9 @@ public class enemy_player_detection : MonoBehaviour
         playerRef = GameObject.FindGameObjectWithTag("Player").transform.position;
         PLAYER = GameObject.FindGameObjectWithTag("Player");
 
+        hasSeenPlayer = true;
+
+
         GetComponent<BoxCollider>().enabled = false;
         GetComponent<BoxCollider>().enabled = true;
     }
