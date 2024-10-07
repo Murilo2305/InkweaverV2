@@ -160,8 +160,31 @@ public class PlayerCombatScript : MonoBehaviour
 
 
 
-        print(Input.GetAxis("RTrigger"));
         
+        if (InputUtility.LTriggerHeld)
+        {
+            print("Left Trigger Held");
+        }
+        if (InputUtility.RTriggerHeld)
+        {
+            print("Right Trigger Held");
+        }    
+        if (InputUtility.LTriggerPulled)
+        {
+            print("Left Trigger Pulled");
+        }
+        if (InputUtility.RTriggerPulled)
+        {
+            print("Right Trigger Pulled");
+        }          
+        if (InputUtility.LTriggerReleased)
+        {
+            print("Left Trigger Released");
+        }
+        if (InputUtility.RTriggerReleased)
+        {
+            print("Right Trigger Released");
+        }      
      
 
     }
