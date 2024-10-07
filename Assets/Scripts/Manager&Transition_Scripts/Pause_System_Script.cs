@@ -22,18 +22,18 @@ public class Pause_System_Script : MonoBehaviour
 
     }
 
-    public void Quit()
+    public void Again()
     {
 
-        Application.Quit();
-        print("a");
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
 
     }
 
     public void Restart()
     {
 
-        SceneManager.LoadScene("Stage1_Segment1");
+        SceneManager.LoadScene("Tutorial_Stage1");
 
     }
 

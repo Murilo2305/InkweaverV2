@@ -810,6 +810,9 @@ MonoBehaviour:
   bullScriptRef: {fileID: 0}
   staggerScriptRef: {fileID: 0}
   enemyCombatScriptRef: {fileID: 0}
+  PlayerDetection: {fileID: 0}
+  Self: {fileID: 0}
+  CanDestroySelf: 0
 --- !u!1 &2420459254089857542
 GameObject:
   m_ObjectHideFlags: 0
@@ -1901,6 +1904,7 @@ MonoBehaviour:
   hasSeenPlayer: 0
   playerRef: {x: 0, y: 0, z: 0}
   PLAYER: {fileID: 0}
+  isMoving: 0
 --- !u!65 &1978971170822094897
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2019,6 +2023,10 @@ MonoBehaviour:
   CamManager: {fileID: 0}
   CamAnim: {fileID: 0}
   ActualCamera: {fileID: 0}
+  bullAnimScript: {fileID: 0}
+  SniperAnimScript: {fileID: 0}
+  MinionAnimScript: {fileID: 0}
+  PlayerColorSystemRef: {fileID: 0}
 --- !u!114 &6677854887286072815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2039,16 +2047,16 @@ MonoBehaviour:
   maxDebuffTimer: 8
   redStacks: 0
   redDoTApplied: 0
-  damageOverTime: 0.1
-  redActiveDamage: 15
+  damageOverTime: 1
+  redActiveDamage: 25
   greenStacks: 0
-  greenHealthRegen: 0.2
-  greenHealingBurst: 9
+  greenHealthRegen: 0.05
+  greenHealingBurst: 2
   canBeRooted: 0
   blueStacks: 0
-  blueSlow: 0.05
-  blueRootTime: 0.2
-  blueHardSlow: 0.075
+  blueSlow: 0.08
+  blueRootTime: 0.5
+  blueHardSlow: 0.09
   isRooted: 0
   magentaRB: 0
   yellowRG: 0
@@ -2155,6 +2163,7 @@ MonoBehaviour:
   targetpos: {x: 0, y: 0, z: 0}
   playerRef: {fileID: 0}
   dashTargetPositionReference: {x: 0, y: 0, z: 0}
+  Self: {fileID: 0}
 --- !u!1 &7013547871965189820
 GameObject:
   m_ObjectHideFlags: 0

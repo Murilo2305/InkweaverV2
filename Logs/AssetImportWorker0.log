@@ -1,0 +1,3042 @@
+Using pre-set license
+Built from '2022.3/staging' branch; Version is '2022.3.10f1 (ff3792e53c62) revision 16725906'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22631) 64bit CoreSingleLanguage' Language: 'pt' Physical Memory: 7981 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Users\muril\OneDrive\Área de Trabalho\unity\2022.3.10f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/muril/OneDrive/Área de Trabalho/InkweaverV2
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+56337
+Successfully changed project path to: C:/Users/muril/OneDrive/Área de Trabalho/InkweaverV2
+C:/Users/muril/OneDrive/Área de Trabalho/InkweaverV2
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [15080] Host "[IP] 192.168.15.6 [Port] 0 [Flags] 2 [Guid] 1278391398 [EditorId] 1278391398 [Version] 1048832 [Id] WindowsEditor(7,GodMachine) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [15080] Host "[IP] 192.168.15.6 [Port] 0 [Flags] 2 [Guid] 1278391398 [EditorId] 1278391398 [Version] 1048832 [Id] WindowsEditor(7,GodMachine) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+[Physics::Module] Initialized MultithreadedJobDispatcher with 3 workers.
+Refreshing native plugins compatible for Editor in 227.64 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.10f1 (ff3792e53c62)
+[Subsystems] Discovering subsystems at path C:/Users/muril/OneDrive/Área de Trabalho/unity/2022.3.10f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/muril/OneDrive/Área de Trabalho/InkweaverV2/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) UHD Graphics (ID=0x8a56)
+    Vendor:   Intel
+    VRAM:     3990 MB
+    Driver:   27.20.100.9565
+Initialize mono
+Mono path[0] = 'C:/Users/muril/OneDrive/Área de Trabalho/unity/2022.3.10f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Users/muril/OneDrive/Área de Trabalho/unity/2022.3.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Users/muril/OneDrive/Área de Trabalho/unity/2022.3.10f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56704
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Users/muril/OneDrive/Área de Trabalho/unity/2022.3.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.048830 seconds.
+- Loaded All Assemblies, in  1.533 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.985 seconds
+Domain Reload Profiling: 2518ms
+	BeginReloadAssembly (537ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (7ms)
+	RebuildCommonClasses (169ms)
+	RebuildNativeTypeToScriptingClass (38ms)
+	initialDomainReloadingComplete (254ms)
+	LoadAllAssembliesAndSetupDomain (532ms)
+		LoadAssemblies (519ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (525ms)
+			TypeCache.Refresh (521ms)
+				TypeCache.ScanAssembly (416ms)
+			ScanForSourceGeneratedMonoScriptInfo (1ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (989ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (833ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (27ms)
+			SetLoadedEditorAssemblies (102ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (6ms)
+			ProcessInitializeOnLoadAttributes (484ms)
+			ProcessInitializeOnLoadMethodAttributes (213ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  4.731 seconds
+Refreshing native plugins compatible for Editor in 16.49 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.683 seconds
+Domain Reload Profiling: 7403ms
+	BeginReloadAssembly (636ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (25ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (107ms)
+	RebuildCommonClasses (202ms)
+	RebuildNativeTypeToScriptingClass (37ms)
+	initialDomainReloadingComplete (220ms)
+	LoadAllAssembliesAndSetupDomain (3625ms)
+		LoadAssemblies (2654ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (1362ms)
+			TypeCache.Refresh (1176ms)
+				TypeCache.ScanAssembly (1134ms)
+			ScanForSourceGeneratedMonoScriptInfo (171ms)
+			ResolveRequiredComponents (13ms)
+	FinalizeReload (2683ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1880ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (14ms)
+			SetLoadedEditorAssemblies (11ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (273ms)
+			ProcessInitializeOnLoadAttributes (1390ms)
+			ProcessInitializeOnLoadMethodAttributes (181ms)
+			AfterProcessingInitializeOnLoad (11ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (18ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.13 seconds
+Refreshing native plugins compatible for Editor in 33.08 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4276 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 64 unused Assets / (61.4 KB). Loaded Objects now: 4744.
+Memory consumption went from 146.7 MB to 146.6 MB.
+Total: 10.252400 ms (FindLiveObjects: 0.451900 ms CreateObjectMapping: 0.713400 ms MarkObjects: 8.207000 ms  DeleteObjects: 0.878600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 512832.626154 seconds.
+  path: Assets/Eric/Prefabs/PlayerPrefabs/PaintballProjectile.prefab
+  artifactKey: Guid(5b3476b4543a7bc439d8dcc326515035) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/PlayerPrefabs/PaintballProjectile.prefab using Guid(5b3476b4543a7bc439d8dcc326515035) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84741df18471d8abcf1b8529233a0da6') in 1.354942 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 38
+========================================================================
+Received Import Request.
+  Time since last request: 0.000077 seconds.
+  path: Assets/Eric/Prefabs/PlayerPrefabs/Player.prefab
+  artifactKey: Guid(eb2e8d6ea29c926418d4fd78f8c65938) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/PlayerPrefabs/Player.prefab using Guid(eb2e8d6ea29c926418d4fd78f8c65938) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67d31f2a927ae6a539747e1c2aefec3a') in 14.876160 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 651
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 19.79 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (0.8 KB). Loaded Objects now: 4760.
+Memory consumption went from 80.3 MB to 80.3 MB.
+Total: 155.707700 ms (FindLiveObjects: 1.940700 ms CreateObjectMapping: 0.355400 ms MarkObjects: 152.657300 ms  DeleteObjects: 0.750200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 195.706360 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '602598e21534acd05a4dcd75fd6ac8d5') in 1.275916 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 3.149177 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b64779c7f68af6bbd4d76b04ada6fcd') in 0.145563 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 0.077005 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '175dbbacd178cbbedd5e9e48b672560c') in 0.189870 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 0.051043 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b5f08106d3cb7888d74051cecc825c6') in 0.079989 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 0.273036 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d07493b2750da65d56ec3ef649a7ef0') in 0.150731 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 10.809104 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8d2a93102fd11e3f931274fd7e2be63') in 0.198460 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 0.268791 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f062c76e343358281a406d8dde9234b') in 0.617946 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 8.522032 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21c25c910339e106b826bc9e04217a29') in 0.082975 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 5.770917 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df4add6db24a002f22d1445fc00f6328') in 0.121433 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 2.530880 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17ee7d1cd37250a71ee0310eaca16b24') in 0.063528 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 11.885351 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e2204e2c237eb4874a2fabab8337119') in 0.135956 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 9.587820 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa05ac2a0ea8e88dce1354cb6f8e676b') in 0.194113 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 0.810174 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5da3f57b151130a32590bd71aff331f') in 0.115991 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 0.515599 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4866f5ce577b573cac9fe20b64e2d45e') in 0.079488 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in 46.761 seconds
+Refreshing native plugins compatible for Editor in 1256.37 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  7.973 seconds
+Domain Reload Profiling: 55154ms
+	BeginReloadAssembly (688ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (37ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (221ms)
+	RebuildCommonClasses (78ms)
+	RebuildNativeTypeToScriptingClass (110ms)
+	initialDomainReloadingComplete (70ms)
+	LoadAllAssembliesAndSetupDomain (46234ms)
+		LoadAssemblies (40508ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (5451ms)
+			TypeCache.Refresh (3046ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (154ms)
+			ResolveRequiredComponents (2248ms)
+	FinalizeReload (7973ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (756ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (23ms)
+			SetLoadedEditorAssemblies (35ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (109ms)
+			ProcessInitializeOnLoadAttributes (538ms)
+			ProcessInitializeOnLoadMethodAttributes (44ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (19ms)
+Refreshing native plugins compatible for Editor in 8.52 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4250 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 36 unused Assets / (35.2 KB). Loaded Objects now: 4765.
+Memory consumption went from 145.7 MB to 145.6 MB.
+Total: 3.388200 ms (FindLiveObjects: 0.324700 ms CreateObjectMapping: 0.174900 ms MarkObjects: 2.804700 ms  DeleteObjects: 0.082600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 81.244401 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '437babaacb751a7c12b7b00dce7f0a69') in 0.360306 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.298 seconds
+Refreshing native plugins compatible for Editor in 20.18 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in 36.839 seconds
+Domain Reload Profiling: 38131ms
+	BeginReloadAssembly (382ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (19ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (117ms)
+	RebuildCommonClasses (140ms)
+	RebuildNativeTypeToScriptingClass (20ms)
+	initialDomainReloadingComplete (53ms)
+	LoadAllAssembliesAndSetupDomain (697ms)
+		LoadAssemblies (847ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (26ms)
+			TypeCache.Refresh (14ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (36839ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (698ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (20ms)
+			SetLoadedEditorAssemblies (6ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (93ms)
+			ProcessInitializeOnLoadAttributes (531ms)
+			ProcessInitializeOnLoadMethodAttributes (41ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (15ms)
+Refreshing native plugins compatible for Editor in 11.98 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4250 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 36 unused Assets / (35.2 KB). Loaded Objects now: 4769.
+Memory consumption went from 145.7 MB to 145.6 MB.
+Total: 6.227000 ms (FindLiveObjects: 0.534100 ms CreateObjectMapping: 0.426800 ms MarkObjects: 5.142300 ms  DeleteObjects: 0.121900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 49.593372 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b75a618c84ceb0fa6cd5460ee9c217c4') in 0.322144 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 0.290394 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7885b3f24b0c3d8ea5e3f45104677dbb') in 0.065505 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.050 seconds
+Refreshing native plugins compatible for Editor in 7.51 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in 50.079 seconds
+Domain Reload Profiling: 51125ms
+	BeginReloadAssembly (322ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (20ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (110ms)
+	RebuildCommonClasses (53ms)
+	RebuildNativeTypeToScriptingClass (37ms)
+	initialDomainReloadingComplete (89ms)
+	LoadAllAssembliesAndSetupDomain (544ms)
+		LoadAssemblies (650ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (19ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (50080ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1019ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (10ms)
+			SetLoadedEditorAssemblies (8ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (225ms)
+			ProcessInitializeOnLoadAttributes (728ms)
+			ProcessInitializeOnLoadMethodAttributes (40ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (17ms)
+Refreshing native plugins compatible for Editor in 12.89 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4250 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 36 unused Assets / (35.2 KB). Loaded Objects now: 4773.
+Memory consumption went from 145.7 MB to 145.6 MB.
+Total: 6.555800 ms (FindLiveObjects: 0.469700 ms CreateObjectMapping: 0.355700 ms MarkObjects: 5.618700 ms  DeleteObjects: 0.109300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 75.121741 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '459ae41478d9374a80900c4d2f5a7bc5') in 0.264423 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.002 seconds
+Refreshing native plugins compatible for Editor in 14.53 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in 33.457 seconds
+Domain Reload Profiling: 34455ms
+	BeginReloadAssembly (330ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (24ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (73ms)
+	RebuildCommonClasses (55ms)
+	RebuildNativeTypeToScriptingClass (42ms)
+	initialDomainReloadingComplete (70ms)
+	LoadAllAssembliesAndSetupDomain (500ms)
+		LoadAssemblies (604ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (80ms)
+			TypeCache.Refresh (64ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (3ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (33457ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1434ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (9ms)
+			SetLoadedEditorAssemblies (11ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (156ms)
+			ProcessInitializeOnLoadAttributes (1170ms)
+			ProcessInitializeOnLoadMethodAttributes (48ms)
+			AfterProcessingInitializeOnLoad (40ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (18ms)
+Refreshing native plugins compatible for Editor in 12.28 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4250 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 36 unused Assets / (36.2 KB). Loaded Objects now: 4777.
+Memory consumption went from 145.7 MB to 145.6 MB.
+Total: 6.414100 ms (FindLiveObjects: 0.668500 ms CreateObjectMapping: 0.411700 ms MarkObjects: 5.222500 ms  DeleteObjects: 0.109400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 54.581854 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9883c428e5a74f22aa74fd9dff511d14') in 0.288662 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 9.529894 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5dacafd3a5ba08668e364320879967aa') in 0.135686 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 0.062154 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c2201a3558397e3b1ec653b2745e809') in 0.060483 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.984 seconds
+Refreshing native plugins compatible for Editor in 11.01 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in 59.132 seconds
+Domain Reload Profiling: 60112ms
+	BeginReloadAssembly (341ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (17ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (57ms)
+	RebuildCommonClasses (58ms)
+	RebuildNativeTypeToScriptingClass (50ms)
+	initialDomainReloadingComplete (52ms)
+	LoadAllAssembliesAndSetupDomain (478ms)
+		LoadAssemblies (637ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (60ms)
+			TypeCache.Refresh (30ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (28ms)
+	FinalizeReload (59132ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1892ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (35ms)
+			SetLoadedEditorAssemblies (15ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (409ms)
+			ProcessInitializeOnLoadAttributes (1386ms)
+			ProcessInitializeOnLoadMethodAttributes (39ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (25ms)
+Refreshing native plugins compatible for Editor in 12.07 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4250 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 36 unused Assets / (35.3 KB). Loaded Objects now: 4781.
+Memory consumption went from 145.7 MB to 145.6 MB.
+Total: 6.701200 ms (FindLiveObjects: 0.487700 ms CreateObjectMapping: 0.395700 ms MarkObjects: 5.701000 ms  DeleteObjects: 0.114700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 89.843994 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8806aa5adf8a97f2aacbab0563699f0') in 0.318454 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 0.043610 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55c57ace3796c2d5c41e943e84269c51') in 0.068973 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 0.149176 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf56b2b72878af93a64196080e506699') in 0.068753 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 4.178936 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '149c0856cf4415be1b2d4b260210eb73') in 0.094618 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 0.084272 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '026148a600e809b0df6d793c3b341b8e') in 0.056930 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 1.553404 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0906ef1668a327023fc9854d70098b95') in 0.192179 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.042 seconds
+Refreshing native plugins compatible for Editor in 9.10 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in 80.098 seconds
+Domain Reload Profiling: 81135ms
+	BeginReloadAssembly (312ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (15ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (70ms)
+	RebuildCommonClasses (60ms)
+	RebuildNativeTypeToScriptingClass (25ms)
+	initialDomainReloadingComplete (90ms)
+	LoadAllAssembliesAndSetupDomain (550ms)
+		LoadAssemblies (697ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (21ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (80098ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1210ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (35ms)
+			SetLoadedEditorAssemblies (17ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (276ms)
+			ProcessInitializeOnLoadAttributes (833ms)
+			ProcessInitializeOnLoadMethodAttributes (41ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (20ms)
+Refreshing native plugins compatible for Editor in 11.02 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4250 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 36 unused Assets / (36.3 KB). Loaded Objects now: 4785.
+Memory consumption went from 145.7 MB to 145.6 MB.
+Total: 5.829800 ms (FindLiveObjects: 0.479900 ms CreateObjectMapping: 0.334400 ms MarkObjects: 4.896200 ms  DeleteObjects: 0.117700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 94.833096 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e92053f86c93b2f49e800f25d5bfce63') in 0.299577 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.280 seconds
+Refreshing native plugins compatible for Editor in 7.27 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in 37.283 seconds
+Domain Reload Profiling: 38558ms
+	BeginReloadAssembly (554ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (21ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (77ms)
+	RebuildCommonClasses (123ms)
+	RebuildNativeTypeToScriptingClass (23ms)
+	initialDomainReloadingComplete (53ms)
+	LoadAllAssembliesAndSetupDomain (522ms)
+		LoadAssemblies (694ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (19ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (37284ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1094ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (16ms)
+			SetLoadedEditorAssemblies (15ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (223ms)
+			ProcessInitializeOnLoadAttributes (668ms)
+			ProcessInitializeOnLoadMethodAttributes (152ms)
+			AfterProcessingInitializeOnLoad (19ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (32ms)
+Refreshing native plugins compatible for Editor in 17.53 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4250 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 36 unused Assets / (35.3 KB). Loaded Objects now: 4789.
+Memory consumption went from 145.7 MB to 145.7 MB.
+Total: 6.008500 ms (FindLiveObjects: 0.453500 ms CreateObjectMapping: 0.369400 ms MarkObjects: 5.078600 ms  DeleteObjects: 0.105100 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 51.220151 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f108b8d74f9cf08e619a1c11c87016a') in 0.286216 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.021 seconds
+Refreshing native plugins compatible for Editor in 6.82 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in 18.283 seconds
+Domain Reload Profiling: 19300ms
+	BeginReloadAssembly (331ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (19ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (142ms)
+	RebuildCommonClasses (97ms)
+	RebuildNativeTypeToScriptingClass (20ms)
+	initialDomainReloadingComplete (45ms)
+	LoadAllAssembliesAndSetupDomain (523ms)
+		LoadAssemblies (627ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (20ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (18283ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1029ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (11ms)
+			SetLoadedEditorAssemblies (9ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (226ms)
+			ProcessInitializeOnLoadAttributes (738ms)
+			ProcessInitializeOnLoadMethodAttributes (38ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (18ms)
+Refreshing native plugins compatible for Editor in 10.62 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4250 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 36 unused Assets / (35.3 KB). Loaded Objects now: 4793.
+Memory consumption went from 145.7 MB to 145.7 MB.
+Total: 6.476700 ms (FindLiveObjects: 0.516000 ms CreateObjectMapping: 0.392000 ms MarkObjects: 5.408000 ms  DeleteObjects: 0.158500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 34.009326 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3fec2995f7d6e631826f1cc000db1d8b') in 0.380085 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.002 seconds
+Refreshing native plugins compatible for Editor in 12.57 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in 40.814 seconds
+Domain Reload Profiling: 41812ms
+	BeginReloadAssembly (320ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (18ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (101ms)
+	RebuildCommonClasses (118ms)
+	RebuildNativeTypeToScriptingClass (21ms)
+	initialDomainReloadingComplete (53ms)
+	LoadAllAssembliesAndSetupDomain (485ms)
+		LoadAssemblies (610ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (27ms)
+			TypeCache.Refresh (13ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (40815ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (11729ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (45ms)
+			SetLoadedEditorAssemblies (29ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (6337ms)
+			ProcessInitializeOnLoadAttributes (5251ms)
+			ProcessInitializeOnLoadMethodAttributes (57ms)
+			AfterProcessingInitializeOnLoad (10ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (19ms)
+Refreshing native plugins compatible for Editor in 11.87 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4250 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 36 unused Assets / (35.3 KB). Loaded Objects now: 4797.
+Memory consumption went from 145.7 MB to 145.7 MB.
+Total: 6.180400 ms (FindLiveObjects: 0.476200 ms CreateObjectMapping: 0.381800 ms MarkObjects: 5.214100 ms  DeleteObjects: 0.106700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 55.652987 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bba18a90c221e7ef30fdaa231cbd258c') in 0.251005 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 2.498046 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '241f0ff46de24d3667518881f97b36d5') in 0.233911 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 2.216807 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '303a9374d79ad75df8680988853b5bbf') in 0.072558 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.914 seconds
+Refreshing native plugins compatible for Editor in 38.49 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in 31.952 seconds
+Domain Reload Profiling: 32861ms
+	BeginReloadAssembly (297ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (14ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (83ms)
+	RebuildCommonClasses (51ms)
+	RebuildNativeTypeToScriptingClass (40ms)
+	initialDomainReloadingComplete (72ms)
+	LoadAllAssembliesAndSetupDomain (449ms)
+		LoadAssemblies (551ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (36ms)
+			TypeCache.Refresh (10ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (19ms)
+	FinalizeReload (31953ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1231ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (10ms)
+			SetLoadedEditorAssemblies (9ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (235ms)
+			ProcessInitializeOnLoadAttributes (932ms)
+			ProcessInitializeOnLoadMethodAttributes (38ms)
+			AfterProcessingInitializeOnLoad (6ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (16ms)
+Refreshing native plugins compatible for Editor in 11.66 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4250 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 36 unused Assets / (35.2 KB). Loaded Objects now: 4801.
+Memory consumption went from 145.8 MB to 145.7 MB.
+Total: 6.019400 ms (FindLiveObjects: 0.504800 ms CreateObjectMapping: 0.439500 ms MarkObjects: 4.971500 ms  DeleteObjects: 0.101500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 43.169860 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9040776ad7b49de723b600ed6048a2b') in 0.297967 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.920 seconds
+Refreshing native plugins compatible for Editor in 14.56 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in 25.474 seconds
+Domain Reload Profiling: 26388ms
+	BeginReloadAssembly (313ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (19ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (63ms)
+	RebuildCommonClasses (61ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (83ms)
+	LoadAllAssembliesAndSetupDomain (440ms)
+		LoadAssemblies (596ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (23ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (13ms)
+	FinalizeReload (25475ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1302ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (10ms)
+			SetLoadedEditorAssemblies (7ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (210ms)
+			ProcessInitializeOnLoadAttributes (952ms)
+			ProcessInitializeOnLoadMethodAttributes (93ms)
+			AfterProcessingInitializeOnLoad (29ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (139ms)
+Refreshing native plugins compatible for Editor in 10.36 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4250 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 36 unused Assets / (35.2 KB). Loaded Objects now: 4805.
+Memory consumption went from 145.8 MB to 145.7 MB.
+Total: 6.142600 ms (FindLiveObjects: 0.459500 ms CreateObjectMapping: 0.402400 ms MarkObjects: 5.161900 ms  DeleteObjects: 0.116600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 37.707169 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40c65d435058fa9b4ac7d53c35e20735') in 0.250361 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 0.292004 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c9c56b2980027c52abc1d57bdc7287f') in 0.064263 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 2.354318 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd2ae47676a9ea449146913c171dabd6') in 0.142212 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 1.072907 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4620d1f7a8d474f0c6bbec8aad155666') in 0.060736 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.928 seconds
+Refreshing native plugins compatible for Editor in 12.23 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in 26.641 seconds
+Domain Reload Profiling: 27565ms
+	BeginReloadAssembly (350ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (62ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (67ms)
+	RebuildCommonClasses (51ms)
+	RebuildNativeTypeToScriptingClass (17ms)
+	initialDomainReloadingComplete (47ms)
+	LoadAllAssembliesAndSetupDomain (458ms)
+		LoadAssemblies (613ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (21ms)
+			TypeCache.Refresh (13ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (7ms)
+	FinalizeReload (26642ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1050ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (11ms)
+			SetLoadedEditorAssemblies (11ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (137ms)
+			ProcessInitializeOnLoadAttributes (781ms)
+			ProcessInitializeOnLoadMethodAttributes (90ms)
+			AfterProcessingInitializeOnLoad (20ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (36ms)
+Refreshing native plugins compatible for Editor in 10.29 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4250 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 36 unused Assets / (35.2 KB). Loaded Objects now: 4809.
+Memory consumption went from 145.8 MB to 145.8 MB.
+Total: 6.190600 ms (FindLiveObjects: 0.469400 ms CreateObjectMapping: 0.464600 ms MarkObjects: 5.133600 ms  DeleteObjects: 0.121300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 38.656874 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8a964327ae374f6a0992ed1e0d7c5de') in 0.324798 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 0.238445 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5409704ba0a1c50c5d0ef4218e4aa69f') in 0.085106 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 3.135644 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3b82af70971a5296245bde71df6aec0') in 0.070289 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 2.335554 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c861cfff1bdf901f39e680653b76f614') in 0.139782 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.984 seconds
+Refreshing native plugins compatible for Editor in 8.18 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in 45.636 seconds
+Domain Reload Profiling: 46615ms
+	BeginReloadAssembly (319ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (16ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (141ms)
+	RebuildCommonClasses (106ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (49ms)
+	LoadAllAssembliesAndSetupDomain (488ms)
+		LoadAssemblies (574ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (29ms)
+			TypeCache.Refresh (16ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (45637ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1065ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (8ms)
+			SetLoadedEditorAssemblies (8ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (176ms)
+			ProcessInitializeOnLoadAttributes (779ms)
+			ProcessInitializeOnLoadMethodAttributes (81ms)
+			AfterProcessingInitializeOnLoad (12ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (73ms)
+Refreshing native plugins compatible for Editor in 10.00 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4250 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 36 unused Assets / (35.2 KB). Loaded Objects now: 4813.
+Memory consumption went from 145.8 MB to 145.8 MB.
+Total: 6.525500 ms (FindLiveObjects: 0.463800 ms CreateObjectMapping: 0.345500 ms MarkObjects: 5.607900 ms  DeleteObjects: 0.106600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 60.513174 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66cadf6a6adb74890baa117dd59de132') in 0.394437 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.020 seconds
+Refreshing native plugins compatible for Editor in 10.45 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in 26.975 seconds
+Domain Reload Profiling: 27991ms
+	BeginReloadAssembly (310ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (18ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (71ms)
+	RebuildCommonClasses (51ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (101ms)
+	LoadAllAssembliesAndSetupDomain (537ms)
+		LoadAssemblies (600ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (114ms)
+			TypeCache.Refresh (10ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (101ms)
+	FinalizeReload (26975ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1286ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (52ms)
+			SetLoadedEditorAssemblies (18ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (199ms)
+			ProcessInitializeOnLoadAttributes (953ms)
+			ProcessInitializeOnLoadMethodAttributes (54ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (23ms)
+Refreshing native plugins compatible for Editor in 11.70 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4250 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 36 unused Assets / (35.3 KB). Loaded Objects now: 4817.
+Memory consumption went from 145.8 MB to 145.8 MB.
+Total: 9.125400 ms (FindLiveObjects: 0.639200 ms CreateObjectMapping: 0.374400 ms MarkObjects: 7.963900 ms  DeleteObjects: 0.145500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 40.227313 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c583198aa1145eb091c2e47f2f9c9911') in 0.490509 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 0.708423 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb517321fb965638ed24457a0e84fb24') in 0.082681 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.091 seconds
+Refreshing native plugins compatible for Editor in 8.88 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in 29.653 seconds
+Domain Reload Profiling: 30740ms
+	BeginReloadAssembly (333ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (18ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (109ms)
+	RebuildCommonClasses (94ms)
+	RebuildNativeTypeToScriptingClass (24ms)
+	initialDomainReloadingComplete (44ms)
+	LoadAllAssembliesAndSetupDomain (591ms)
+		LoadAssemblies (725ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (21ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (29654ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (890ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (10ms)
+			SetLoadedEditorAssemblies (9ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (229ms)
+			ProcessInitializeOnLoadAttributes (574ms)
+			ProcessInitializeOnLoadMethodAttributes (62ms)
+			AfterProcessingInitializeOnLoad (6ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (15ms)
+Refreshing native plugins compatible for Editor in 12.41 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4250 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 36 unused Assets / (35.3 KB). Loaded Objects now: 4821.
+Memory consumption went from 145.8 MB to 145.8 MB.
+Total: 15.486800 ms (FindLiveObjects: 3.368900 ms CreateObjectMapping: 0.615700 ms MarkObjects: 11.396400 ms  DeleteObjects: 0.104600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 42.444235 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f1a80e4a61fbd92e154d37ead7caf95') in 0.273075 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 1.913998 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47b76128287ec3122083ae294dc9433d') in 0.133928 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 0.273121 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2552c15cfec20859e35c63de1effcdc') in 0.054281 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 7.621410 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6181d8a53447c90581124ae97b57ef2f') in 0.166134 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.894 seconds
+Refreshing native plugins compatible for Editor in 16.59 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in 25.822 seconds
+Domain Reload Profiling: 26712ms
+	BeginReloadAssembly (308ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (21ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (71ms)
+	RebuildCommonClasses (46ms)
+	RebuildNativeTypeToScriptingClass (17ms)
+	initialDomainReloadingComplete (48ms)
+	LoadAllAssembliesAndSetupDomain (470ms)
+		LoadAssemblies (619ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (19ms)
+			TypeCache.Refresh (10ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (8ms)
+	FinalizeReload (25823ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1001ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (18ms)
+			SetLoadedEditorAssemblies (8ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (138ms)
+			ProcessInitializeOnLoadAttributes (743ms)
+			ProcessInitializeOnLoadMethodAttributes (80ms)
+			AfterProcessingInitializeOnLoad (13ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (78ms)
+Refreshing native plugins compatible for Editor in 11.65 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4250 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 36 unused Assets / (35.3 KB). Loaded Objects now: 4825.
+Memory consumption went from 145.8 MB to 145.8 MB.
+Total: 6.363400 ms (FindLiveObjects: 0.584400 ms CreateObjectMapping: 0.401300 ms MarkObjects: 5.245400 ms  DeleteObjects: 0.130500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 43.093928 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75d3d802e5535401b5619be608274256') in 0.192905 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 4.171096 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '329f7669d0a0b2d64a46c51dbf29f5ba') in 0.162553 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.339 seconds
+Refreshing native plugins compatible for Editor in 11.35 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in 26.206 seconds
+Domain Reload Profiling: 27537ms
+	BeginReloadAssembly (334ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (20ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (114ms)
+	RebuildCommonClasses (60ms)
+	RebuildNativeTypeToScriptingClass (91ms)
+	initialDomainReloadingComplete (63ms)
+	LoadAllAssembliesAndSetupDomain (782ms)
+		LoadAssemblies (884ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (21ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (26207ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (830ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (10ms)
+			SetLoadedEditorAssemblies (8ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (113ms)
+			ProcessInitializeOnLoadAttributes (650ms)
+			ProcessInitializeOnLoadMethodAttributes (41ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (15ms)
+Refreshing native plugins compatible for Editor in 40.24 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4250 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 36 unused Assets / (35.3 KB). Loaded Objects now: 4829.
+Memory consumption went from 145.8 MB to 145.8 MB.
+Total: 5.886700 ms (FindLiveObjects: 0.468100 ms CreateObjectMapping: 0.385600 ms MarkObjects: 4.915400 ms  DeleteObjects: 0.114900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 39.000370 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c748ddb11609f24dc915002490ffd4ea') in 0.266244 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 0.462461 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2087415bf457b69d5707e6c766c5fe3f') in 0.074371 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 8.612039 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f56d65293ff7dc926ce1cb0eeeb7560') in 0.066582 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 0.152265 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b45fe6049f0033c246c6d75d912ebe3a') in 0.058521 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 8.801557 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9426fcc9954e13ff05513caa5912a71b') in 0.068268 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 6.798135 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '319e7779045803ef47b229ad76154950') in 0.074532 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 4.978300 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf8d17b04726ac4483bf39778a262133') in 0.185759 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.900 seconds
+Refreshing native plugins compatible for Editor in 7.70 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in 49.731 seconds
+Domain Reload Profiling: 50626ms
+	BeginReloadAssembly (318ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (16ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (66ms)
+	RebuildCommonClasses (52ms)
+	RebuildNativeTypeToScriptingClass (21ms)
+	initialDomainReloadingComplete (95ms)
+	LoadAllAssembliesAndSetupDomain (408ms)
+		LoadAssemblies (579ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (18ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (7ms)
+	FinalizeReload (49732ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (10651ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (5412ms)
+			SetLoadedEditorAssemblies (3737ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (706ms)
+			ProcessInitializeOnLoadAttributes (693ms)
+			ProcessInitializeOnLoadMethodAttributes (85ms)
+			AfterProcessingInitializeOnLoad (17ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (31ms)
+Refreshing native plugins compatible for Editor in 12.48 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4250 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 36 unused Assets / (35.2 KB). Loaded Objects now: 4833.
+Memory consumption went from 145.8 MB to 145.8 MB.
+Total: 6.492400 ms (FindLiveObjects: 0.485900 ms CreateObjectMapping: 0.429300 ms MarkObjects: 5.464400 ms  DeleteObjects: 0.111000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 64.107236 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f43367110e53b235bdb1f9ddc5a55da4') in 0.340652 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 0.044977 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64c425e7b900a4bc1e38d45d7d2d4789') in 0.060291 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 1.325045 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91ec26bdfbf65ac67279906880d94397') in 0.149918 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 1.873541 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a01bba0c157ee88c1b779d2ddea4ffe') in 0.066026 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 0.310483 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30317dbbbd9c54a2e0691927ee13e251') in 0.124295 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.019 seconds
+Refreshing native plugins compatible for Editor in 11.74 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in 17.992 seconds
+Domain Reload Profiling: 19005ms
+	BeginReloadAssembly (367ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (52ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (71ms)
+	RebuildCommonClasses (52ms)
+	RebuildNativeTypeToScriptingClass (21ms)
+	initialDomainReloadingComplete (52ms)
+	LoadAllAssembliesAndSetupDomain (522ms)
+		LoadAssemblies (678ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (23ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (17993ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1080ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (82ms)
+			SetLoadedEditorAssemblies (10ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (131ms)
+			ProcessInitializeOnLoadAttributes (760ms)
+			ProcessInitializeOnLoadMethodAttributes (90ms)
+			AfterProcessingInitializeOnLoad (6ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (16ms)
+Refreshing native plugins compatible for Editor in 15.37 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4250 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 36 unused Assets / (35.3 KB). Loaded Objects now: 4837.
+Memory consumption went from 145.8 MB to 145.8 MB.
+Total: 6.640500 ms (FindLiveObjects: 0.541200 ms CreateObjectMapping: 0.377500 ms MarkObjects: 5.614100 ms  DeleteObjects: 0.106300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 31.403712 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6bd4d7687cd3d46ac6281b17fa3383cc') in 0.251324 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 0.089684 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d49e1df48d2a7256fb2f9d19537420a') in 0.067957 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 1.992199 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a08c470f84c8e083283811c60b8bf599') in 0.064838 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 0.298343 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9671e5fc41e5ac050899faa4d19729a') in 0.149574 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.894 seconds
+Refreshing native plugins compatible for Editor in 7.25 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in 59.307 seconds
+Domain Reload Profiling: 60196ms
+	BeginReloadAssembly (312ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (19ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (70ms)
+	RebuildCommonClasses (48ms)
+	RebuildNativeTypeToScriptingClass (22ms)
+	initialDomainReloadingComplete (92ms)
+	LoadAllAssembliesAndSetupDomain (413ms)
+		LoadAssemblies (569ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (19ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (59308ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1092ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (13ms)
+			SetLoadedEditorAssemblies (9ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (228ms)
+			ProcessInitializeOnLoadAttributes (794ms)
+			ProcessInitializeOnLoadMethodAttributes (40ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (16ms)
+Refreshing native plugins compatible for Editor in 35.95 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4250 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 36 unused Assets / (35.2 KB). Loaded Objects now: 4841.
+Memory consumption went from 146.0 MB to 145.9 MB.
+Total: 11.302800 ms (FindLiveObjects: 0.449800 ms CreateObjectMapping: 0.512300 ms MarkObjects: 10.158600 ms  DeleteObjects: 0.180400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 277.797344 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab
+  artifactKey: Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab using Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'minionGFX': Transition 'attack -> Death' in state 'attack' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1841]
+
+ -> (artifact id: '407cdaa8a6f6dd718334cf473a9fdbb3') in 0.374410 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 216
+========================================================================
+Received Import Request.
+  Time since last request: 0.000104 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab
+  artifactKey: Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab using Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'minionGFX': Transition 'attack -> Death' in state 'attack' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1841]
+
+ -> (artifact id: '75ec3bea4fbf0842820a60d4f8ad27d9') in 0.131030 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 216
+========================================================================
+Received Import Request.
+  Time since last request: 3.453805 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab
+  artifactKey: Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab using Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'minionGFX': Transition 'attack -> Death' in state 'attack' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1841]
+
+ -> (artifact id: 'ad0eb2e19a41aa8ef8307a7e6368ad9b') in 0.079987 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 216
+========================================================================
+Received Import Request.
+  Time since last request: 0.524125 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab
+  artifactKey: Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab using Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'minionGFX': Transition 'attack -> Death' in state 'attack' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1841]
+
+ -> (artifact id: 'e446b4993d1bc77bc855bd437c21b796') in 0.149019 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 216
+========================================================================
+Received Import Request.
+  Time since last request: 6.926586 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab
+  artifactKey: Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab using Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'minionGFX': Transition 'attack -> Death' in state 'attack' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1841]
+
+ -> (artifact id: 'ec11578fed83dede5ac411528e275a5a') in 0.157056 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 216
+========================================================================
+Received Import Request.
+  Time since last request: 3.115323 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab
+  artifactKey: Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab using Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'minionGFX': Transition 'attack -> Death' in state 'attack' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1841]
+
+ -> (artifact id: '1fc7b435fd8ee37f4849070367cb596e') in 0.083094 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 216
+========================================================================
+Received Import Request.
+  Time since last request: 1.918882 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab
+  artifactKey: Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab using Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'minionGFX': Transition 'attack -> Death' in state 'attack' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1841]
+
+ -> (artifact id: 'a0f2640dc5976a3fe25cdde219acf061') in 0.142757 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 216
+========================================================================
+Received Import Request.
+  Time since last request: 14.415180 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab
+  artifactKey: Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab using Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'minionGFX': Transition 'attack -> Death' in state 'attack' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1841]
+
+ -> (artifact id: 'c088783e899afcc85e03f52fbdb5b044') in 0.067848 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 216
+========================================================================
+Received Import Request.
+  Time since last request: 0.141308 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab
+  artifactKey: Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab using Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'minionGFX': Transition 'attack -> Death' in state 'attack' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1841]
+
+ -> (artifact id: '7d17c9766e55c718509668ff0ec85ce7') in 0.066302 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 216
+========================================================================
+Received Import Request.
+  Time since last request: 2.146190 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab
+  artifactKey: Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab using Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'minionGFX': Transition 'attack -> Death' in state 'attack' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1841]
+
+ -> (artifact id: 'b4bcc02d8ca2b04e38cabaa626fdf576') in 0.137933 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 216
+========================================================================
+Received Import Request.
+  Time since last request: 2.674535 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab
+  artifactKey: Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab using Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'minionGFX': Transition 'attack -> Death' in state 'attack' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1841]
+
+ -> (artifact id: '0bf7abb4e531043e62067a767065fddd') in 0.066161 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 216
+========================================================================
+Received Import Request.
+  Time since last request: 3.792150 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab
+  artifactKey: Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab using Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'minionGFX': Transition 'attack -> Death' in state 'attack' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1841]
+
+ -> (artifact id: '1304ad9ea33d2cda18ebac56e3594ef1') in 0.075395 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 216
+========================================================================
+Received Import Request.
+  Time since last request: 0.314860 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab
+  artifactKey: Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab using Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'minionGFX': Transition 'attack -> Death' in state 'attack' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1841]
+
+ -> (artifact id: 'f1bfefe4cdae6181d2f115f39c90dc02') in 0.253159 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 216
+========================================================================
+Received Import Request.
+  Time since last request: 0.546190 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab
+  artifactKey: Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab using Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'minionGFX': Transition 'attack -> Death' in state 'attack' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1841]
+
+ -> (artifact id: 'f84e4408daa5bb264aae2c78fd01eb1f') in 0.147810 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 216
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.899 seconds
+Refreshing native plugins compatible for Editor in 10.06 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in 16.141 seconds
+Domain Reload Profiling: 17036ms
+	BeginReloadAssembly (304ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (15ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (78ms)
+	RebuildCommonClasses (53ms)
+	RebuildNativeTypeToScriptingClass (19ms)
+	initialDomainReloadingComplete (49ms)
+	LoadAllAssembliesAndSetupDomain (469ms)
+		LoadAssemblies (614ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (22ms)
+			TypeCache.Refresh (10ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (16142ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (951ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (17ms)
+			SetLoadedEditorAssemblies (8ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (133ms)
+			ProcessInitializeOnLoadAttributes (727ms)
+			ProcessInitializeOnLoadMethodAttributes (43ms)
+			AfterProcessingInitializeOnLoad (23ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (30ms)
+Refreshing native plugins compatible for Editor in 14.16 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4250 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 36 unused Assets / (35.3 KB). Loaded Objects now: 4846.
+Memory consumption went from 146.1 MB to 146.1 MB.
+Total: 6.029000 ms (FindLiveObjects: 0.496400 ms CreateObjectMapping: 0.391100 ms MarkObjects: 5.030200 ms  DeleteObjects: 0.109500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 32.599596 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab
+  artifactKey: Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab using Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'minionGFX': Transition 'attack -> Death' in state 'attack' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1841]
+
+ -> (artifact id: '7b9aa5c0345d39953e6bedaf3f12d4e2') in 0.263741 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 216
+========================================================================
+Received Import Request.
+  Time since last request: 0.120191 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab
+  artifactKey: Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab using Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'minionGFX': Transition 'attack -> Death' in state 'attack' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1841]
+
+ -> (artifact id: '9fb96f658467bd6189aa9842b657ca21') in 0.075059 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 216
+========================================================================
+Received Import Request.
+  Time since last request: 0.968897 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab
+  artifactKey: Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab using Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'minionGFX': Transition 'attack -> Death' in state 'attack' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1841]
+
+ -> (artifact id: 'a823f6b0c869f6f3f6add5a6fbf9b988') in 0.083376 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 216
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.942 seconds
+Refreshing native plugins compatible for Editor in 10.43 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in 57.092 seconds
+Domain Reload Profiling: 58031ms
+	BeginReloadAssembly (302ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (15ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (120ms)
+	RebuildCommonClasses (106ms)
+	RebuildNativeTypeToScriptingClass (20ms)
+	initialDomainReloadingComplete (43ms)
+	LoadAllAssembliesAndSetupDomain (467ms)
+		LoadAssemblies (567ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (27ms)
+			TypeCache.Refresh (12ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (1ms)
+			ResolveRequiredComponents (13ms)
+	FinalizeReload (57093ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (28253ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (206ms)
+			SetLoadedEditorAssemblies (41ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (6054ms)
+			ProcessInitializeOnLoadAttributes (16110ms)
+			ProcessInitializeOnLoadMethodAttributes (4833ms)
+			AfterProcessingInitializeOnLoad (1007ms)
+			EditorAssembliesLoaded (2ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (82ms)
+Refreshing native plugins compatible for Editor in 27.08 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4250 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 36 unused Assets / (35.3 KB). Loaded Objects now: 4850.
+Memory consumption went from 146.1 MB to 146.1 MB.
+Total: 6.606000 ms (FindLiveObjects: 0.618300 ms CreateObjectMapping: 0.465600 ms MarkObjects: 5.391000 ms  DeleteObjects: 0.128800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 73.092669 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab
+  artifactKey: Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab using Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'minionGFX': Transition 'attack -> Death' in state 'attack' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1841]
+
+ -> (artifact id: '340e1e63de0e43b5d2634dc49add5a8a') in 0.287557 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 216
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.815 seconds
+Refreshing native plugins compatible for Editor in 8.12 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in 24.516 seconds
+Domain Reload Profiling: 26304ms
+	BeginReloadAssembly (798ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (34ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (155ms)
+	RebuildCommonClasses (82ms)
+	RebuildNativeTypeToScriptingClass (72ms)
+	initialDomainReloadingComplete (68ms)
+	LoadAllAssembliesAndSetupDomain (768ms)
+		LoadAssemblies (1245ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (42ms)
+			TypeCache.Refresh (24ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (16ms)
+	FinalizeReload (24516ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (945ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (10ms)
+			SetLoadedEditorAssemblies (9ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (198ms)
+			ProcessInitializeOnLoadAttributes (678ms)
+			ProcessInitializeOnLoadMethodAttributes (41ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (21ms)
+Refreshing native plugins compatible for Editor in 10.71 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4250 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 36 unused Assets / (35.2 KB). Loaded Objects now: 4854.
+Memory consumption went from 146.1 MB to 146.1 MB.
+Total: 6.515000 ms (FindLiveObjects: 0.469300 ms CreateObjectMapping: 0.713500 ms MarkObjects: 5.212800 ms  DeleteObjects: 0.117500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 36.575407 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab
+  artifactKey: Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/MinionEnemy.prefab using Guid(f947eeee6e0c144419978c34cb842256) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'minionGFX': Transition 'attack -> Death' in state 'attack' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1841]
+
+ -> (artifact id: '446579784acda6dbfff30910139e541f') in 0.304595 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 216
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.915 seconds
+Refreshing native plugins compatible for Editor in 10.24 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in 45.386 seconds
+Domain Reload Profiling: 46295ms
+	BeginReloadAssembly (320ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (14ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (54ms)
+	RebuildCommonClasses (57ms)
+	RebuildNativeTypeToScriptingClass (20ms)
+	initialDomainReloadingComplete (84ms)
+	LoadAllAssembliesAndSetupDomain (427ms)
+		LoadAssemblies (610ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (22ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (45386ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (14007ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (22ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (12195ms)
+			ProcessInitializeOnLoadAttributes (1729ms)
+			ProcessInitializeOnLoadMethodAttributes (46ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (24ms)
+Refreshing native plugins compatible for Editor in 11.47 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4250 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 36 unused Assets / (35.2 KB). Loaded Objects now: 4858.
+Memory consumption went from 146.1 MB to 146.1 MB.
+Total: 9.647900 ms (FindLiveObjects: 0.487200 ms CreateObjectMapping: 0.450000 ms MarkObjects: 8.607700 ms  DeleteObjects: 0.101200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.008 seconds
+Refreshing native plugins compatible for Editor in 8.03 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in 44.883 seconds
+Domain Reload Profiling: 45886ms
+	BeginReloadAssembly (321ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (15ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (74ms)
+	RebuildCommonClasses (53ms)
+	RebuildNativeTypeToScriptingClass (17ms)
+	initialDomainReloadingComplete (92ms)
+	LoadAllAssembliesAndSetupDomain (519ms)
+		LoadAssemblies (596ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (97ms)
+			TypeCache.Refresh (14ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (1ms)
+			ResolveRequiredComponents (81ms)
+	FinalizeReload (44883ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (811ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (8ms)
+			SetLoadedEditorAssemblies (9ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (113ms)
+			ProcessInitializeOnLoadAttributes (602ms)
+			ProcessInitializeOnLoadMethodAttributes (71ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (20ms)
+Refreshing native plugins compatible for Editor in 11.75 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4251 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 36 unused Assets / (35.3 KB). Loaded Objects now: 4862.
+Memory consumption went from 146.4 MB to 146.4 MB.
+Total: 6.415000 ms (FindLiveObjects: 0.553200 ms CreateObjectMapping: 0.423400 ms MarkObjects: 5.336200 ms  DeleteObjects: 0.100000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 180.649907 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a997679980f29c2953e8b0ccfb1dd54b') in 0.307539 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 0.843216 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '338a06e7305349a96aee0d9618c86533') in 0.146882 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 0.669026 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ea96b71093db2f09062b658fef6a5e7') in 0.125234 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 25.358531 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8df5f6b6e3a640b859aa701c44a5fbaa') in 0.084995 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 1.082459 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecf80b0ca584d02623718a6dd30f9cf7') in 0.083814 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 1.725615 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab
+  artifactKey: Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/BullEnemy.prefab using Guid(6b3a4103c0b090d41afb1e9469a1885e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e706a9ea667419968b99d9c773a25cf0') in 0.065890 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 207
+========================================================================
+Received Import Request.
+  Time since last request: 16.482860 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/SniperEnemy.prefab
+  artifactKey: Guid(1608ecff0b4e476479c4196e0098973a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/SniperEnemy.prefab using Guid(1608ecff0b4e476479c4196e0098973a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'SniperGFX': Transition 'Shoot -> SniperDeath' in state 'Shoot' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1841]
+
+ -> (artifact id: 'bb9e07f01f386e8ba9aa83afcd980260') in 0.268094 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 230
+========================================================================
+Received Import Request.
+  Time since last request: 1.105322 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/SniperEnemy.prefab
+  artifactKey: Guid(1608ecff0b4e476479c4196e0098973a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/SniperEnemy.prefab using Guid(1608ecff0b4e476479c4196e0098973a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'SniperGFX': Transition 'Shoot -> SniperDeath' in state 'Shoot' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1841]
+
+ -> (artifact id: 'e8c8ba54a53207ad1989f70a8010acda') in 0.161798 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 230
+========================================================================
+Received Import Request.
+  Time since last request: 0.454166 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/SniperEnemy.prefab
+  artifactKey: Guid(1608ecff0b4e476479c4196e0098973a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/SniperEnemy.prefab using Guid(1608ecff0b4e476479c4196e0098973a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'SniperGFX': Transition 'Shoot -> SniperDeath' in state 'Shoot' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1841]
+
+ -> (artifact id: '90c86a798834fdd196dab8fcf3ef5eb5') in 0.132793 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 230
+========================================================================
+Received Import Request.
+  Time since last request: 5.697618 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/SniperEnemy.prefab
+  artifactKey: Guid(1608ecff0b4e476479c4196e0098973a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/SniperEnemy.prefab using Guid(1608ecff0b4e476479c4196e0098973a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'SniperGFX': Transition 'Shoot -> SniperDeath' in state 'Shoot' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1841]
+
+ -> (artifact id: 'dfee634e5713fe643dc9a1e041358745') in 0.120689 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 230
+========================================================================
+Received Import Request.
+  Time since last request: 1.293657 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/SniperEnemy.prefab
+  artifactKey: Guid(1608ecff0b4e476479c4196e0098973a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/SniperEnemy.prefab using Guid(1608ecff0b4e476479c4196e0098973a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'SniperGFX': Transition 'Shoot -> SniperDeath' in state 'Shoot' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1841]
+
+ -> (artifact id: 'a11b683e17abf751c6f02b0aeff94c81') in 0.146043 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 230
+========================================================================
+Received Import Request.
+  Time since last request: 3.879722 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/SniperEnemy.prefab
+  artifactKey: Guid(1608ecff0b4e476479c4196e0098973a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/SniperEnemy.prefab using Guid(1608ecff0b4e476479c4196e0098973a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'SniperGFX': Transition 'Shoot -> SniperDeath' in state 'Shoot' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1841]
+
+ -> (artifact id: 'b73344118ee93cf7cd4359a026d29670') in 0.083755 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 230
+========================================================================
+Received Import Request.
+  Time since last request: 0.334654 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/SniperEnemy.prefab
+  artifactKey: Guid(1608ecff0b4e476479c4196e0098973a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/SniperEnemy.prefab using Guid(1608ecff0b4e476479c4196e0098973a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'SniperGFX': Transition 'Shoot -> SniperDeath' in state 'Shoot' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1841]
+
+ -> (artifact id: '98f559f0492881963106a236067fb0ae') in 0.145810 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 230
+========================================================================
+Received Import Request.
+  Time since last request: 7.578369 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/SniperEnemy.prefab
+  artifactKey: Guid(1608ecff0b4e476479c4196e0098973a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/SniperEnemy.prefab using Guid(1608ecff0b4e476479c4196e0098973a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'SniperGFX': Transition 'Shoot -> SniperDeath' in state 'Shoot' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1841]
+
+ -> (artifact id: '9c9c6789b87e3d5d764952f569de83d6') in 0.089024 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 230
+========================================================================
+Received Import Request.
+  Time since last request: 8.373726 seconds.
+  path: Assets/Eric/Prefabs/EnemyPrefabs/Enemies/SniperEnemy.prefab
+  artifactKey: Guid(1608ecff0b4e476479c4196e0098973a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Eric/Prefabs/EnemyPrefabs/Enemies/SniperEnemy.prefab using Guid(1608ecff0b4e476479c4196e0098973a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'SniperGFX': Transition 'Shoot -> SniperDeath' in state 'Shoot' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1841]
+
+ -> (artifact id: 'fd7dc2fcea6ed3ca391953295fb0cb91') in 0.255429 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 230

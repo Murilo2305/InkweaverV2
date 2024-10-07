@@ -44,7 +44,7 @@ public class EnemyCombatScript : MonoBehaviour
     public BullAnimationScript bullAnimScript;
     public SniperAnimationScript SniperAnimScript;
     public MinionAnimationScript MinionAnimScript;
-
+    [SerializeField] PlayerColorSystem PlayerColorSystemRef;
 
 
     //enemyTypeSetup
@@ -83,6 +83,7 @@ public class EnemyCombatScript : MonoBehaviour
 
         }
 
+        PlayerColorSystemRef = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<PlayerColorSystem>();
 
         enemyColorSystemRef = GetComponent<EnemyColorSystem>();
         staggerScriptRef = GetComponent<StaggerScript>();
@@ -174,25 +175,46 @@ public class EnemyCombatScript : MonoBehaviour
                 {
                     if(lightStaggerDuration > staggerTimer)
                     {
+                        if(PlayerColorSystemRef.blue == true)
+                        {
+
                         StaggerEnemy(lightStaggerDuration);
+                        
+                        }
                     }
                 }
                 else if (HitboxScriptRef.damage > 15 && HitboxScriptRef.damage <= 20)
                 {
                     if(mediumStaggerDuration > staggerTimer)
                     {
+                        if(PlayerColorSystemRef.blue == true)
+                        {
+
                         StaggerEnemy(mediumStaggerDuration);
+
+                        }
                     }
                 }
                 else
                 {
                     if(HeavyStaggerDuration > staggerTimer)
                     {
+                        if(PlayerColorSystemRef.blue == true)
+                        {
+
                         StaggerEnemy(HeavyStaggerDuration);
+
+                        }
                     }
                 }
                 
+                if(PlayerColorSystemRef.blue == true)
+                {
+
                 staggerScriptRef.OnStagger();
+                
+                }
+
             }
 
             //Subtracts hp from the attack received
