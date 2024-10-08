@@ -102,6 +102,13 @@ public class EnemyCombatScript : MonoBehaviour
 
     private void Update()
     {
+
+        if(isStaggered)
+        {
+            print("test");
+        }
+
+
         //Counts down the time staggered until the enemy goes back to normal
         if (staggerTimer > 0)
         {
@@ -169,49 +176,37 @@ public class EnemyCombatScript : MonoBehaviour
             //Staggers the enemy if possible
             if (isStaggerable)
             {
+
+
                 isStaggered = true;
-                //staggerTimer = maxStaggerTimer;
-                if(HitboxScriptRef.damage <= 15)
-                {
-                    if(lightStaggerDuration > staggerTimer)
-                    {
-                        if(PlayerColorSystemRef.blue == true)
-                        {
-
-                        StaggerEnemy(lightStaggerDuration);
-                        
-                        }
-                    }
-                }
-                else if (HitboxScriptRef.damage > 15 && HitboxScriptRef.damage <= 20)
-                {
-                    if(mediumStaggerDuration > staggerTimer)
-                    {
-                        if(PlayerColorSystemRef.blue == true)
-                        {
-
-                        StaggerEnemy(mediumStaggerDuration);
-
-                        }
-                    }
-                }
-                else
-                {
-                    if(HeavyStaggerDuration > staggerTimer)
-                    {
-                        if(PlayerColorSystemRef.blue == true)
-                        {
-
-                        StaggerEnemy(HeavyStaggerDuration);
-
-                        }
-                    }
-                }
                 
                 if(PlayerColorSystemRef.blue == true)
                 {
 
-                staggerScriptRef.OnStagger();
+                    if(HitboxScriptRef.damage <= 15)
+                    {
+                        if(lightStaggerDuration > staggerTimer)
+                        {
+                            StaggerEnemy(lightStaggerDuration);
+                        }
+                    }
+                    else if (HitboxScriptRef.damage > 15 && HitboxScriptRef.damage <= 20)
+                    {
+                        if(mediumStaggerDuration > staggerTimer)
+                        {
+                            StaggerEnemy(mediumStaggerDuration);   
+                        }
+                    }
+                    else
+                    {
+                        if(HeavyStaggerDuration > staggerTimer)
+                        {
+                                StaggerEnemy(HeavyStaggerDuration);
+                        }
+                    }
+                
+
+                    staggerScriptRef.OnStagger();
                 
                 }
 
@@ -219,10 +214,11 @@ public class EnemyCombatScript : MonoBehaviour
 
             //Subtracts hp from the attack received
             DamageEnemy(HitboxScriptRef.damage);
+
             if(CamAnim.GetBool("Shake1") == false && CamAnim.GetBool("Shake2") == false && CamAnim.GetBool("Shake3") == false)
             {
                 
-            CamManager.Shake();
+                CamManager.Shake();
 
             }
 

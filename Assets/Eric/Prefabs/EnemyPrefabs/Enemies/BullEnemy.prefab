@@ -2003,13 +2003,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d70df6e5fc50ba46acc0fe4751fc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 250
-  healthPoints: 250
+  maxHealth: 150
+  healthPoints: 150
   isStaggerable: 1
   staggerTimer: 0
-  lightStaggerDuration: 0.3
-  mediumStaggerDuration: 0.5
-  HeavyStaggerDuration: 1
+  lightStaggerDuration: 0.15
+  mediumStaggerDuration: 0.2
+  HeavyStaggerDuration: 0.25
   damageTakenMultiplier: 1
   isStaggered: 0
   isHittable: 0
@@ -2049,10 +2049,10 @@ MonoBehaviour:
   maxDebuffTimer: 8
   redStacks: 0
   redDoTApplied: 0
-  damageOverTime: 1
+  damageOverTime: 0.5
   redActiveDamage: 25
   greenStacks: 0
-  greenHealthRegen: 0.05
+  greenHealthRegen: 0.15
   greenHealingBurst: 2
   canBeRooted: 0
   blueStacks: 0
@@ -2150,7 +2150,7 @@ MonoBehaviour:
   once: 0
   minDelayBeforeRush: 0
   maxDelayBeforeRush: 0
-  delayInbetweenAttacks: 2
+  delayInbetweenAttacks: 3
   agent: {fileID: 0}
   PlayerDetector: {fileID: 6223965393308161177}
   isAttacking: 0

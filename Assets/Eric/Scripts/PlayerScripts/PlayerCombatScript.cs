@@ -107,6 +107,7 @@ public class PlayerCombatScript : MonoBehaviour
         //Setting Refs in other scripts
         playerColorSystemRef.playerHealthBarScriptRef = PlayerHealthBarScriptRef;
 
+        IsDying = false;
         
         Vignete = GameObject.FindGameObjectWithTag("DamageVignete").gameObject.GetComponent<DamageVignete_Script>();
 
@@ -128,22 +129,26 @@ public class PlayerCombatScript : MonoBehaviour
         //Decays the timer for the combo
         ComboDecay();
 
-        //Attacks if button is pressed down and released quickly
-        if ((Input.GetButtonDown("Fire1") && canAttack && Time.timeScale != 0.0f) || (InputUtility.RTriggerPulled && canAttack && Time.timeScale != 0.0f))
+        if (!IsDying)
         {
-            canAttack = false;
+            //Attacks if button is pressed down and released quickly
+            if ((Input.GetButtonDown("Fire1") && canAttack && Time.timeScale != 0.0f) || (InputUtility.RTriggerPulled && canAttack && Time.timeScale != 0.0f))
+            {
+                canAttack = false;
 
-            LightAttack();
-        }
-        //If the player holds down, calls up the charging function
-        if (Input.GetButton("Fire1") || InputUtility.RTriggerHeld)
-        {
-            ChargingAttack();
-        }
-        //on release, calls the charge attack function
-        if (Input.GetButtonUp("Fire1") || InputUtility.RTriggerReleased)
-        {
-            ReleaseChargeAttack();
+                LightAttack();
+            }
+            //If the player holds down, calls up the charging function
+            if (Input.GetButton("Fire1") || InputUtility.RTriggerHeld)
+            {
+                ChargingAttack();
+            }
+            //on release, calls the charge attack function
+            if (Input.GetButtonUp("Fire1") || InputUtility.RTriggerReleased)
+            {
+                ReleaseChargeAttack();
+            }
+
         }
 
         // when health is actually implemented remove the folowing
@@ -160,7 +165,7 @@ public class PlayerCombatScript : MonoBehaviour
 
 
 
-        
+        /*
         if (InputUtility.LTriggerHeld)
         {
             print("Left Trigger Held");
@@ -185,7 +190,7 @@ public class PlayerCombatScript : MonoBehaviour
         {
             print("Right Trigger Released");
         }      
-     
+         */
 
     }
 

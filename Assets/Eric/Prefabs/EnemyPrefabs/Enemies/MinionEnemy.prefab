@@ -1675,9 +1675,9 @@ MonoBehaviour:
   healthPoints: 300
   isStaggerable: 1
   staggerTimer: 0
-  lightStaggerDuration: 0.3
-  mediumStaggerDuration: 0.5
-  HeavyStaggerDuration: 1
+  lightStaggerDuration: 0.15
+  mediumStaggerDuration: 0.2
+  HeavyStaggerDuration: 0.25
   damageTakenMultiplier: 1
   isStaggered: 0
   isHittable: 0
@@ -1736,10 +1736,10 @@ MonoBehaviour:
   maxDebuffTimer: 8
   redStacks: 0
   redDoTApplied: 0
-  damageOverTime: 1
+  damageOverTime: 0.5
   redActiveDamage: 25
   greenStacks: 0
-  greenHealthRegen: 0.05
+  greenHealthRegen: 0.15
   greenHealingBurst: 2
   canBeRooted: 1
   blueStacks: 0

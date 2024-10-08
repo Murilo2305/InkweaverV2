@@ -55,6 +55,9 @@ public class StaggerScript : MonoBehaviour
         //Makes the enemy start moving again
         isStaggered = false;
 
+        print("isNoLongerStaggered");
+
+
         if (enemyType.Equals("MELEE"))
         {
             //melee enemy == minion
