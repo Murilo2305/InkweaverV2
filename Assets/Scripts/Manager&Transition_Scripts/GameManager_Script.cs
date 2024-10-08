@@ -11,6 +11,7 @@ public class GameManager_Script : MonoBehaviour
     [SerializeField] List<GameObject> enemies;
     [SerializeField] EnemySpawnerScript enemySpawnerScriptRef;
     [SerializeField] GameObject PauseSystem;
+    [SerializeField] GameObject DeathCanvas;
     public bool StageCleared;
 
     // Start is called before the first frame update
@@ -28,7 +29,9 @@ public class GameManager_Script : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Instantiate(PlayerRef,PlayerStartPos,PlayerRef.transform.rotation);
         enemySpawnerScriptRef.SpawnEnemies();
-        
+
+        DeathCanvas = PauseSystem.transform.parent.parent.GetChild(2).gameObject;
+
     }
 
     // Update is called once per frame
@@ -36,7 +39,7 @@ public class GameManager_Script : MonoBehaviour
     {
         print(Cursor.lockState);
 
-        if (Input.GetButtonDown("PauseButton"))
+        if (Input.GetButtonDown("PauseButton") && !DeathCanvas.activeInHierarchy)
         {
 
             PauseGame();
