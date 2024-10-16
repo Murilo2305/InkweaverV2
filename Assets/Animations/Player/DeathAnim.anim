@@ -116,9 +116,114 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: 
+    functionName: AnimationEventSetBrushPosition
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 27
+    messageOptions: 0
+  - time: 0.083333336
+    functionName: AnimationEventSetBrushPosition
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 28
+    messageOptions: 0
+  - time: 0.16666667
+    functionName: AnimationEventSetBrushPosition
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 29
+    messageOptions: 0
+  - time: 0.25
+    functionName: AnimationEventSetBrushPosition
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 30
+    messageOptions: 0
+  - time: 0.33333334
+    functionName: AnimationEventSetBrushPosition
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 31
+    messageOptions: 0
+  - time: 0.41666666
+    functionName: AnimationEventSetBrushPosition
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 32
+    messageOptions: 0
+  - time: 0.5
+    functionName: AnimationEventSetBrushPosition
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 33
+    messageOptions: 0
+  - time: 0.5833333
+    functionName: AnimationEventSetBrushPosition
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 34
+    messageOptions: 0
+  - time: 0.6666667
+    functionName: AnimationEventSetBrushPosition
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 35
+    messageOptions: 0
+  - time: 0.75
+    functionName: AnimationEventSetBrushPosition
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 36
+    messageOptions: 0
+  - time: 0.8333333
+    functionName: AnimationEventSetBrushPosition
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 37
+    messageOptions: 0
+  - time: 0.9166667
+    functionName: AnimationEventSetBrushPosition
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 38
+    messageOptions: 0
+  - time: 1
+    functionName: AnimationEventSetBrushPosition
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 39
+    messageOptions: 0
+  - time: 1.0833334
+    functionName: AnimationEventSetBrushPosition
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 40
+    messageOptions: 0
+  - time: 1.1666666
+    functionName: AnimationEventSetBrushPosition
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 41
+    messageOptions: 0
+  - time: 1.25
+    functionName: AnimationEventSetBrushPosition
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 42
     messageOptions: 0

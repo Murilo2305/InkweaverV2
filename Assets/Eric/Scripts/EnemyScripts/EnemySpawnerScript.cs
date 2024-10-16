@@ -26,7 +26,7 @@ public class EnemySpawnerScript : MonoBehaviour
         for (int i = 0; i < EnemyPosRefs.Count; i++)
         {
             SpawnEnemy(i);
-            print(i);
+            //print(i);
         }
     }
 

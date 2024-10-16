@@ -170,7 +170,7 @@ public class PlayerColorSystem : MonoBehaviour
             playerUIColorBurstCooldownImage1.enabled = true;
             playerUIColorBurstCooldownImage2.enabled = true;
             playerAnimationScriptRef.SetTriggerInPlayerAnimator("ColorBurst");
-            BrushTipScriptRef.SetTriggerInBrushTip("ColorBurst");
+            //.SetTriggerInBrushTip("ColorBurst");
             yield return new WaitForSeconds(0.35f);
 
             foreach (GameObject enemy in colorburstTargets)

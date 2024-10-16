@@ -140,8 +140,8 @@ Transform:
   m_GameObject: {fileID: 497034292107502282}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.486}
+  m_LocalScale: {x: 1, y: 1, z: 1.3792393}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 828158286024738355}
@@ -346,7 +346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 692e2142408423945b37bdb2ce2fbc7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stacksOfInk: 4
+  stacksOfInk: 10
   damage: 0
   isRed: 0
   isGreen: 0
@@ -511,8 +511,8 @@ Transform:
   m_GameObject: {fileID: 2719493326972828995}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.4899993, z: 2.47}
-  m_LocalScale: {x: 1.15, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 3.4899993, z: 3.53}
+  m_LocalScale: {x: 1.373445, y: 1, z: 1.3033701}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2894672378444479265}
@@ -529,7 +529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 692e2142408423945b37bdb2ce2fbc7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stacksOfInk: 1
+  stacksOfInk: 10
   damage: 0
   isRed: 0
   isGreen: 0
@@ -873,7 +873,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3439953480748640536}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: eed1275ba8c4d0e4c95220e3eb83a43f, type: 2}
   m_CullingMode: 0
@@ -956,6 +956,56 @@ MonoBehaviour:
   BrushTipSR: {fileID: 0}
   PlayerSR: {fileID: 0}
   PlayerCS: {fileID: 0}
+  Idle1: {fileID: 21300000, guid: 89c444054483f754d9bdc597f40a2e72, type: 3}
+  ChargeAttack1: {fileID: 21300000, guid: 7ce74a64b162b604bba5ddb1306b6192, type: 3}
+  ChargeAttack2: {fileID: 21300000, guid: 3603eaa570da8cb49949423a3368d1e6, type: 3}
+  ChargeAttack3: {fileID: 21300000, guid: f1681f6b1f56d3348bf41bf79682a4cb, type: 3}
+  ChargeAttack4: {fileID: 21300000, guid: f1681f6b1f56d3348bf41bf79682a4cb, type: 3}
+  ChargeAttack5: {fileID: 21300000, guid: 57f8ba22aa003b74f969267485c7cf98, type: 3}
+  ChargeAttack6: {fileID: 21300000, guid: 7a0df7a9ec4ee8248b39f66a63ae5b20, type: 3}
+  ChargeAttack7: {fileID: 21300000, guid: e8533bae2c3f39d4dbab0f6f0cc3a49b, type: 3}
+  ChargeAttack8: {fileID: 21300000, guid: e9b3621f0a5b78c4ea066ec14c824d25, type: 3}
+  ChargeAttack9: {fileID: 21300000, guid: ad8bebc5ffb0802459c570d0087f32be, type: 3}
+  ChargeAttack10: {fileID: 21300000, guid: 0f5ba77cdf93ffc49a01ee6f4fb2d1f2, type: 3}
+  ChargeAttack11: {fileID: 21300000, guid: 3abd6def43543164492b3531d6f44364, type: 3}
+  ChargeAttack12: {fileID: 21300000, guid: 2ed8a55d06924b547b07bf0886620cd5, type: 3}
+  ChargeAttack13: {fileID: 21300000, guid: d2018d420ca8d494e96c236754e1c695, type: 3}
+  ChargeAttack14: {fileID: 21300000, guid: 766a46fd62297404d96864b26d848f75, type: 3}
+  ChargeAttack15: {fileID: 21300000, guid: f6ef28067873c544c84ca14853df9c63, type: 3}
+  ChargeAttack16: {fileID: 21300000, guid: 7e4d108afac4c0f4baa7245ec8190918, type: 3}
+  ChargeAttack17: {fileID: 21300000, guid: 335e287501d3d0a4384f2c4fdba04347, type: 3}
+  ChargeAttack18: {fileID: 21300000, guid: 335e287501d3d0a4384f2c4fdba04347, type: 3}
+  Dash1: {fileID: 21300000, guid: e3aaf62751e360b4e95dbff63efac0aa, type: 3}
+  LightAttackOne1: {fileID: 21300000, guid: 72262658682c11d46acfe1c3cee0372d, type: 3}
+  LightAttackOne2: {fileID: 21300000, guid: 96c44282c36bb414682dd78719a200af, type: 3}
+  LightAttackTwo1: {fileID: 21300000, guid: aff9920fa78ee0948910d1d1898338e5, type: 3}
+  LightAttackTwo2: {fileID: 21300000, guid: 4aff041f81717224fb2f2b4f8388a7cc, type: 3}
+  LightAttackThree1: {fileID: 21300000, guid: af6420816c0aab54c8ac8a4cc64266b6, type: 3}
+  LightAttackThree2: {fileID: 21300000, guid: dea0a6b8c5be5eb4cb1324410fbeec11, type: 3}
+  Death1: {fileID: 21300000, guid: dfada64f4d2b51843a4ed15b337abed2, type: 3}
+  Death2: {fileID: 21300000, guid: f1c3981efe7cbec448ed39a77039941d, type: 3}
+  Death3: {fileID: 21300000, guid: 78e014b5858ae024b9679e45474fb0de, type: 3}
+  Death4: {fileID: 21300000, guid: 386e1217a641ec24894ee57faa356069, type: 3}
+  Death5: {fileID: 21300000, guid: bad40c0f86b03fc48a100fff30087809, type: 3}
+  Death6: {fileID: 21300000, guid: 13411a81788a161468c37e9df4ef3685, type: 3}
+  Death7: {fileID: 21300000, guid: 77de857d2df0e3f41b153197246e2fb4, type: 3}
+  Death8: {fileID: 21300000, guid: 19c31f7fd83e959488c2f9f1de840063, type: 3}
+  Death9: {fileID: 21300000, guid: 44ec3f5c0496c6345ad4fb7bcac3133c, type: 3}
+  Death10: {fileID: 21300000, guid: 9f73a2d9d1ef1b74ca6fdff92c5690ab, type: 3}
+  Death11: {fileID: 21300000, guid: 9cffd067a38abf742a09e27399a68970, type: 3}
+  Death12: {fileID: 21300000, guid: 287cfeec0bd3b8740ab4e4fe95700c88, type: 3}
+  Death13: {fileID: 21300000, guid: 2d71650e9a511cc40bfe68a04c1add5c, type: 3}
+  Death14: {fileID: 21300000, guid: 08cc33599b435b24984f9927011246d7, type: 3}
+  Death15: {fileID: 21300000, guid: 16af6522e31cc6d47b54e705bf020994, type: 3}
+  Death16: {fileID: 21300000, guid: 037caeb5b0b77334b86dc9df4b14b32d, type: 3}
+  Run1: {fileID: 21300000, guid: d65aa1833a8db7949be64c7e25a36126, type: 3}
+  Run2: {fileID: 21300000, guid: bd55da8400dd7a94da11be902d35cc89, type: 3}
+  Run3: {fileID: 21300000, guid: 1af7a855fcbb08649bef0fa35207addd, type: 3}
+  Run4: {fileID: 21300000, guid: 107c47e1cc22566489a4a18d785a2f07, type: 3}
+  Run5: {fileID: 21300000, guid: a0f74db60ed273a45a097252dba74902, type: 3}
+  Run6: {fileID: 21300000, guid: 72b668a7d338d984ea221a5c4c2052dd, type: 3}
+  Run7: {fileID: 21300000, guid: 94d6fe9b03ae22043be06e7bddc67cea, type: 3}
+  Run8: {fileID: 21300000, guid: 5e39683b48748ac4eb474750d35c8536, type: 3}
 --- !u!1 &3636366130548240671
 GameObject:
   m_ObjectHideFlags: 0
@@ -1733,6 +1783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de5726276e62aa42a74f87cc8c346be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FaceOnce: 0
 --- !u!95 &6634991014638833461
 Animator:
   serializedVersion: 5
@@ -2110,8 +2161,8 @@ Transform:
   m_GameObject: {fileID: 8751873906029688279}
   serializedVersion: 2
   m_LocalRotation: {x: 0.70710576, y: -0, z: -0, w: 0.7071079}
-  m_LocalPosition: {x: 2.1078725e-12, y: 0, z: 1.48}
-  m_LocalScale: {x: 0.40056792, y: 0.74181753, z: 1}
+  m_LocalPosition: {x: 2.1078725e-12, y: 0, z: 2.53}
+  m_LocalScale: {x: 0.40056792, y: 1.0231439, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4313060549211565982}

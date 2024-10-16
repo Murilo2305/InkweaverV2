@@ -250,11 +250,11 @@ public class EnemyCombatScript : MonoBehaviour
 
         if (enemyColorSystemRef.debuffsActive > 0)
         { 
-            DamageEnemy(enemyColorSystemRef.damageOverTime / enemyColorSystemRef.debuffsActive, true);
+            DamageEnemy(enemyColorSystemRef.damageOverTime / enemyColorSystemRef.debuffsActive, true, false);
         }
         else
         {
-            DamageEnemy(enemyColorSystemRef.damageOverTime, true);
+            DamageEnemy(enemyColorSystemRef.damageOverTime, true, false);
         }
 
 
@@ -265,7 +265,7 @@ public class EnemyCombatScript : MonoBehaviour
 
     }
 
-    public void DamageEnemy(float dmg, bool imediate)
+    public void DamageEnemy(float dmg, bool imediate, bool triggersFeedback)
     {
         healthPoints -= dmg * damageTakenMultiplier;
 
@@ -274,6 +274,10 @@ public class EnemyCombatScript : MonoBehaviour
             StartCoroutine(enemyColorSystemRef.YellowLifestealHeal(dmg * enemyColorSystemRef.yellowLifeStealPercentage));
         }
 
+        if (triggersFeedback)
+        {
+            StartCoroutine(EnemyDamageFeedback());
+        }
 
         if (imediate)
         {
@@ -353,7 +357,12 @@ public class EnemyCombatScript : MonoBehaviour
     }
 
 
-
+    private IEnumerator EnemyDamageFeedback()
+    {
+        gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+    }
 
 
 
@@ -368,7 +377,10 @@ public class EnemyCombatScript : MonoBehaviour
     //DamageTaken shortcut without the specification if the health bar should be animated
     public void DamageEnemy(float dmg)
     {
-        DamageEnemy(dmg, false);
+        DamageEnemy(dmg, false, true);
+    } public void DamageEnemy(float dmg, bool imediate)
+    {
+        DamageEnemy(dmg, imediate, true);
     }
 
     //Updates the hit bar with the "draining" animation; also if speed not provided the speed defaults to 10

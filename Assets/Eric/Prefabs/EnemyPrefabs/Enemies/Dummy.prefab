@@ -1344,6 +1344,7 @@ MonoBehaviour:
   bullAnimScript: {fileID: 0}
   SniperAnimScript: {fileID: 0}
   MinionAnimScript: {fileID: 0}
+  PlayerColorSystemRef: {fileID: 0}
 --- !u!114 &7853184320848853740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1383,10 +1384,10 @@ MonoBehaviour:
   maxDebuffTimer: 5
   redStacks: 0
   redDoTApplied: 0
-  damageOverTime: 0.1
-  redActiveDamage: 15
+  damageOverTime: 0.5
+  redActiveDamage: 5
   greenStacks: 0
-  greenHealthRegen: 0.2
+  greenHealthRegen: 0.3
   greenHealingBurst: 5
   canBeRooted: 1
   blueStacks: 0
@@ -1436,7 +1437,7 @@ NavMeshAgent:
   m_Height: 2
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!114 &5039579313547367926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1678,6 +1679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de5726276e62aa42a74f87cc8c346be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FaceOnce: 0
 --- !u!1 &6371991929654859275
 GameObject:
   m_ObjectHideFlags: 0
@@ -2260,7 +2262,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 78285e43f2f759e4394b2670ab49ae29, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

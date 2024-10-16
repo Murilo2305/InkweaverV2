@@ -88,7 +88,7 @@ public class EnemyColorSystem : MonoBehaviour
         // improvised code to make the health bar work may delete later
         playerHealthBarScriptRef = playerRef.GetComponent<PlayerCombatScript>().PlayerHealthBarScriptRef;
 
-
+        UpdateEnemyHealthBarColor();
 
         if (debuffTimer > 0.0f)
         {
@@ -96,7 +96,10 @@ public class EnemyColorSystem : MonoBehaviour
         }
         else if (debuffTimer <= 0.0f)
         {
-            ResetStacks();
+            if (!HealthBarScriptRef.Equals(null))
+            {
+                ResetStacks();
+            }
             if (playerColorSystemRef.colorburstTargets.Contains(gameObject))
             {
                 playerColorSystemRef.colorburstTargets.Remove(gameObject);
@@ -446,12 +449,15 @@ public class EnemyColorSystem : MonoBehaviour
             magentaRB = false;
             yellowRG = false;
             cyanGB = false;
-            HealthBarScriptRef.SetBarColor(Color.white);
-            HealthBarScriptRef.redColorIndicator.SetActive(false);
-            HealthBarScriptRef.greenColorIndicator.SetActive(false);
-            HealthBarScriptRef.blueColorIndicator.SetActive(false);
-            HealthBarScriptRef.bleedIndicator.SetActive(false);
-            HealthBarScriptRef.blueSlowIndicator.SetActive(false);
+            if (!HealthBarScriptRef.Equals(null))
+            {
+                HealthBarScriptRef.SetBarColor(Color.white);
+                HealthBarScriptRef.redColorIndicator.SetActive(false);
+                HealthBarScriptRef.greenColorIndicator.SetActive(false);
+                HealthBarScriptRef.blueColorIndicator.SetActive(false);
+                HealthBarScriptRef.bleedIndicator.SetActive(false);
+                HealthBarScriptRef.blueSlowIndicator.SetActive(false);
+            }
             playerHealthBarScriptRef.ChangeHealthBarColor(Color.white);
             StacksReset = true;
             redDoTApplied = false;

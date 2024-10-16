@@ -25,7 +25,7 @@ public class DashAfterImageScript : MonoBehaviour
 
         for (int i = 0; i < DashFrames.Count; i++)
         {
-            if(PlayerAnim.GetBool("IsDashing") == true)
+            if(PlayerAnim.GetBool("IsDashing") == true && !PlayerAnim.GetBool("IsDying"))
             {
                 if (i == 0)
                 {

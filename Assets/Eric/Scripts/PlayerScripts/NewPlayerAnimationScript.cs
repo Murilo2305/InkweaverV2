@@ -50,6 +50,8 @@ public class NewPlayerAnimationScript : MonoBehaviour
 
         BrushTipAnimator = playerRef.transform.GetChild(3).gameObject.GetComponent<Animator>();
 
+        playerAnimator.SetBool("IsDying", false);
+
     }
         
 
@@ -112,15 +114,24 @@ public class NewPlayerAnimationScript : MonoBehaviour
 
     public void SetParameterInPlayerAnimator(string id, bool value)
     {
-        playerAnimator.SetBool(id, value);
+        if (!value.Equals("IsDying") && !playerAnimator.GetBool("IsDying"))
+        {
+            playerAnimator.SetBool(id, value);
+        }
     }
     public void SetParameterInPlayerAnimator(string id, int value)
     {
-        playerAnimator.SetInteger(id, value);
+        if (!playerAnimator.GetBool("IsDying"))
+        {   
+            playerAnimator.SetInteger(id, value);
+        }
     }
     public void SetTriggerInPlayerAnimator(string id)
     {
-        playerAnimator.SetTrigger(id);
+        if (!playerAnimator.GetBool("IsDying"))
+        {
+            playerAnimator.SetTrigger(id);
+        }
     }
 
 
@@ -171,7 +182,7 @@ public class NewPlayerAnimationScript : MonoBehaviour
             BrushTipGFX.transform.position = new Vector3(BrushTipGFX.transform.position.x+0.97f,BrushTipGFX.transform.position.y-0.41f,BrushTipGFX.transform.position.z);
             }
             BrushTipGFX.transform.localScale = new Vector3(0.23f,0.23f,0.2f);
-            playerAnimator.SetTrigger("IsDying");
+            playerAnimator.SetBool("IsDying", true);
             BrushTipAnimator.SetTrigger("IsDying");
         }
 
@@ -197,6 +208,13 @@ public class NewPlayerAnimationScript : MonoBehaviour
 
         return false;
 
+    }
+
+
+
+    public void AnimationEventSetBrushPosition(int id)
+    {
+        BrushTipGFX.GetComponent<BrushTipScript>().SetPosition(id);
     }
 
 }

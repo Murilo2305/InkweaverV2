@@ -8,7 +8,7 @@ public class PlayerCombatScript : MonoBehaviour
 {
     //Control Variables
     [Header(" - Control Variables")]
-    [SerializeField] private bool canAttack;
+    public bool canAttack;
     public bool isInvulnerable;
 
     //Health Parameters
@@ -385,6 +385,7 @@ public class PlayerCombatScript : MonoBehaviour
         StartCoroutine(EnableAndDisableHitbox(hitBoxDuration, delayBeforeAttacking, isHeavyAttack));
         //time before the player can attack again
         StartCoroutine(attackCooldown(cooldownForTheAttack));
+
         
     }
 

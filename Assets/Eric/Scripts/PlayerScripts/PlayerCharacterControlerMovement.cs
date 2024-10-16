@@ -70,6 +70,7 @@ public class PlayerCharacterControlerMovement : MonoBehaviour
             isDashing = true;
             canDash = false;
             canMove = false;
+            combatScriptRef.canAttack = false;
             StartCoroutine(Dash());
         }
 
@@ -82,28 +83,30 @@ public class PlayerCharacterControlerMovement : MonoBehaviour
 
     void PlayerMove()
     {
-        horizontalmovement = Input.GetAxisRaw("Horizontal");
-        verticalmovement = Input.GetAxisRaw("Vertical");
-
-
-        if (canMove)
+        if (!combatScriptRef.IsDying)
         {
-            if (combatScriptRef.isCharging)
+            horizontalmovement = Input.GetAxisRaw("Horizontal");
+            verticalmovement = Input.GetAxisRaw("Vertical");
+
+
+            if (canMove)
             {
-                movement = new Vector3(horizontalmovement, 0.0f, verticalmovement);
-                movement = Vector3.Normalize(movement);
+                if (combatScriptRef.isCharging)
+                {
+                    movement = new Vector3(horizontalmovement, 0.0f, verticalmovement);
+                    movement = Vector3.Normalize(movement);
 
-                cc.Move(movement * speed * Time.deltaTime * 0.05f);
+                    cc.Move(movement * speed * Time.deltaTime * 0.05f);
+                }
+                else
+                {
+                    movement = new Vector3(horizontalmovement, 0.0f, verticalmovement);
+                    movement = Vector3.Normalize(movement);
+
+                    cc.Move(movement * speed * Time.deltaTime);
+
+                }
             }
-            else
-            {
-                movement = new Vector3(horizontalmovement, 0.0f, verticalmovement);
-                movement = Vector3.Normalize(movement);
-
-                cc.Move(movement * speed * Time.deltaTime);
-
-            }
-
         }
     }
 
@@ -115,11 +118,14 @@ public class PlayerCharacterControlerMovement : MonoBehaviour
 
         while (Vector3.Distance(transform.position, dash.position) > 0)
         {
+            
             //remember to alter the direction of raycast bc it isnt working properly
-            if (Physics.Raycast(transform.position, movement, 1.0f, LayerMask.GetMask("Wall")))
+            if (Physics.Raycast(transform.position, movement, 1.5f, LayerMask.GetMask("Wall")))
             {
                 break;
             }
+
+            Debug.DrawRay(transform.position, movement * 1.5f);
 
 
             transform.position = (Vector3.MoveTowards(transform.position, dash.position, dashSpeed * Time.deltaTime));
@@ -138,10 +144,30 @@ public class PlayerCharacterControlerMovement : MonoBehaviour
         dashOnCooldown = false;
         canDash = true;
         canMove = true;
+        combatScriptRef.canAttack = true;
 
         dash.SetParent(transform);
+        dash.transform.localPosition = Vector3.zero;
     }
 
+    public void InterruptDash()
+    {
+        StopCoroutine(Dash());
+
+        isDashing = false;
+        dashOnCooldown = true;
+        combatScriptRef.isInvulnerable = false;
+
+        canMove = true;
+
+        dashOnCooldown = false;
+        canDash = true;
+
+        combatScriptRef.canAttack = true;
+
+        dash.SetParent(transform);
+        dash.transform.localPosition = Vector3.zero;
+    }
 
 
 }

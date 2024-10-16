@@ -171,6 +171,8 @@ public class bull_script : MonoBehaviour
         attackHitboxRef.enabled = true;
         enemyCombatScriptRef.isHittable = false;
         isAttacking = true;
+
+        agent.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
     }
 
     public void AnimationEventRushEnd()
@@ -181,6 +183,7 @@ public class bull_script : MonoBehaviour
         isAttacking = false;
         bullAnimationScriptRef.SetAnimatorParameter("rushStopBool", false);
 
+        agent.obstacleAvoidanceType = ObstacleAvoidanceType.HighQualityObstacleAvoidance;
         agent.SetDestination(targetpos);
     }
 }

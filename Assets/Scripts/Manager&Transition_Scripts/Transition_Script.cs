@@ -46,7 +46,7 @@ public class Transition_Script : MonoBehaviour
             {
 
                 SceneManager.LoadScene(NextScene);
-                print("next Stage");
+                //print("next Stage");
 
             }
 

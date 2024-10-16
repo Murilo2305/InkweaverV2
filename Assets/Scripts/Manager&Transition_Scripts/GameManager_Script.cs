@@ -37,7 +37,7 @@ public class GameManager_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(Cursor.lockState);
+        // print(Cursor.lockState);
 
         if (Input.GetButtonDown("PauseButton") && !DeathCanvas.activeInHierarchy)
         {

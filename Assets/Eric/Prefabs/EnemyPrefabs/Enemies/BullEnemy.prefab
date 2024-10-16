@@ -734,7 +734,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 713c65c3fbc8cce49a49b9a1cc37cdb0, type: 3}
   m_Color: {r: 0.990566, g: 0.990566, b: 0.990566, a: 1}
   m_FlipX: 0
@@ -2049,15 +2049,15 @@ MonoBehaviour:
   maxDebuffTimer: 8
   redStacks: 0
   redDoTApplied: 0
-  damageOverTime: 0.5
-  redActiveDamage: 25
+  damageOverTime: 0.1
+  redActiveDamage: 5
   greenStacks: 0
-  greenHealthRegen: 0.15
-  greenHealingBurst: 2
+  greenHealthRegen: 0.1
+  greenHealingBurst: 1.5
   canBeRooted: 0
   blueStacks: 0
   blueSlow: 0.08
-  blueRootTime: 0.5
+  blueRootTime: 0.15
   blueHardSlow: 0.09
   isRooted: 0
   magentaRB: 0

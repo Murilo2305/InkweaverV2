@@ -77,12 +77,14 @@
     <Compile Include="Assets\Eric\Scripts\Miscellaneous\DamagePlayer.cs" />
     <Compile Include="Assets\Scripts\old shit\Player.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\minion\enemy_damage_radius.cs" />
+    <Compile Include="Assets\Eric\Scripts\Miscellaneous\PlayerInboundsReferencePointScript.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\DummyScripts\EnemyAnimatorScript.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\minion\script_minion.cs" />
     <Compile Include="Assets\Eric\Scripts\ColorSystem\CyanAOEScript.cs" />
     <Compile Include="Assets\Eric\Scripts\Miscellaneous\LineRendererDebugThing.cs" />
     <Compile Include="Assets\Eric\Scripts\PlayerScripts\NewPlayerAnimationScript.cs" />
     <Compile Include="Assets\Eric\Scripts\PlayerScripts\Paintball\PlayerPaintballScript.cs" />
+    <Compile Include="Assets\Eric\Scripts\Miscellaneous\PlayerTeleportBackToArena.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\DummyScripts\DummySpawner.cs" />
     <Compile Include="Assets\Eric\Scripts\UserInterfaceScripts\PlayerHealthBarScript.cs" />
     <Compile Include="Assets\Scripts\old shit\PlayerDash.cs" />

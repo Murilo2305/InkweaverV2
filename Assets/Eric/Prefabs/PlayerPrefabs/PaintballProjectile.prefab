@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 692e2142408423945b37bdb2ce2fbc7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stacksOfInk: 1
+  stacksOfInk: 10
   damage: 0
   isRed: 0
   isGreen: 0
@@ -237,3 +237,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de5726276e62aa42a74f87cc8c346be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FaceOnce: 0
