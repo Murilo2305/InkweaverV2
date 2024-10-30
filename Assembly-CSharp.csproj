@@ -63,61 +63,61 @@
     <Compile Include="Assets\Scripts\ThankYouScript.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\DummyScripts\DummyScript.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\enemy_seeking_mechanism.cs" />
-    <Compile Include="Assets\Eric\Scripts\PlayerScripts\PlayerCombatScript.cs" />
-    <Compile Include="Assets\Scripts\enemy_scripts\Bull\bull_script.cs" />
     <Compile Include="Assets\Eric\Scripts\Miscellaneous\DamageAreaScript.cs" />
-    <Compile Include="Assets\Eric\Scripts\UserInterfaceScripts\EnemyHealthBar.cs" />
-    <Compile Include="Assets\Eric\Scripts\UserInterfaceScripts\ProgressBar.cs" />
     <Compile Include="Assets\Eric\Scripts\PlayerScripts\PlayerHitboxScript.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\sniper\Sniper_script.cs" />
     <Compile Include="Assets\Scripts\old shit\PlayerMovementAlternatePhysicsBased.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\EnemyCombatScript.cs" />
+    <Compile Include="Assets\Eric\Scripts\EnemyScripts\DummyScripts\EnemyAnimatorScript.cs" />
+    <Compile Include="Assets\Eric\Scripts\Miscellaneous\LineRendererDebugThing.cs" />
+    <Compile Include="Assets\Eric\Scripts\PlayerScripts\NewPlayerAnimationScript.cs" />
+    <Compile Include="Assets\Eric\Scripts\Miscellaneous\PlayerTeleportBackToArena.cs" />
+    <Compile Include="Assets\Eric\Scripts\EnemyScripts\DummyScripts\DummySpawner.cs" />
+    <Compile Include="Assets\Eric\Scripts\UserInterfaceScripts\PlayerHealthBarScript.cs" />
+    <Compile Include="Assets\Scripts\Manager&amp;Transition_Scripts\Pause_System_Script.cs" />
+    <Compile Include="Assets\Eric\Scripts\EnemyScripts\AnimatorScripts\SniperAnimationScript.cs" />
+    <Compile Include="Assets\Eric\Scripts\EnemyScripts\EnemySpawnPosRefScript.cs" />
+    <Compile Include="Assets\Scripts\old shit\PlayerAnimationScript.cs" />
+    <Compile Include="Assets\Eric\Scripts\ColorSystem\PlayerColorSystem.cs" />
+    <Compile Include="Assets\Scripts\enemy_scripts\enemy_hit_and_Damage.cs" />
+    <Compile Include="Assets\Eric\Scripts\PlayerScripts\DashAfterImageScript.cs" />
+    <Compile Include="Assets\Eric\Scripts\EnemyScripts\EnemyAttackHitboxScript.cs" />
+    <Compile Include="Assets\Scripts\enemy_scripts\minion\minion_seeking_mechanism.cs" />
+    <Compile Include="Assets\Scripts\old shit\PlayerMesh.cs" />
+    <Compile Include="Assets\Eric\Scripts\PlayerScripts\PlayerCombatScript.cs" />
+    <Compile Include="Assets\Scripts\enemy_scripts\Bull\bull_script.cs" />
+    <Compile Include="Assets\Eric\Scripts\UserInterfaceScripts\EnemyHealthBar.cs" />
+    <Compile Include="Assets\Eric\Scripts\UserInterfaceScripts\ProgressBar.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\enemy_player_detection.cs" />
     <Compile Include="Assets\Scripts\old shit\ScriptTofigureOutTheNameOfTheFaceButtons.cs" />
     <Compile Include="Assets\Eric\Scripts\Miscellaneous\DamagePlayer.cs" />
     <Compile Include="Assets\Scripts\old shit\Player.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\minion\enemy_damage_radius.cs" />
     <Compile Include="Assets\Eric\Scripts\Miscellaneous\PlayerInboundsReferencePointScript.cs" />
-    <Compile Include="Assets\Eric\Scripts\EnemyScripts\DummyScripts\EnemyAnimatorScript.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\minion\script_minion.cs" />
     <Compile Include="Assets\Eric\Scripts\ColorSystem\CyanAOEScript.cs" />
-    <Compile Include="Assets\Eric\Scripts\Miscellaneous\LineRendererDebugThing.cs" />
-    <Compile Include="Assets\Eric\Scripts\PlayerScripts\NewPlayerAnimationScript.cs" />
     <Compile Include="Assets\Eric\Scripts\PlayerScripts\Paintball\PlayerPaintballScript.cs" />
-    <Compile Include="Assets\Eric\Scripts\Miscellaneous\PlayerTeleportBackToArena.cs" />
-    <Compile Include="Assets\Eric\Scripts\EnemyScripts\DummyScripts\DummySpawner.cs" />
-    <Compile Include="Assets\Eric\Scripts\UserInterfaceScripts\PlayerHealthBarScript.cs" />
     <Compile Include="Assets\Scripts\old shit\PlayerDash.cs" />
     <Compile Include="Assets\Eric\Scripts\UserInterfaceScripts\FollowTarget.cs" />
-    <Compile Include="Assets\Scripts\Manager&amp;Transition_Scripts\Pause_System_Script.cs" />
     <Compile Include="Assets\Eric\Scripts\PlayerScripts\PlayerCharacterControlerMovement.cs" />
     <Compile Include="Assets\Scripts\Manager&amp;Transition_Scripts\ButtonScript.cs" />
-    <Compile Include="Assets\Eric\Scripts\EnemyScripts\AnimatorScripts\SniperAnimationScript.cs" />
     <Compile Include="Assets\Scripts\old shit\camera.cs" />
     <Compile Include="Assets\Scripts\Manager&amp;Transition_Scripts\DeathMenu_Script.cs" />
     <Compile Include="Assets\Scripts\Manager&amp;Transition_Scripts\Transition_Script.cs" />
     <Compile Include="Assets\Scripts\Manager&amp;Transition_Scripts\GameManager_Script.cs" />
     <Compile Include="Assets\Eric\Scripts\InputScript\Byjedimndtrick\InputUtility.cs" />
-    <Compile Include="Assets\Eric\Scripts\EnemyScripts\EnemySpawnPosRefScript.cs" />
     <Compile Include="Assets\Scripts\Manager&amp;Transition_Scripts\CamShake_Script.cs" />
     <Compile Include="Assets\Eric\Scripts\Miscellaneous\SpriteScript.cs" />
-    <Compile Include="Assets\Scripts\old shit\PlayerAnimationScript.cs" />
     <Compile Include="Assets\Scripts\BrushTipScript.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\StaggerScript.cs" />
     <Compile Include="Assets\Eric\Scripts\PlayerScripts\NewPlayerDirectionalIndicator.cs" />
-    <Compile Include="Assets\Eric\Scripts\ColorSystem\PlayerColorSystem.cs" />
     <Compile Include="Assets\Scripts\Manager&amp;Transition_Scripts\DamageVignete_Script.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\AnimatorScripts\MinionAnimationScript.cs" />
-    <Compile Include="Assets\Scripts\enemy_scripts\enemy_hit_and_Damage.cs" />
-    <Compile Include="Assets\Eric\Scripts\PlayerScripts\DashAfterImageScript.cs" />
-    <Compile Include="Assets\Eric\Scripts\EnemyScripts\EnemyAttackHitboxScript.cs" />
-    <Compile Include="Assets\Scripts\enemy_scripts\minion\minion_seeking_mechanism.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\sniper\Bullet_Script.cs" />
     <Compile Include="Assets\Scripts\old shit\PlayerDirectionalIndicator.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\EnemySpawnerScript.cs" />
     <Compile Include="Assets\Eric\Scripts\ColorSystem\EnemyColorSystem.cs" />
     <Compile Include="Assets\Scripts\old shit\PlayerMovement.cs" />
-    <Compile Include="Assets\Scripts\old shit\PlayerMesh.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -770,6 +770,9 @@
     <Reference Include="Unity.2D.IK.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.AI.Navigation">
       <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.dll</HintPath>
     </Reference>
@@ -791,6 +794,9 @@
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
     </Reference>
@@ -809,6 +815,9 @@
     <Reference Include="Unity.TestTools.CodeCoverage.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Collections">
       <HintPath>Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
     </Reference>
@@ -817,6 +826,9 @@
     </Reference>
     <Reference Include="Unity.2D.PixelPerfect">
       <HintPath>Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll</HintPath>
+    </Reference>
+    <Reference Include="PPv2URPConverters">
+      <HintPath>Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
@@ -830,11 +842,20 @@
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.EditorCoroutines.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
     </Reference>
     <Reference Include="PsdPlugin">
       <HintPath>Library\ScriptAssemblies\PsdPlugin.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
@@ -847,6 +868,9 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ShaderGraph.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
@@ -881,6 +905,9 @@
     <Reference Include="Unity.2D.Common.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
     </Reference>
@@ -908,8 +935,14 @@
     <Reference Include="Unity.2D.Common.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Searcher.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.AI.Navigation.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll</HintPath>
