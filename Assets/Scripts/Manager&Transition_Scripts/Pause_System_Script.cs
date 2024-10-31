@@ -33,7 +33,7 @@ public class Pause_System_Script : MonoBehaviour
 
     }
 
-    public void Again()
+    public void RestartScene()
     {
 
         string currentSceneName = SceneManager.GetActiveScene().name;
@@ -41,10 +41,10 @@ public class Pause_System_Script : MonoBehaviour
 
     }
 
-    public void Restart()
+    public void ReturnToMainMenu()
     {
 
-        SceneManager.LoadScene("Tutorial_Stage1");
+        SceneManager.LoadScene("TitleScreen");
 
     }
 

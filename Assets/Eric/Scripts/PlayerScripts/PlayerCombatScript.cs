@@ -94,7 +94,7 @@ public class PlayerCombatScript : MonoBehaviour
         moveScriptRef = player.GetComponent<PlayerCharacterControlerMovement>();
         playerColorSystemRef = player.GetComponent<PlayerColorSystem>();
         playerAnimationScriptRef = player.transform.GetChild(2).GetComponent<NewPlayerAnimationScript>();
-        PlayerHealthBarScriptRef = PlayerUIRef.transform.GetChild(3).GetComponent<PlayerHealthBarScript>();
+        PlayerHealthBarScriptRef = PlayerUIRef.transform.GetChild(4).GetComponent<PlayerHealthBarScript>();
         //refs of attack related things
         lightAttackHitbox = lightAttackHitboxGameObjectRef.GetComponent<BoxCollider>();
         heavyAttackHitbox = heavyAttackHitboxGameObjectRef.GetComponent<BoxCollider>();
@@ -211,10 +211,12 @@ public class PlayerCombatScript : MonoBehaviour
     //attack function
     private void LightAttack()
 {
-    currentTimer = maxTimer;
-    playerAnimationScriptRef.SetParameterInPlayerAnimator("isAttacking", true);
-    moveScriptRef.canMove = false;
-    moveScriptRef.canDash = false;
+        currentTimer = maxTimer;
+        playerAnimationScriptRef.SetParameterInPlayerAnimator("isAttacking", true);
+        moveScriptRef.canMove = false;
+        moveScriptRef.canDash = false;
+
+        moveScriptRef.AttackStepForward();
 
     //first attack in light attack chain
     if (comboTracker == 0)

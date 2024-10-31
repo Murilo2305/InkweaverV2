@@ -12,6 +12,7 @@ public class PlayerTeleportBackToArena : MonoBehaviour
         {
             other.transform.position = playerInboundsReferencePoint.position;
             other.GetComponent<PlayerCharacterControlerMovement>().InterruptDash();
+            other.GetComponent<PlayerCharacterControlerMovement>().playerIsOutOfBounds = true;
         }
     }
     private void OnTriggerStay(Collider other)
@@ -20,6 +21,15 @@ public class PlayerTeleportBackToArena : MonoBehaviour
         {
             other.transform.position = playerInboundsReferencePoint.position;
             other.GetComponent<PlayerCharacterControlerMovement>().InterruptDash();
+            other.GetComponent<PlayerCharacterControlerMovement>().playerIsOutOfBounds = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.GetComponent<PlayerCharacterControlerMovement>().playerIsOutOfBounds = false;
         }
     }
 

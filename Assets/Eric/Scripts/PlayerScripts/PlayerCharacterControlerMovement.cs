@@ -13,18 +13,21 @@ public class PlayerCharacterControlerMovement : MonoBehaviour
 
     [Header(" - Dash Parameters:")]
     [SerializeField] private Transform dash;
+    [SerializeField] private float dashRedundancy;
 
     public bool isDashing;
     public bool dashOnCooldown;
     public bool canDash;
 
-    [SerializeField] private float dashCooldown = 0.33f;
+    public float dashCooldownMax = 0.33f;
+    public float dashCooldownTimer = 0.0f;
     [SerializeField] private float dashSpeed;
 
     /*
-    [Header("Miscellaneous Variables")]
     [SerializeField] private bool hasCollided;
     */
+    [Header("Miscellaneous Variables")]
+    public bool playerIsOutOfBounds;
 
     [Header(" - Refs:")]
     //Diretcional Indicator transform
@@ -35,6 +38,7 @@ public class PlayerCharacterControlerMovement : MonoBehaviour
     [SerializeField] private PlayerCombatScript combatScriptRef;
     [SerializeField] private float horizontalmovement;
     [SerializeField] private float verticalmovement;
+    [SerializeField] private PlayerUIDashCooldownScript playerUIDashCooldownScriptRef;
 
     /*
      * Obsolete stuff
@@ -54,15 +58,21 @@ public class PlayerCharacterControlerMovement : MonoBehaviour
         dash.SetParent(transform);
         canDash = true;
         canMove = true;
+        playerIsOutOfBounds = false;
     }
 
 
     void Update()
     {
+        if (playerUIDashCooldownScriptRef == null)
+        {
+            playerUIDashCooldownScriptRef = combatScriptRef.PlayerUIRef.transform.GetChild(1).GetChild(0).GetComponent<PlayerUIDashCooldownScript>();
+        }
+
         //Move script set to its own function
         PlayerMove();
 
-        transform.position = new Vector3(transform.position.x,0f,transform.position.z);
+        transform.position = new Vector3(transform.position.x, 0f, transform.position.z);
 
         //dashing
         if (Input.GetButtonDown("Jump") && canDash && movement != new Vector3(0.0f, 0.0f, 0.0f) && !combatScriptRef.isHeavyAttacking && !combatScriptRef.isCharging)
@@ -72,8 +82,12 @@ public class PlayerCharacterControlerMovement : MonoBehaviour
             canMove = false;
             combatScriptRef.canAttack = false;
             StartCoroutine(Dash());
+
+            dashRedundancy = 0.3f;
         }
 
+        DashRedundancyFunction();
+        DashCooldownFunction();
     }
 
 
@@ -96,15 +110,20 @@ public class PlayerCharacterControlerMovement : MonoBehaviour
                     movement = new Vector3(horizontalmovement, 0.0f, verticalmovement);
                     movement = Vector3.Normalize(movement);
 
-                    cc.Move(movement * speed * Time.deltaTime * 0.05f);
+                    if (!playerIsOutOfBounds)
+                    {
+                        cc.Move(movement * speed * Time.deltaTime * 0.05f);
+                    }
                 }
                 else
                 {
                     movement = new Vector3(horizontalmovement, 0.0f, verticalmovement);
                     movement = Vector3.Normalize(movement);
 
-                    cc.Move(movement * speed * Time.deltaTime);
-
+                    if (!playerIsOutOfBounds)
+                    {
+                        cc.Move(movement * speed * Time.deltaTime);
+                    }
                 }
             }
         }
@@ -118,7 +137,7 @@ public class PlayerCharacterControlerMovement : MonoBehaviour
 
         while (Vector3.Distance(transform.position, dash.position) > 0)
         {
-            
+
             //remember to alter the direction of raycast bc it isnt working properly
             if (Physics.Raycast(transform.position, movement, 1.5f, LayerMask.GetMask("Wall")))
             {
@@ -136,10 +155,14 @@ public class PlayerCharacterControlerMovement : MonoBehaviour
         isDashing = false;
         dashOnCooldown = true;
         combatScriptRef.isInvulnerable = false;
+        dashRedundancy = 0.0f;
 
         canMove = true;
 
-        yield return new WaitForSeconds(dashCooldown);
+        dashCooldownTimer = dashCooldownMax;
+        /*
+        #region oldDashCooldownCode
+        yield return new WaitForSeconds(dashCooldownMax);
 
         dashOnCooldown = false;
         canDash = true;
@@ -148,6 +171,8 @@ public class PlayerCharacterControlerMovement : MonoBehaviour
 
         dash.SetParent(transform);
         dash.transform.localPosition = Vector3.zero;
+        #endregion
+        */
     }
 
     public void InterruptDash()
@@ -169,5 +194,66 @@ public class PlayerCharacterControlerMovement : MonoBehaviour
         dash.transform.localPosition = Vector3.zero;
     }
 
+    public void AttackStepForward()
+    {
+        cc.Move(new Vector3(horizontalmovement, 0.0f, verticalmovement).normalized * Time.deltaTime * 75f);
+    }
 
+    private void DashRedundancyFunction()
+    {
+        //this function serves the purpose of interrupting the dash in case something goes wrong and the dash lasts longer than normal
+        if (dashRedundancy > 0.0f)
+        {
+            dashRedundancy -= Time.deltaTime;
+        }
+        else if (dashRedundancy <= 0.0f && isDashing)
+        {
+            InterruptDash();
+            dashRedundancy = 0.0f;
+        }
+    }
+
+    private void DashCooldownFunction()
+    {
+        if (dashOnCooldown)
+        {
+            if (dashCooldownTimer > 0.0f)
+            {
+                dashCooldownTimer -= Time.deltaTime;
+            }
+            else if (dashCooldownTimer < 0.0f)
+            {
+                dashCooldownTimer = 0.0f;
+                dashOnCooldown = false;
+                canDash = true;
+                canMove = true;
+                combatScriptRef.canAttack = true;
+
+                dash.SetParent(transform);
+                dash.transform.localPosition = Vector3.zero;
+            }
+            else if (dashCooldownTimer == 0.0f)
+            {
+                dashOnCooldown = false;
+                canDash = true;
+                canMove = true;
+                combatScriptRef.canAttack = true;
+
+                dash.SetParent(transform);
+                dash.transform.localPosition = Vector3.zero;
+            }
+        }
+        if(playerUIDashCooldownScriptRef != null)
+        {
+            playerUIDashCooldownScriptRef.SetCooldownDisplay(dashCooldownTimer/ dashCooldownMax);
+        }
+    }
+
+    private void SetupPlayerUIRef()
+    {
+        if (playerUIDashCooldownScriptRef == null)
+        {
+            playerUIDashCooldownScriptRef = combatScriptRef.PlayerUIRef.transform.GetChild(1).GetChild(0).GetComponent<PlayerUIDashCooldownScript>();
+        }
+    }
 }

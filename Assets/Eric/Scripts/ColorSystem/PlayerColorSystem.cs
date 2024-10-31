@@ -61,6 +61,18 @@ public class PlayerColorSystem : MonoBehaviour
         {
             SwitchColor();
         }
+        if(Input.GetKeyDown(KeyCode.Alpha1) && Time.timeScale != 0.0f)
+        {
+            SwitchColorWithAlphaNumbers(1);
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha2) && Time.timeScale != 0.0f)
+        {
+            SwitchColorWithAlphaNumbers(2);
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha3) && Time.timeScale != 0.0f)
+        {
+            SwitchColorWithAlphaNumbers(3);
+        }
         if (Input.GetButtonDown("Fire2") || InputUtility.LTriggerPulled)
         {
             StartCoroutine(Colorburst());
@@ -124,6 +136,31 @@ public class PlayerColorSystem : MonoBehaviour
         {
             red = true;
             rotationTarget = 120f;
+        }
+        StartRotationCoroutine();
+    }
+    private void SwitchColorWithAlphaNumbers(int input)
+    {
+        if (input == 1)
+        {
+            red = true;
+            green = false;
+            blue = false;
+            rotationTarget = 120f;
+        }
+        else if (input == 2)
+        {
+            green = true;
+            blue = false;
+            red = false;
+            rotationTarget = 240f;
+        }
+        else if (input == 3)
+        {
+            blue = true;
+            red = false;
+            green = false;
+            rotationTarget = 0f;
         }
         StartRotationCoroutine();
     }

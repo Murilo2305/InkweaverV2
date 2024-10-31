@@ -17,9 +17,9 @@ public class PlayerHealthBarScript : MonoBehaviour
 
     private void Start()
     {
-        GreenHealthRegenIndicator = gameObject.transform.parent.GetChild(4).gameObject;
-        CyanHealthRegenIndicator = gameObject.transform.parent.GetChild(5).gameObject;
-        YellowHealingIndicator = gameObject.transform.parent.GetChild(6).gameObject;
+        GreenHealthRegenIndicator = gameObject.transform.parent.GetChild(5).gameObject;
+        CyanHealthRegenIndicator = gameObject.transform.parent.GetChild(6).gameObject;
+        YellowHealingIndicator = gameObject.transform.parent.GetChild(7).gameObject;
 
         tempColor = Color.white;
     }

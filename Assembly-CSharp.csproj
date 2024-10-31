@@ -64,9 +64,11 @@
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\DummyScripts\DummyScript.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\enemy_seeking_mechanism.cs" />
     <Compile Include="Assets\Eric\Scripts\Miscellaneous\DamageAreaScript.cs" />
+    <Compile Include="Assets\Eric\Scripts\UserInterfaceScripts\MainMenuParallaxScript.cs" />
     <Compile Include="Assets\Eric\Scripts\PlayerScripts\PlayerHitboxScript.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\sniper\Sniper_script.cs" />
     <Compile Include="Assets\Scripts\old shit\PlayerMovementAlternatePhysicsBased.cs" />
+    <Compile Include="Assets\Eric\Scripts\UserInterfaceScripts\PlayerUIDashCooldownScript.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\EnemyCombatScript.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\DummyScripts\EnemyAnimatorScript.cs" />
     <Compile Include="Assets\Eric\Scripts\Miscellaneous\LineRendererDebugThing.cs" />
@@ -84,8 +86,8 @@
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\EnemyAttackHitboxScript.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\minion\minion_seeking_mechanism.cs" />
     <Compile Include="Assets\Scripts\old shit\PlayerMesh.cs" />
-    <Compile Include="Assets\Eric\Scripts\PlayerScripts\PlayerCombatScript.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\Bull\bull_script.cs" />
+    <Compile Include="Assets\Eric\Scripts\PlayerScripts\PlayerCombatScript.cs" />
     <Compile Include="Assets\Eric\Scripts\UserInterfaceScripts\EnemyHealthBar.cs" />
     <Compile Include="Assets\Eric\Scripts\UserInterfaceScripts\ProgressBar.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\enemy_player_detection.cs" />
@@ -111,6 +113,7 @@
     <Compile Include="Assets\Scripts\BrushTipScript.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\StaggerScript.cs" />
     <Compile Include="Assets\Eric\Scripts\PlayerScripts\NewPlayerDirectionalIndicator.cs" />
+    <Compile Include="Assets\Eric\Scripts\UserInterfaceScripts\MainMenuScript.cs" />
     <Compile Include="Assets\Scripts\Manager&amp;Transition_Scripts\DamageVignete_Script.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\AnimatorScripts\MinionAnimationScript.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\sniper\Bullet_Script.cs" />
@@ -812,11 +815,11 @@
     <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TestTools.CodeCoverage.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TestTools.CodeCoverage.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Collections">
       <HintPath>Library\ScriptAssemblies\Unity.Collections.dll</HintPath>

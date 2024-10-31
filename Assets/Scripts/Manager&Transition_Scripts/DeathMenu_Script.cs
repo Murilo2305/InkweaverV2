@@ -16,8 +16,14 @@ public class DeathMenu_Script : MonoBehaviour
 
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
-        print("a");
 
+
+    }
+
+    public void ReturnToMainMenu()
+    {
+
+        SceneManager.LoadScene("TitleScreen");
 
     }
 

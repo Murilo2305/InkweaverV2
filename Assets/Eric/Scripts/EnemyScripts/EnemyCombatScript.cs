@@ -269,6 +269,8 @@ public class EnemyCombatScript : MonoBehaviour
     {
         healthPoints -= dmg * damageTakenMultiplier;
 
+    
+
         if (enemyColorSystemRef.isWithYellowLifestealMark)
         {
             StartCoroutine(enemyColorSystemRef.YellowLifestealHeal(dmg * enemyColorSystemRef.yellowLifeStealPercentage));
@@ -288,6 +290,7 @@ public class EnemyCombatScript : MonoBehaviour
         {
             UpdateHealthBar();
         }
+
     }
 
 
@@ -365,8 +368,8 @@ public class EnemyCombatScript : MonoBehaviour
     }
 
 
-
     
+
 
 
 
