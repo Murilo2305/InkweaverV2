@@ -50,7 +50,7 @@ public class PlayerColorSystem : MonoBehaviour
         playerUIColorBurstCooldownScriptRef = playerCombatScriptRef.PlayerUIRef.transform.GetChild(0).GetChild(0).GetComponent<PlayerUIColorBurstCooldownScripts>();
         playerUIColorBurstCooldownImage1 = playerCombatScriptRef.PlayerUIRef.transform.GetChild(0).GetComponent<Image>();
         playerUIColorBurstCooldownImage2 = playerCombatScriptRef.PlayerUIRef.transform.GetChild(0).GetChild(0).GetComponent<Image>();
-        UIColorwheelRef = playerCombatScriptRef.PlayerUIRef.transform.GetChild(1).GetComponent<RectTransform>();
+        UIColorwheelRef = playerCombatScriptRef.PlayerUIRef.transform.GetChild(2).GetComponent<RectTransform>();
         PlayerRef = GameObject.FindGameObjectWithTag("Player");
         BrushTipScriptRef = PlayerRef.transform.GetChild(3).GetComponent<BrushTipScript>();
     }
@@ -174,7 +174,7 @@ public class PlayerColorSystem : MonoBehaviour
     private IEnumerator RotationCoroutine(float i)
     {
         i += 0.1f;
-
+        print("test");
         if (rotationTarget == 0.0f)
         {
             UIColorwheelRef.Rotate(0, 0, Mathf.Lerp(UIColorwheelRef.rotation.eulerAngles.z, 360f, i) - UIColorwheelRef.rotation.eulerAngles.z);
