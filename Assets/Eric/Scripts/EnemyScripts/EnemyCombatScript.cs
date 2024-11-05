@@ -29,6 +29,7 @@ public class EnemyCombatScript : MonoBehaviour
 
     [Header("References")]
     public GameObject playerRef;
+    [SerializeField] AudioSource enemyDamagedAudioSourceRef;
 
     [Header(" - DebugStuff")]
     [SerializeField] EnemyColorSystem enemyColorSystemRef;
@@ -362,6 +363,7 @@ public class EnemyCombatScript : MonoBehaviour
 
     private IEnumerator EnemyDamageFeedback()
     {
+        enemyDamagedAudioSourceRef.Play();
         gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = Color.red;
         yield return new WaitForSeconds(0.1f);
         gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = Color.white;

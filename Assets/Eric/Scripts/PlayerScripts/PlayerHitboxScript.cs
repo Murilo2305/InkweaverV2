@@ -12,4 +12,10 @@ public class PlayerHitboxScript : MonoBehaviour
     public bool isRed;
     public bool isGreen;
     public bool isBlue;
+
+    [Space]
+
+    public bool isPaintBall;
+
+    
 }

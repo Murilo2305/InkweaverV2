@@ -32,6 +32,8 @@ public class PlayerCharacterControlerMovement : MonoBehaviour
     [Header(" - Refs:")]
     //Diretcional Indicator transform
     [SerializeField] private Transform DITransform;
+    [SerializeField] private walkCycleScript walkCycleSFXScriptRef;
+    [SerializeField] private AudioSource dashAudioSourceRef;
 
     [Header(" - DebugStuff:")]
     [SerializeField] private CharacterController cc;
@@ -81,6 +83,7 @@ public class PlayerCharacterControlerMovement : MonoBehaviour
             canDash = false;
             canMove = false;
             combatScriptRef.canAttack = false;
+            dashAudioSourceRef.Play();
             StartCoroutine(Dash());
 
             dashRedundancy = 0.3f;
@@ -88,6 +91,8 @@ public class PlayerCharacterControlerMovement : MonoBehaviour
 
         DashRedundancyFunction();
         DashCooldownFunction();
+
+        MovementSoundEffectFunction();
     }
 
 
@@ -196,7 +201,7 @@ public class PlayerCharacterControlerMovement : MonoBehaviour
 
     public void AttackStepForward()
     {
-        cc.Move(new Vector3(horizontalmovement, 0.0f, verticalmovement).normalized * Time.deltaTime * 75f);
+        cc.Move(new Vector3(horizontalmovement, 0.0f, verticalmovement).normalized * Time.deltaTime * 50f);
     }
 
     private void DashRedundancyFunction()
@@ -249,11 +254,16 @@ public class PlayerCharacterControlerMovement : MonoBehaviour
         }
     }
 
-    private void SetupPlayerUIRef()
+
+    private void MovementSoundEffectFunction()
     {
-        if (playerUIDashCooldownScriptRef == null)
+        if(movement != Vector3.zero && combatScriptRef.canAttack && !combatScriptRef.isCharging)
         {
-            playerUIDashCooldownScriptRef = combatScriptRef.PlayerUIRef.transform.GetChild(1).GetChild(0).GetComponent<PlayerUIDashCooldownScript>();
+            walkCycleSFXScriptRef.IsWalking = true;
+        }
+        else
+        {
+            walkCycleSFXScriptRef.IsWalking = false;
         }
     }
 }

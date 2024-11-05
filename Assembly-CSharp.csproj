@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\Manager&amp;Transition_Scripts\Pause_System_Script.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\AnimatorScripts\SniperAnimationScript.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\EnemySpawnPosRefScript.cs" />
+    <Compile Include="Assets\walkCycleScript.cs" />
     <Compile Include="Assets\Scripts\old shit\PlayerAnimationScript.cs" />
     <Compile Include="Assets\Eric\Scripts\ColorSystem\PlayerColorSystem.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\enemy_hit_and_Damage.cs" />
@@ -117,6 +118,7 @@
     <Compile Include="Assets\Scripts\Manager&amp;Transition_Scripts\DamageVignete_Script.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\AnimatorScripts\MinionAnimationScript.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\sniper\Bullet_Script.cs" />
+    <Compile Include="Assets\AttackAudioSourceScript.cs" />
     <Compile Include="Assets\Scripts\old shit\PlayerDirectionalIndicator.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\EnemySpawnerScript.cs" />
     <Compile Include="Assets\Eric\Scripts\ColorSystem\EnemyColorSystem.cs" />

@@ -15,16 +15,29 @@ public class PlayerPaintballScript : MonoBehaviour
     [SerializeField] private float despawnTimer = 0.0f;
     [SerializeField] private bool canMove = true;
 
+    [Space]
+
+    public AudioSource paintBallAudioSourceRef;
+
+    private bool SFXControlVariable;
+
     private void Start()
     {
         despawnTimer = lifespan;
+        SFXControlVariable = false;
     }
     void Update()
     {
         despawnTimer -= Time.deltaTime;
         if (despawnTimer <= 0.0f)
         {
+            if(SFXControlVariable == false)
+            {
+                SFXControlVariable = true;
+                paintBallAudioSourceRef.Play();
+            }
             Splash();
+            
         }
 
         if (canMove)
@@ -38,8 +51,13 @@ public class PlayerPaintballScript : MonoBehaviour
 
     public void Splash()
     {
-        canMove = false;
-        animatorRef.SetTrigger("Splash");
-        Destroy(gameObject, 0.35f);
+        
+            SFXControlVariable = true;
+            canMove = false;
+            animatorRef.SetTrigger("Splash");
+
+            Destroy(gameObject, 0.35f);
+           
+        
     }
 }

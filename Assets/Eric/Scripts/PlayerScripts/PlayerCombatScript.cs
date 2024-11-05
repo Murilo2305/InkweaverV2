@@ -63,6 +63,8 @@ public class PlayerCombatScript : MonoBehaviour
     [SerializeField] private Transform ProjectileSpawnerTransform;
     [SerializeField] private Transform ProjectileSpawnerTransform1;
     [SerializeField] private Transform ProjectileSpawnerTransform2;
+    [SerializeField] private AttackAudioSourceScript AttackAudioSourceScriptRef;
+    [SerializeField] private AudioSource PlayerDamagedAudioSource;
 
 
     //Debugging
@@ -238,6 +240,7 @@ public class PlayerCombatScript : MonoBehaviour
         //Calls the function that triggers the necessary functions and coroutines to attack
         GeneralPurposeAtttackFunction(mvLightAttack1, 0.25f, cdLightAttack1);
 
+            AttackAudioSourceScriptRef.PlayAttackSoundEffect(1);
     }
     //second attack in combo
     else if (comboTracker == 1)
@@ -255,6 +258,7 @@ public class PlayerCombatScript : MonoBehaviour
         }
 
         GeneralPurposeAtttackFunction(mvLightAttack2, 0.3f, cdLightAttack2, 0.05f);
+            AttackAudioSourceScriptRef.PlayAttackSoundEffect(2);
     }
     //last attack in the three-hit combo
     else if (comboTracker == 2)
@@ -263,6 +267,7 @@ public class PlayerCombatScript : MonoBehaviour
         playerAnimationScriptRef.SetParameterInPlayerAnimator("ComboTracker", 0);
 
         GeneralPurposeAtttackFunction(mvLightAttack3, 0.5f, cdLightAttack3, 0.1f);
+        AttackAudioSourceScriptRef.PlayAttackSoundEffect(3);
     }
 }
 
@@ -332,6 +337,7 @@ public class PlayerCombatScript : MonoBehaviour
 
             SpawnProjectiles(true);
             GeneralPurposeAtttackFunction(mvChargedAttack, 0.5f, 0.75f, true);
+            AttackAudioSourceScriptRef.PlayAttackSoundEffect(4);
         }
         else if (isLightlyCharged)
         {
@@ -343,6 +349,7 @@ public class PlayerCombatScript : MonoBehaviour
 
             SpawnProjectiles(false);
             GeneralPurposeAtttackFunction(mvHeavyAttack, 0.5f, 0.75f, true);
+            AttackAudioSourceScriptRef.PlayAttackSoundEffect(4);
         }
 
         isLightlyCharged = false;
@@ -577,6 +584,7 @@ public class PlayerCombatScript : MonoBehaviour
         if (!isInvulnerable)
         {
             healthPoints -= amountOfDamage;
+            PlayerDamagedAudioSource.Play();
             healthPoints = Mathf.Clamp(healthPoints, 0.0f, maxHealth);
             Vignete.Fade();
         }

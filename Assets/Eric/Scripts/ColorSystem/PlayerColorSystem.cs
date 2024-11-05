@@ -27,6 +27,7 @@ public class PlayerColorSystem : MonoBehaviour
 
     [Header(" - Refs")]
     public GameObject cyanColorburstAOEPrefab;
+    [SerializeField] private AudioSource ColorburstAudioSourceRef;
 
     [Header(" - DebugStuff")]
     [SerializeField] private PlayerCombatScript playerCombatScriptRef;
@@ -207,6 +208,7 @@ public class PlayerColorSystem : MonoBehaviour
             playerUIColorBurstCooldownImage1.enabled = true;
             playerUIColorBurstCooldownImage2.enabled = true;
             playerAnimationScriptRef.SetTriggerInPlayerAnimator("ColorBurst");
+            ColorburstAudioSourceRef.Play();
             //.SetTriggerInBrushTip("ColorBurst");
             yield return new WaitForSeconds(0.35f);
 
