@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="Assets\Eric\Scripts\UserInterfaceScripts\PlayerUIColorBurstCooldownScripts.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\AnimatorScripts\BullAnimationScript.cs" />
+    <Compile Include="Assets\BackgroundMusicScript.cs" />
     <Compile Include="Assets\Scripts\ThankYouScript.cs" />
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\DummyScripts\DummyScript.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\enemy_seeking_mechanism.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="Assets\Eric\Scripts\EnemyScripts\EnemyAttackHitboxScript.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\minion\minion_seeking_mechanism.cs" />
     <Compile Include="Assets\Scripts\old shit\PlayerMesh.cs" />
+    <Compile Include="Assets\CanvasManagerScript.cs" />
     <Compile Include="Assets\Scripts\enemy_scripts\Bull\bull_script.cs" />
     <Compile Include="Assets\Eric\Scripts\PlayerScripts\PlayerCombatScript.cs" />
     <Compile Include="Assets\Eric\Scripts\UserInterfaceScripts\EnemyHealthBar.cs" />

@@ -689,6 +689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354bbbea09d17404cb5e4358004f7fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BGMRef: {fileID: 0}
 --- !u!1 &2351598231298813339
 GameObject:
   m_ObjectHideFlags: 0
@@ -3594,6 +3595,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3103794388234994624}
+  - component: {fileID: 9209822136325464263}
   m_Layer: 0
   m_Name: Canvases
   m_TagString: CanvasParentObject
@@ -3620,6 +3622,18 @@ Transform:
   - {fileID: 1593946623394211925}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9209822136325464263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7895137691827540269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f1a7c4a556f0bb4694ce92a51556dbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8199236365925558154
 GameObject:
   m_ObjectHideFlags: 0

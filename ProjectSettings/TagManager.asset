@@ -15,6 +15,7 @@ TagManager:
   - PlayerAnimator
   - CamManager
   - DamageVignete
+  - BackgroundMusic
   layers:
   - Default
   - TransparentFX

@@ -18,9 +18,16 @@ public class MainMenuParallaxScript : MonoBehaviour
 
 
 
-    // Update is called once per frame
+    private void Awake()
+    {
+        Time.timeScale = 1.0f;
+    }
+
+
     void Update()
     {
+        print("sigma");
+
         // Remap to [0.0, 1.0].
         // Mouse position across screen.
 
